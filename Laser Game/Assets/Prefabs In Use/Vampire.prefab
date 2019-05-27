@@ -170,8 +170,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4680297020996514}
   - component: {fileID: 2018951963499932705}
+  - component: {fileID: -58715337478902991}
   m_Layer: 0
-  m_Name: Chara_10
+  m_Name: Vampire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -212,6 +213,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ee2b166c39b4b254184a17955f3ef39c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-58715337478902991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1336485181231658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 445ce65567de1a944aa64842ee8033e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1464517943638742
