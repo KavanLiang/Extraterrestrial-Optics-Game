@@ -22,7 +22,7 @@ public class Laser : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        StartCoroutine(RedrawLaser());
     }
 
     IEnumerator RedrawLaser()
@@ -50,7 +50,7 @@ public class Laser : MonoBehaviour
                 mLineRenderer.SetVertexCount(vertexCounter);
                 mLineRenderer.SetPosition(vertexCounter - 1, Vector3.MoveTowards(hit.point, lastLaserPosition, 0.01f));
 
-                mLineRenderer.SetWidth(.1f, .1f);
+                mLineRenderer.SetWidth(.2f, .2f);
                 lastLaserPosition = hit.point;
                 Vector3 prevDirection = laserDirection;
                 laserDirection = Vector3.Reflect(laserDirection, hit.normal);
@@ -63,7 +63,7 @@ public class Laser : MonoBehaviour
                 vertexCounter++;
                 mLineRenderer.SetVertexCount(vertexCounter);
                 mLineRenderer.SetPosition(vertexCounter - 1, hit.point);
-
+                mLineRenderer.SetWidth(.2f, .2f);
                 loopActive = false;
             }
             else
@@ -74,7 +74,7 @@ public class Laser : MonoBehaviour
                 mLineRenderer.SetVertexCount(vertexCounter);
                 Vector3 lastPos = lastLaserPosition + (laserDirection.normalized * laserDistance);
                 mLineRenderer.SetPosition(vertexCounter - 1, lastLaserPosition + (laserDirection.normalized * laserDistance));
-
+                mLineRenderer.SetWidth(.2f, .2f);
                 loopActive = false;
             }
             if (laserReflected > maxBounce)
