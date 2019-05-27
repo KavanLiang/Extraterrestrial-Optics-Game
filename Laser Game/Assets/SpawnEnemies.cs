@@ -2,23 +2,30 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using System;
 
 //TODO: decide on spawning locations and finish methods
 public class SpawnEnemies : MonoBehaviour {
 	// Start is called before the first frame update
 	public int SpawnInterval;
 	public GameObject[] enemies;
+	private float elapsedTime;
 
 	//IEnumerator coroutine;
 
 	void Start() {
+		elapsedTime = 0;
 		//coroutine = SpawnFromFile(someFileNameHere);
 	}
 
 	// Update is called once per frame
 	void Update() {
 		//StartCoroutine(coroutine);
-		//SpawnRandom();
+		elapsedTime += Time.deltaTime;
+		if(elapsedTime > SpawnInterval) {
+			elapsedTime = 0;
+			SpawnRandom();
+		}
 	}
 
 	/// <summary>
@@ -27,16 +34,16 @@ public class SpawnEnemies : MonoBehaviour {
 	/// <param name="lane">The lane to spawn the enemy in.</param>
 	/// <param name="enemy">The prefab pertaining to the enemy to be spawned</param>
 	void SpawnInLane(int lane, GameObject enemy) {
-		//TODO
+		Instantiate(enemy, new Vector3(GameManager.Instance.WorldWidth / 2, GameManager.Instance.ClampToLane(lane), lane), Quaternion.identity);
 	}
 
 	/// <summary>
 	/// Spawns a basic enemy in some random lane.
-	/// 
+	///
 	/// For infinite levels.
 	/// </summary>
 	void SpawnRandom() {
-		SpawnInLane(Random.Range(0, GameManager.Instance.NumLanes), enemies[0]);
+		SpawnInLane(UnityEngine.Random.Range(0, GameManager.Instance.NumLanes), enemies[0]);
 	}
 
 	/// <summary>
@@ -54,14 +61,16 @@ public class SpawnEnemies : MonoBehaviour {
 
 	/// <summary>
 	/// Spawns a wave of enemies.
-	/// 
-	/// Each integer represents a unique enemy. 
-	/// e.g. 10000 would spawn a single basicEnemy in the top row.
+	///
+	/// Each integer represents a unique enemy.
+	/// e.g. 00000 would spawn a single basicEnemy in the top row.
 	/// </summary>
 	/// <param name="line">A string of integers that corresponds to the next wave of enemies</param>
 	public void SpawnHelper(string line) {
 		for(int i = 0; i < line.Length; i++) {
-			SpawnInLane(i, enemies[i]);
+			if(Char.IsDigit(line[i])) {
+				SpawnInLane(i, enemies[line[i] - '0']);
+			}
 		}
 	}
 }
