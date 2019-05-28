@@ -4,7 +4,6 @@ using UnityEngine;
 using System.IO;
 using System;
 
-//TODO: decide on spawning locations and finish methods
 public class SpawnEnemies : MonoBehaviour {
 	// Start is called before the first frame update
 	public int SpawnInterval;
@@ -34,7 +33,7 @@ public class SpawnEnemies : MonoBehaviour {
 	/// <param name="lane">The lane to spawn the enemy in.</param>
 	/// <param name="enemy">The prefab pertaining to the enemy to be spawned</param>
 	void SpawnInLane(int lane, GameObject enemy) {
-		Instantiate(enemy, new Vector3(GameManager.Instance.WorldWidth / 2, GameManager.Instance.ClampToLane(lane), lane), Quaternion.identity);
+		Instantiate(enemy, new Vector3(GameManager.Instance.WorldWidth / 2, GameManager.Instance.ClampToLane(lane), GameManager.Instance.NumLanes - lane), Quaternion.identity);
 	}
 
 	/// <summary>

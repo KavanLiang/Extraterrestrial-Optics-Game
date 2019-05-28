@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//TODO: end the game when player hp goes to 0
 public class GameManager : MonoBehaviour {
 	public static GameManager Instance {
 		get;
@@ -11,6 +12,9 @@ public class GameManager : MonoBehaviour {
 	public float WorldHeight;
 	public float WorldWidth;
 	public int NumLanes;
+
+	private float playerHealth;
+	private int score;
 
 
 	public Vector3 GrassScale() {
@@ -25,15 +29,28 @@ public class GameManager : MonoBehaviour {
 		return (GrassOffset().y) - (GrassScale().y / 2) - (y * (GrassScale().y) / NumLanes);
 	}
 
+	public float getPlayerHealth() {
+		return playerHealth;
+	}
+
+	public void decrementPlayerHealth(float dmg) {
+		playerHealth -= dmg;
+	}
+
+	public void incrementScore(int amnt) {
+		score += amnt;
+	}
+
 	private void Awake() {
 		if(Instance == null) {
 			Instance = this;
 			WorldHeight = (float) Camera.main.orthographicSize * 2;
 			WorldWidth = WorldHeight / Screen.height * Screen.width;
+			playerHealth = 100f;
+			score = 0;
 			DontDestroyOnLoad(this.gameObject);
 		} else {
 			Destroy(this.gameObject);
 		}
 	}
-
 }
