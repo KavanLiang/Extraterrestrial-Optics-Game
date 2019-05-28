@@ -543,6 +543,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1331bd0f8a32da4e8c2a22bb5c12a72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MaxHealth: 100
   WorldHeight: 0
   WorldWidth: 0
   NumLanes: 5
@@ -638,6 +639,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1739854610}
   - component: {fileID: 1739854611}
+  - component: {fileID: 1739854612}
   m_Layer: 5
   m_Name: HealthSlider
   m_TagString: Untagged
@@ -717,6 +719,19 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, Unity.ugui, Version=1.0.0.0, Culture=neutral,
       PublicKeyToken=null
+--- !u!114 &1739854612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1739854609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53a9cee4af63d0c41bdb059b262fa705, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 1739854611}
 --- !u!1 &1770746422
 GameObject:
   m_ObjectHideFlags: 0

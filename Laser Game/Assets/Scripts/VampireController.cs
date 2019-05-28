@@ -18,7 +18,7 @@ public class VampireController : MonoBehaviour {
 	// Update is called once per frame
 	void Update() {
 		transform.position -= new Vector3(speed * Time.deltaTime, 0, 0);
-		if(transform.position.x < - GameManager.Instance.WorldWidth / 2) {
+		if(transform.position.x < -GameManager.Instance.WorldWidth / 2) {
 			GameManager.Instance.decrementPlayerHealth(dmg);
 			Destroy(gameObject);
 		}

@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour {
 		private set;
 	}
 
+	public float MaxHealth;
 	public float WorldHeight;
 	public float WorldWidth;
 	public int NumLanes;
@@ -22,14 +23,14 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public Vector3 GrassOffset() {
-		return new Vector3(0, WorldHeight / 3, -10);
+		return new Vector3(0,(GrassScale().y/2) - (WorldHeight / 2), 10);
 	}
 
 	public float ClampToLane(int y) {
-		return (GrassOffset().y) - (GrassScale().y / 2) - (y * (GrassScale().y) / NumLanes);
+		return (GrassOffset().y) + (GrassScale().y / 2) - (y * (GrassScale().y) / NumLanes);
 	}
 
-	public float getPlayerHealth() {
+	public float GetPlayerHealth() {
 		return playerHealth;
 	}
 
@@ -46,7 +47,7 @@ public class GameManager : MonoBehaviour {
 			Instance = this;
 			WorldHeight = (float) Camera.main.orthographicSize * 2;
 			WorldWidth = WorldHeight / Screen.height * Screen.width;
-			playerHealth = 100f;
+			playerHealth = MaxHealth;
 			score = 0;
 			DontDestroyOnLoad(this.gameObject);
 		} else {
