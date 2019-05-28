@@ -19,7 +19,7 @@ public class AlienController : MonoBehaviour {
 	void Update() {
 		transform.position -= new Vector3(speed * Time.deltaTime, 0, 0);
 		if(transform.position.x < -GameManager.Instance.WorldWidth / 2) {
-			GameManager.Instance.decrementPlayerHealth(dmg);
+			GameManager.Instance.DecrementPlayerHealth(dmg);
 			Destroy(gameObject);
 		}
 		if(hp <= 0) {

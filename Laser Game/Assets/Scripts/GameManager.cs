@@ -34,13 +34,17 @@ public class GameManager : MonoBehaviour {
 		return playerHealth;
 	}
 
-	public void decrementPlayerHealth(float dmg) {
+	public void DecrementPlayerHealth(float dmg) {
 		playerHealth -= dmg;
 	}
 
-	public void incrementScore(int amnt) {
+	public void IncrementScore(int amnt) {
 		score += amnt;
 	}
+
+	public int GetScore() {
+		return score;
+	}					   
 
 	private void Awake() {
 		if(Instance == null) {
