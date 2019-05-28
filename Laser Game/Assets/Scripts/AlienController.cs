@@ -6,6 +6,7 @@ public class AlienController : MonoBehaviour {
 	private float hp;
 	public float speed;
 	public float dmg;
+	public int ScoreValue;
 	// Start is called before the first frame update
 	void Start() {
 		hp = 100;
@@ -31,6 +32,7 @@ public class AlienController : MonoBehaviour {
 	/// Kills this Vampire
 	/// </summary>
 	void Die() {
+		GameManager.Instance.IncrementScore(ScoreValue);
 		Destroy(gameObject);
 	}
 }
