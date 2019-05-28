@@ -48,10 +48,8 @@ public class GameManager : MonoBehaviour {
 		return score;
 	}
 
-	public void Update() {
-		if(playerHealth <= 0) {
-			StartCoroutine(RestartLevel());
-		}
+	public void EndGame() {
+		StartCoroutine(RestartLevel());
 	}
 
 	private IEnumerator RestartLevel() {
@@ -61,6 +59,7 @@ public class GameManager : MonoBehaviour {
 		Time.timeScale = 1f;
 		Time.fixedDeltaTime = Time.fixedDeltaTime * slowFactor;
 		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+		reset();
 	}
 
 	private void reset() {

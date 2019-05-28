@@ -6,6 +6,11 @@ using UnityEngine.UI;
 public class FadeScreen : MonoBehaviour
 {
 	public Image img;
+	private bool end;
+
+	void Start() {
+		end = false;
+	}
 
     // Update is called once per frame
     void Update()
@@ -16,6 +21,10 @@ public class FadeScreen : MonoBehaviour
 	void fade() {
 		if(GameManager.Instance.GetPlayerHealth() <= 0) {
 			StartCoroutine(fadeToBlack());
+			if(!end) {
+				GameManager.Instance.EndGame();
+				end = true;
+			}
 		}
 	}
 
