@@ -1,8 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-//TODO: end the game when player hp goes to 0
 public class GameManager : MonoBehaviour {
 	public static GameManager Instance {
 		get;
@@ -13,9 +13,11 @@ public class GameManager : MonoBehaviour {
 	public float WorldHeight;
 	public float WorldWidth;
 	public int NumLanes;
+	public float slowFactor = 6f;
 
 	private float playerHealth;
 	private int score;
+	private bool gameEnded;
 
 
 	public Vector3 GroundScale() {
@@ -44,15 +46,34 @@ public class GameManager : MonoBehaviour {
 
 	public int GetScore() {
 		return score;
-	}					   
+	}
+
+	public void Update() {
+		if(playerHealth <= 0) {
+			StartCoroutine(RestartLevel());
+		}
+	}
+
+	private IEnumerator RestartLevel() {
+		Time.timeScale = 1f / slowFactor;
+		Time.fixedDeltaTime = Time.fixedDeltaTime / slowFactor;
+		yield return new WaitForSeconds(3f / slowFactor);
+		Time.timeScale = 1f;
+		Time.fixedDeltaTime = Time.fixedDeltaTime * slowFactor;
+		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+	}
+
+	private void reset() {
+		WorldHeight = (float)Camera.main.orthographicSize * 2;
+		WorldWidth = WorldHeight / Screen.height * Screen.width;
+		playerHealth = MaxHealth;
+		score = 0;
+	}
 
 	private void Awake() {
 		if(Instance == null) {
 			Instance = this;
-			WorldHeight = (float) Camera.main.orthographicSize * 2;
-			WorldWidth = WorldHeight / Screen.height * Screen.width;
-			playerHealth = MaxHealth;
-			score = 0;
+			reset();
 			DontDestroyOnLoad(this.gameObject);
 		} else {
 			Destroy(this.gameObject);

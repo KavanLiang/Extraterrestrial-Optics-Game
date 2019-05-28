@@ -11,7 +11,7 @@ public class AlienController : MonoBehaviour {
 		hp = 100;
 	}
 
-	void decrementHp(float dmg) {
+	public void DecrementHp(float dmg) {
 		hp -= dmg;
 	}
 
