@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class mirror : MonoBehaviour
+public class mirror2 : MonoBehaviour
 {
     private Vector3 mouse_pos;
     private Vector3 object_pos;
     private float angle;
+    private bool selected = false;
     // Start is called before the first frame update
 
     void Start()
@@ -17,17 +18,15 @@ public class mirror : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) && mirrorControll.selected2)
         {
             Vector3 pz = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             pz.z = 0;
             gameObject.transform.position = pz;
+
         }
-        if (Input.GetMouseButton(1))
+        if (Input.GetMouseButton(1) && mirrorControll.selected2)
         {
-            /*Vector3 pz = new Vector3(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
-            Vector3 rot = new Vector3(0f, 0f, (float) (Vector3.MoveTowards(pz,transform.position,0.01f).magnitude));
-            transform.Rotate(rot * 50f);*/
             mouse_pos = Input.mousePosition;
             mouse_pos.z = -20;
             object_pos = Camera.main.WorldToScreenPoint(transform.position);
@@ -36,5 +35,11 @@ public class mirror : MonoBehaviour
             angle = Mathf.Atan2(mouse_pos.y, mouse_pos.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Euler(0, 0, angle);
         }
+    }
+
+    void OnMouseDown()
+    {
+        mirrorControll.selected2 = true;
+        mirrorControll.selected1 = false;
     }
 }
