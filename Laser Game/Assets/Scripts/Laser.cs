@@ -9,6 +9,7 @@ public class Laser : MonoBehaviour
     public float updateFrequency = 0.1f;
     public int laserDistance;
     public string bounceTag;
+    public string enemyTag;
     public int maxBounce;
     private LineRenderer mLineRenderer;
 
@@ -27,7 +28,6 @@ public class Laser : MonoBehaviour
 
     IEnumerator RedrawLaser()
     {
-        int laserSplit = 1; //How many times it got split
         int laserReflected = 1; //How many times it got reflected
         int vertexCounter = 1; //How many line segments are there
         bool loopActive = true; //Is the reflecting loop active?
@@ -65,6 +65,10 @@ public class Laser : MonoBehaviour
                 mLineRenderer.SetPosition(vertexCounter - 1, hit.point);
                 mLineRenderer.SetWidth(.2f, .2f);
                 loopActive = false;
+                if(hit.transform.gameObject.tag == enemyTag)
+                {
+                    // do damage
+                }
             }
             else
             {
