@@ -33,7 +33,7 @@ public class mirror : MonoBehaviour
             object_pos = Camera.main.WorldToScreenPoint(transform.position);
             mouse_pos.x = mouse_pos.x - object_pos.x;
             mouse_pos.y = mouse_pos.y - object_pos.y;
-            angle = Mathf.Atan2(-mouse_pos.x, mouse_pos.y) * Mathf.Rad2Deg;
+            angle = Mathf.Atan2(mouse_pos.y, mouse_pos.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Euler(0, 0, angle);
         }
     }
