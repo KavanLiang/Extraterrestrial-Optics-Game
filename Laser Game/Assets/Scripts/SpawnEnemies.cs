@@ -34,7 +34,7 @@ public class SpawnEnemies : MonoBehaviour {
 	/// <param name="lane">The lane to spawn the enemy in.</param>
 	/// <param name="enemy">The prefab pertaining to the enemy to be spawned</param>
 	void SpawnInLane(int lane, GameObject enemy) {
-		Instantiate(enemy, new Vector3(GameManager.Instance.WorldWidth / 2, GameManager.Instance.ClampToLane(lane) * WallSpawnFactor, GameManager.Instance.NumLanes - lane), Quaternion.identity);
+		Instantiate(enemy, new Vector3(GameManager.Instance.WorldWidth / 2, GameManager.Instance.ClampToLane(lane) * WallSpawnFactor, 0), Quaternion.identity);
 	}
 
 	/// <summary>
