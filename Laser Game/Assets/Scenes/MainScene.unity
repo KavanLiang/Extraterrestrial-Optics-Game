@@ -341,7 +341,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.3915094, g: 0.6281446, b: 1, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -593,6 +593,7 @@ MonoBehaviour:
   SpawnInterval: 3
   enemies:
   - {fileID: 1336485181231658, guid: e5cb27b0420804e41a0f1be6d053e93a, type: 3}
+  WallSpawnFactor: 0.85
 --- !u!1 &1727143677
 GameObject:
   m_ObjectHideFlags: 0
@@ -812,7 +813,7 @@ GameObject:
   - component: {fileID: 2071642582}
   - component: {fileID: 2071642581}
   m_Layer: 0
-  m_Name: Grass
+  m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

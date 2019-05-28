@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VampireController : MonoBehaviour {
+public class AlienController : MonoBehaviour {
 	private float hp;
 	public float speed;
 	public float dmg;

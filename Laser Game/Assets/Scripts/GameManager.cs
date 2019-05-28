@@ -18,16 +18,16 @@ public class GameManager : MonoBehaviour {
 	private int score;
 
 
-	public Vector3 GrassScale() {
+	public Vector3 GroundScale() {
 		return new Vector3(WorldWidth, (2 * WorldHeight / 3), 1);
 	}
 
-	public Vector3 GrassOffset() {
-		return new Vector3(0,(GrassScale().y/2) - (WorldHeight / 2), 10);
+	public Vector3 GroundOffset() {
+		return new Vector3(0, 0, 10);
 	}
 
 	public float ClampToLane(int y) {
-		return (GrassOffset().y) + (GrassScale().y / 2) - (y * (GrassScale().y) / NumLanes);
+		return (GroundOffset().y) + (GroundScale().y / 2) - (y * (GroundScale().y) / NumLanes);
 	}
 
 	public float GetPlayerHealth() {
