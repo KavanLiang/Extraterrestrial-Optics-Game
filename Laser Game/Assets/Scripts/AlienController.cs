@@ -7,9 +7,21 @@ public class AlienController : MonoBehaviour {
 	public float speed;
 	public float dmg;
 	public int ScoreValue;
+	public List<GameObject> shields;
+	public int max_shields;
+
 	// Start is called before the first frame update
 	void Start() {
 		hp = 100;
+		int numShields = 4;
+		while(numShields > max_shields) {
+			int randIndex = (int) Random.Range(0, shields.Count - 1);
+			Debug.Log(randIndex);
+			GameObject removeShield = shields[randIndex];
+			shields.RemoveAt(randIndex);
+			Destroy(removeShield);
+			numShields--;
+		}
 	}
 
 	public void DecrementHp(float dmg) {

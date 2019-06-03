@@ -20,7 +20,9 @@ public class mirror1 : MonoBehaviour
         if (Input.GetMouseButton(0) && mirrorControll.mirror1)
         {
             Vector3 pz = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            pz.z = 0;
+			pz.x = Mathf.Clamp(pz.x, -GameManager.Instance.WorldWidth / 2, GameManager.Instance.WorldWidth / 2);
+			pz.y = Mathf.Clamp(pz.y, -GameManager.Instance.GroundScale().y / 2, GameManager.Instance.GroundScale().y / 2);
+			pz.z = 0;
             gameObject.transform.position = pz;
 
         }
