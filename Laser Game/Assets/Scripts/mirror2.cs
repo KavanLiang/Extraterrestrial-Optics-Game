@@ -7,7 +7,6 @@ public class mirror2 : MonoBehaviour
     private Vector3 mouse_pos;
     private Vector3 object_pos;
     private float angle;
-    private bool selected = false;
     // Start is called before the first frame update
 
     void Start()
@@ -18,14 +17,14 @@ public class mirror2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButton(0) && mirrorControll.selected2)
+        if (Input.GetMouseButton(0) && mirrorControll.mirror2)
         {
             Vector3 pz = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             pz.z = 0;
             gameObject.transform.position = pz;
 
         }
-        if (Input.GetMouseButton(1) && mirrorControll.selected2)
+        if (Input.GetMouseButton(1) && mirrorControll.mirror2)
         {
             mouse_pos = Input.mousePosition;
             mouse_pos.z = -20;
@@ -39,7 +38,8 @@ public class mirror2 : MonoBehaviour
 
     void OnMouseDown()
     {
-        mirrorControll.selected2 = true;
-        mirrorControll.selected1 = false;
+        mirrorControll.mirror1 = false;
+        mirrorControll.mirror2 = true;
+        mirrorControll.sprism1 = false;
     }
 }
