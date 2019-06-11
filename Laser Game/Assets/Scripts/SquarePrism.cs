@@ -41,5 +41,7 @@ public class SquarePrism : MonoBehaviour
         mirrorControll.mirror1 = false;
         mirrorControll.mirror2 = false;
         mirrorControll.sprism1 = true;
+        mirrorControll.concaveMirror = false;
+        mirrorControll.convexMirror = false;
     }
 }

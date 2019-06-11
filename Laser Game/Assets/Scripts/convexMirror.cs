@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class mirror1 : MonoBehaviour
+public class convexMirror : MonoBehaviour
 {
     private Vector3 mouse_pos;
     private Vector3 object_pos;
@@ -11,22 +11,21 @@ public class mirror1 : MonoBehaviour
 
     void Start()
     {
-
+        Vector3 pz = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        pz.z = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButton(0) && mirrorControll.mirror1)
+        if (Input.GetMouseButton(0) && mirrorControll.convexMirror)
         {
             Vector3 pz = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            //pz.x = Mathf.Clamp(pz.x, -GameManager.Instance.WorldWidth / 2, GameManager.Instance.WorldWidth / 2);
-			//pz.y = Mathf.Clamp(pz.y, -GameManager.Instance.GroundScale().y / 2, GameManager.Instance.GroundScale().y / 2);
-			pz.z = 0;
+            pz.z = 0;
             gameObject.transform.position = pz;
 
         }
-        if (Input.GetMouseButton(1) && mirrorControll.mirror1)
+        if (Input.GetMouseButton(1) && mirrorControll.convexMirror)
         {
             mouse_pos = Input.mousePosition;
             mouse_pos.z = -20;
@@ -40,10 +39,10 @@ public class mirror1 : MonoBehaviour
 
     void OnMouseDown()
     {
-        mirrorControll.mirror1 = true;
+        mirrorControll.mirror1 = false;
         mirrorControll.mirror2 = false;
         mirrorControll.sprism1 = false;
         mirrorControll.concaveMirror = false;
-        mirrorControll.convexMirror = false;
+        mirrorControll.convexMirror = true;
     }
 }

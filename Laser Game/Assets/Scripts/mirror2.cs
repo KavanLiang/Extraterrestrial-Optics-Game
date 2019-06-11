@@ -43,5 +43,7 @@ public class mirror2 : MonoBehaviour
         mirrorControll.mirror1 = false;
         mirrorControll.mirror2 = true;
         mirrorControll.sprism1 = false;
+        mirrorControll.concaveMirror = false;
+        mirrorControll.convexMirror = false;
     }
 }
