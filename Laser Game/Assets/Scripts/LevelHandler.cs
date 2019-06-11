@@ -4,17 +4,22 @@ using UnityEngine;
 using System.IO;
 using System;
 
-public class SpawnEnemies : MonoBehaviour {
+public class LevelHandler : MonoBehaviour {
 	// Start is called before the first frame update
 	public int SpawnInterval;
 	public GameObject[] enemies;
 	private float elapsedTime;
 	public float WallSpawnFactor;
+	public int level;
+	public Prompt[] prompts;
+	private int currentPrompt;
 
 	//IEnumerator coroutine;
 
 	void Start() {
 		elapsedTime = 0;
+		currentPrompt = 0;
+		advanceLevel();
 		//coroutine = SpawnFromFile(someFileNameHere);
 	}
 
@@ -24,7 +29,17 @@ public class SpawnEnemies : MonoBehaviour {
 		elapsedTime += Time.deltaTime;
 		if(elapsedTime > SpawnInterval) {
 			elapsedTime = 0;
-			SpawnRandom();
+			SpawnRandom(level);
+		}
+	}
+
+	private void TriggerPrompt(Prompt p) {
+		GameManager.Instance.displayPrompt(p);
+	}
+
+	void advanceLevel() {
+		if(currentPrompt < prompts.Length) {
+			TriggerPrompt(prompts[currentPrompt++]);
 		}
 	}
 
@@ -34,7 +49,7 @@ public class SpawnEnemies : MonoBehaviour {
 	/// <param name="lane">The lane to spawn the enemy in.</param>
 	/// <param name="enemy">The prefab pertaining to the enemy to be spawned</param>
 	void SpawnInLane(int lane, GameObject enemy) {
-		Instantiate(enemy, new Vector3(GameManager.Instance.WorldWidth / 2, GameManager.Instance.ClampToLane(lane) * WallSpawnFactor, 0), Quaternion.identity);
+		Instantiate(enemy, new Vector3(GameManager.Instance.WorldWidth / 2, GameManager.Instance.ClampToLane(lane) * WallSpawnFactor, 0), Quaternion.Euler(0, 0, 90));
 	}
 
 	/// <summary>
@@ -42,8 +57,8 @@ public class SpawnEnemies : MonoBehaviour {
 	///
 	/// For infinite levels.
 	/// </summary>
-	void SpawnRandom() {
-		SpawnInLane(UnityEngine.Random.Range(0, GameManager.Instance.NumLanes), enemies[0]);
+	void SpawnRandom(int level) {
+		SpawnInLane(UnityEngine.Random.Range(0, GameManager.Instance.NumLanes), enemies[(int) Mathf.Clamp(level, 0, enemies.Length - 1)]);
 	}
 
 	/// <summary>

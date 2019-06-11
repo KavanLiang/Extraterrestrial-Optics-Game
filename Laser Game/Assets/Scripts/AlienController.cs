@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class AlienController : MonoBehaviour {
+	public float max_hp;
 	private float hp;
 	public float speed;
 	public float dmg;
@@ -12,20 +13,20 @@ public class AlienController : MonoBehaviour {
 
 	// Start is called before the first frame update
 	void Start() {
-		hp = 100;
+		hp = max_hp;
+		shields.Sort((a, b) => Random.Range(-1, 1));
 		int numShields = 4;
 		while(numShields > max_shields) {
-			int randIndex = (int) Random.Range(0, shields.Count - 1);
-			Debug.Log(randIndex);
-			GameObject removeShield = shields[randIndex];
-			shields.RemoveAt(randIndex);
+			GameObject removeShield = shields[0];
+			shields.RemoveAt(0);
 			Destroy(removeShield);
 			numShields--;
 		}
 	}
 
 	public void DecrementHp(float dmg) {
-		hp -= dmg;
+		float dealt = dmg * Time.deltaTime;
+		hp -= dealt;
 	}
 
 	// Update is called once per frame
@@ -41,7 +42,7 @@ public class AlienController : MonoBehaviour {
 	}
 
 	/// <summary>
-	/// Kills this Vampire
+	/// Kills this Alien
 	/// </summary>
 	void Die() {
 		GameManager.Instance.IncrementScore(ScoreValue);
