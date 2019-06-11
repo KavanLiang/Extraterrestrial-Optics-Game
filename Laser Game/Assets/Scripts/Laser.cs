@@ -8,7 +8,8 @@ public class Laser : MonoBehaviour {
 	public float updateFrequency = 0.1f;
 	public int laserDistance;
 	public string bounceTag;
-	public string enemyTag;
+    public string prismTag;
+    public string enemyTag;
 	public int maxBounce;
 	private LineRenderer mLineRenderer;
 	public float dmg;
@@ -37,7 +38,6 @@ public class Laser : MonoBehaviour {
 		RaycastHit hit;
 
 		while(loopActive) {
-			Debug.Log(Physics.Raycast(lastLaserPosition, laserDirection, out hit, laserDistance));
 			if(Physics.Raycast(lastLaserPosition, laserDirection, out hit, laserDistance) && ((hit.transform.gameObject.tag == bounceTag))) {
 				laserReflected++;
 				vertexCounter++;
@@ -50,14 +50,42 @@ public class Laser : MonoBehaviour {
 				laserDirection = Vector3.Reflect(laserDirection, hit.normal);
 
 
-			} else if(Physics.Raycast(lastLaserPosition, laserDirection, out hit, laserDistance)) {
+			} 
+            else if (Physics.Raycast(lastLaserPosition, laserDirection, out hit, laserDistance) && ((hit.transform.gameObject.tag == prismTag)))
+            {
+                vertexCounter++;
+                mLineRenderer.SetVertexCount(vertexCounter);
+                mLineRenderer.SetPosition(vertexCounter - 1, Vector3.MoveTowards(hit.point, lastLaserPosition, 0.01f));
+
+                mLineRenderer.SetWidth(.2f, .2f);
+                lastLaserPosition = hit.point;
+                Vector3 prevDirection = laserDirection;
+                float incAngle = Vector3.Angle(prevDirection,-1.0f * (hit.normal));
+                if(incAngle > 90f)
+                {
+                    incAngle = incAngle - 90;
+                }
+                float refAngle = incAngle / 1.5f;
+                Debug.Log(incAngle);
+                if (Vector3.Angle(Quaternion.Euler(0, 0, (refAngle - incAngle)) * laserDirection,-1.0f * (hit.normal)) < incAngle)
+                {
+                    laserDirection = Quaternion.Euler(0, 0, (refAngle - incAngle)) * laserDirection;
+                }
+                else
+                {
+                    laserDirection = Quaternion.Euler(0, 0, -(refAngle - incAngle)) * laserDirection;
+                }
+
+               
+            }
+            else if(Physics.Raycast(lastLaserPosition, laserDirection, out hit, laserDistance)) {
 				vertexCounter++;
 				mLineRenderer.SetVertexCount(vertexCounter);
 				mLineRenderer.SetPosition(vertexCounter - 1, hit.point);
 				mLineRenderer.SetWidth(.2f, .2f);
 				loopActive = false;
 				if(hit.transform.gameObject.tag == enemyTag) {
-					Debug.Log("Daamage");
+					Debug.Log("Damage");
 					hit.transform.gameObject.GetComponent<AlienController>().DecrementHp(dmg);
 				}
 			} else {

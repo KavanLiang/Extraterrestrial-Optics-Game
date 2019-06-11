@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
 	public static GameManager Instance {
@@ -19,6 +20,11 @@ public class GameManager : MonoBehaviour {
 	private int score;
 	private bool gameEnded;
 
+	public Text promptText;
+	public Image promptImage;
+
+	public Queue<string> promptQueue;
+	public Animator animator;
 
 	public Vector3 GroundScale() {
 		return new Vector3(WorldWidth, (2 * WorldHeight / 3), 1);
@@ -52,6 +58,30 @@ public class GameManager : MonoBehaviour {
 		StartCoroutine(RestartLevel());
 	}
 
+	public void displayPrompt(Prompt prompt) {
+		animator.SetBool("IsOpen", true);
+		promptQueue.Clear();
+		promptImage.sprite = prompt.image;
+		promptImage.enabled = prompt.hasImage;
+		foreach(string sentence in prompt.pText) {
+			promptQueue.Enqueue(sentence);
+		}
+		DisplayNextPrompt();
+	}
+
+	public void DisplayNextPrompt() {
+		Debug.Log("NEXT");
+		if(promptQueue.Count <= 0) {
+			EndPrompt();
+			return;
+		}
+		promptText.text = promptQueue.Dequeue();
+	}
+
+	void EndPrompt() {
+		animator.SetBool("IsOpen", false);
+	}
+
 	private IEnumerator RestartLevel() {
 		Time.timeScale = 1f / slowFactor;
 		Time.fixedDeltaTime = Time.fixedDeltaTime / slowFactor;
@@ -67,6 +97,7 @@ public class GameManager : MonoBehaviour {
 		WorldWidth = WorldHeight / Screen.height * Screen.width;
 		playerHealth = MaxHealth;
 		score = 0;
+		promptQueue = new Queue<string>();
 	}
 
 	private void Awake() {
