@@ -61,6 +61,7 @@ public class Laser : MonoBehaviour
 
             else if (Physics.Raycast(lastLaserPosition, laserDirection, out hit, laserDistance) && ((hit.transform.gameObject.tag == prismTag)) && !inMedium)
             {
+                Debug.Log("refract");
                 vertexCounter++;
                 mLineRenderer.SetVertexCount(vertexCounter);
                 mLineRenderer.SetPosition(vertexCounter - 1, Vector3.MoveTowards(hit.point, lastLaserPosition, 0.01f));
@@ -83,11 +84,11 @@ public class Laser : MonoBehaviour
                     laserDirection = Quaternion.Euler(0, 0, -(refAngle - incAngle)) * laserDirection;
                 }
                 inMedium = !inMedium;
-                Debug.Log(inMedium + " " + refAngle);
             }
 
             else if (Physics.Raycast(lastLaserPosition, laserDirection, out hit, laserDistance) && ((hit.transform.gameObject.tag == prismTag)) && inMedium)
             {
+                Debug.Log("refract end");
                 vertexCounter++;
                 mLineRenderer.SetVertexCount(vertexCounter);
                 mLineRenderer.SetPosition(vertexCounter - 1, Vector3.MoveTowards(hit.point, lastLaserPosition, 0.01f));
@@ -114,11 +115,26 @@ public class Laser : MonoBehaviour
                     laserDirection = Quaternion.Euler(0, 0, -(refAngle - incAngle)) * laserDirection;
                 }
                 inMedium = !inMedium;
-                Debug.Log(inMedium +" "+ refAngle);
             }
-            
 
 
+            else if (Physics.Raycast(lastLaserPosition, laserDirection, out hit, laserDistance) && hit.transform.gameObject.tag == "medium")
+            {
+                /*laserReflected++;
+                vertexCounter++;
+                mLineRenderer.SetVertexCount(vertexCounter);
+                Vector3 lastPos = lastLaserPosition + (laserDirection.normalized * laserDistance);
+                mLineRenderer.SetPosition(vertexCounter - 1, lastLaserPosition + (laserDirection.normalized * laserDistance));
+                mLineRenderer.SetWidth(.2f, .2f);*/
+                Debug.Log("in medium");
+
+                vertexCounter++;
+                mLineRenderer.SetVertexCount(vertexCounter);
+                mLineRenderer.SetPosition(vertexCounter - 1, Vector3.MoveTowards(hit.point, lastLaserPosition, 0.01f));
+
+                mLineRenderer.SetWidth(.2f, .2f);
+                lastLaserPosition = hit.point;
+            }
 
             else if (Physics.Raycast(lastLaserPosition, laserDirection, out hit, laserDistance))
             {
@@ -132,6 +148,7 @@ public class Laser : MonoBehaviour
                     hit.transform.gameObject.GetComponent<AlienController>().DecrementHp(dmg);
                 }
             }
+            
             else
             {
                 laserReflected++;
