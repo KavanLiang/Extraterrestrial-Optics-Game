@@ -121,6 +121,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &77299544 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1401417664747350036, guid: 7ddf2c9517e98e540a0c98c4f8ee29b7,
+    type: 3}
+  m_PrefabInstance: {fileID: 816642045}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &304574992
 GameObject:
   m_ObjectHideFlags: 0
@@ -389,6 +395,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &532335757 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4215395996937028103, guid: a7fade9111bd95743a1e10e9b9011b43,
+    type: 3}
+  m_PrefabInstance: {fileID: 830819794}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &553822729
 GameObject:
   m_ObjectHideFlags: 0
@@ -994,24 +1006,63 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a375910c5a17944e886e656c76e18f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpawnInterval: 10
   enemies:
   - {fileID: 1336485181231658, guid: e5cb27b0420804e41a0f1be6d053e93a, type: 3}
   - {fileID: 4138138109523452457, guid: 7c22945d4078a76489aa7ac8c57a84e2, type: 3}
   - {fileID: 2982319138480481938, guid: bce810721d186a647bb16842b99128d7, type: 3}
   WallSpawnFactor: 0.85
-  level: 3
-  prompts:
-  - image: {fileID: 0}
-    hasImage: 0
-    pText:
-    - Stop the invading aliens!
-    - Left-click to select and move tools, right-click to rotate the selected tool.
-  - image: {fileID: 0}
-    hasImage: 0
-    pText:
-    - This is a concave/convex mirror.
-    - 
+  levels:
+  - enabledTools:
+    - {fileID: 1505425415}
+    - {fileID: 532335757}
+    SpawnInterval: 5
+    EnabledEnemies: 1
+    prompt:
+      image: {fileID: 0}
+      hasImage: 0
+      pText:
+      - Use the laser and optical tools to fend off the incoming alien invasion!
+      - Left click to select and move tools. Right click to rotate a selected tool.
+  - enabledTools: []
+    SpawnInterval: 0
+    EnabledEnemies: 0
+    prompt:
+      image: {fileID: 0}
+      hasImage: 0
+      pText: []
+  - enabledTools: []
+    SpawnInterval: 0
+    EnabledEnemies: 0
+    prompt:
+      image: {fileID: 0}
+      hasImage: 0
+      pText: []
+  - enabledTools: []
+    SpawnInterval: 0
+    EnabledEnemies: 0
+    prompt:
+      image: {fileID: 0}
+      hasImage: 0
+      pText: []
+  - enabledTools: []
+    SpawnInterval: 0
+    EnabledEnemies: 0
+    prompt:
+      image: {fileID: 0}
+      hasImage: 0
+      pText: []
+--- !u!1 &1483212685 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2812116602530391459, guid: 1512a7020033b9f4aac27dfd306a324e,
+    type: 3}
+  m_PrefabInstance: {fileID: 946354696}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1505425415 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4215395996937028103, guid: a7fade9111bd95743a1e10e9b9011b43,
+    type: 3}
+  m_PrefabInstance: {fileID: 1781501540}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1656977322
 GameObject:
   m_ObjectHideFlags: 0
@@ -1494,7 +1545,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.87, y: -1.82}
+  m_AnchoredPosition: {x: 0.98, y: -0.51}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1860698266
@@ -1946,5 +1997,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4829884097667037966, guid: cf9a1a7ea528f0c4b9659a8ad8f66737,
+        type: 3}
+      propertyPath: tools.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4829884097667037966, guid: cf9a1a7ea528f0c4b9659a8ad8f66737,
+        type: 3}
+      propertyPath: tools.Array.data[0]
+      value: 
+      objectReference: {fileID: 1505425415}
+    - target: {fileID: 4829884097667037966, guid: cf9a1a7ea528f0c4b9659a8ad8f66737,
+        type: 3}
+      propertyPath: tools.Array.data[1]
+      value: 
+      objectReference: {fileID: 532335757}
+    - target: {fileID: 4829884097667037966, guid: cf9a1a7ea528f0c4b9659a8ad8f66737,
+        type: 3}
+      propertyPath: tools.Array.data[2]
+      value: 
+      objectReference: {fileID: 1483212685}
+    - target: {fileID: 4829884097667037966, guid: cf9a1a7ea528f0c4b9659a8ad8f66737,
+        type: 3}
+      propertyPath: tools.Array.data[3]
+      value: 
+      objectReference: {fileID: 77299544}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf9a1a7ea528f0c4b9659a8ad8f66737, type: 3}

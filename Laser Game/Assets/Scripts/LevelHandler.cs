@@ -6,19 +6,15 @@ using System;
 
 public class LevelHandler : MonoBehaviour {
 	// Start is called before the first frame update
-	public int SpawnInterval;
 	public GameObject[] enemies;
 	private float elapsedTime;
 	public float WallSpawnFactor;
-	public int level;
-	public Prompt[] prompts;
-	private int currentPrompt;
-
-	//IEnumerator coroutine;
+	public Level[] levels;
+	private int currentLevel;
 
 	void Start() {
 		elapsedTime = 0;
-		currentPrompt = 0;
+		currentLevel = -1;
 		advanceLevel();
 		//coroutine = SpawnFromFile(someFileNameHere);
 	}
@@ -27,9 +23,9 @@ public class LevelHandler : MonoBehaviour {
 	void Update() {
 		//StartCoroutine(coroutine);
 		elapsedTime += Time.deltaTime;
-		if(elapsedTime > SpawnInterval) {
+		if(elapsedTime > levels[currentLevel].SpawnInterval) {
 			elapsedTime = 0;
-			SpawnRandom(level);
+			SpawnRandom(UnityEngine.Random.Range(0, levels[currentLevel].EnabledEnemies - 1));
 		}
 	}
 
@@ -38,8 +34,11 @@ public class LevelHandler : MonoBehaviour {
 	}
 
 	void advanceLevel() {
-		if(currentPrompt < prompts.Length) {
-			TriggerPrompt(prompts[currentPrompt++]);
+		if(currentLevel < levels.Length) {
+			currentLevel++;
+			Level next = levels[currentLevel];
+			OpticsSelector.Instance.EnableTools(next.enabledTools);
+			TriggerPrompt(next.prompt);
 		}
 	}
 
@@ -58,7 +57,7 @@ public class LevelHandler : MonoBehaviour {
 	/// For infinite levels.
 	/// </summary>
 	void SpawnRandom(int level) {
-		SpawnInLane(UnityEngine.Random.Range(0, GameManager.Instance.NumLanes), enemies[(int) Mathf.Clamp(level, 0, enemies.Length - 1)]);
+		SpawnInLane(UnityEngine.Random.Range(0, GameManager.Instance.NumLanes), enemies[level]);
 	}
 
 	/// <summary>

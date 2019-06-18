@@ -22,6 +22,13 @@ public class OpticsSelector : MonoBehaviour
 		}
 	}
 
+	public void EnableTools(GameObject[] tools) {
+		reset();
+		foreach(GameObject obj in tools) {
+			obj.SetActive(true);
+		}
+	}
+
 	private void Awake() {
 		if(Instance == null) {
 			Instance = this;
