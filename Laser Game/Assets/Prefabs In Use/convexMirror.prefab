@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 2812116602530391454}
   - component: {fileID: 2812116602530391453}
   - component: {fileID: 2812116602530391452}
-  - component: {fileID: 2812116602530391448}
   - component: {fileID: 2812116602530391455}
+  - component: {fileID: 2749034186136340031}
   m_Layer: 0
   m_Name: convexMirror
   m_TagString: mirror
@@ -80,18 +80,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &2812116602530391448
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2812116602530391459}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d35cde8970858344eab6a7324743ee9b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &2812116602530391455
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -106,3 +94,15 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 2534964839176971238, guid: 332fc0bb1b8f445ea92009a2bd003b0a, type: 3}
+--- !u!114 &2749034186136340031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2812116602530391459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d24b132282fb7b04b9b7d9ea44f16091, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
