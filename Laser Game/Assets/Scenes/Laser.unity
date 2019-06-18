@@ -348,6 +348,7 @@ GameObject:
   - component: {fileID: 462769818}
   - component: {fileID: 462769817}
   - component: {fileID: 462769819}
+  - component: {fileID: 462769820}
   m_Layer: 0
   m_Name: Laser
   m_TagString: Untagged
@@ -472,7 +473,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 462769816}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ccefa0106ab62457bbe5ff3912f8a0d2, type: 3}
   m_Name: 
@@ -483,6 +484,25 @@ MonoBehaviour:
   prismTag: squarePrism
   enemyTag: 
   maxBounce: 3
+  dmg: 0
+--- !u!114 &462769820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 462769816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1ccbfcd5edfe92439eae33b8ea47feb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  laserDistance: 100
+  bounceTag: mirror
+  prismTag: squarePrism
+  refIndex: 1.5
+  enemyTag: 
+  maxBounce: 10
   dmg: 0
 --- !u!1 &946302939
 GameObject:
@@ -687,12 +707,12 @@ PrefabInstance:
     - target: {fileID: 1864892263262915521, guid: 6607fe3d9c4daf346ae2ce4b01dbd04d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.54
+      value: -5.44
       objectReference: {fileID: 0}
     - target: {fileID: 1864892263262915521, guid: 6607fe3d9c4daf346ae2ce4b01dbd04d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.4
+      value: -4.44
       objectReference: {fileID: 0}
     - target: {fileID: 1864892263262915521, guid: 6607fe3d9c4daf346ae2ce4b01dbd04d,
         type: 3}
@@ -738,6 +758,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 62.475002
+      objectReference: {fileID: 0}
+    - target: {fileID: 1864892263262915524, guid: 6607fe3d9c4daf346ae2ce4b01dbd04d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1864892263262915550, guid: 6607fe3d9c4daf346ae2ce4b01dbd04d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1864892263262915551, guid: 6607fe3d9c4daf346ae2ce4b01dbd04d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1864892263262915520, guid: 6607fe3d9c4daf346ae2ce4b01dbd04d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6607fe3d9c4daf346ae2ce4b01dbd04d, type: 3}
