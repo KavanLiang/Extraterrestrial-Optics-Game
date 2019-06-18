@@ -38,6 +38,10 @@ public class OpticsSelector : MonoBehaviour
     {
 		if(Input.GetMouseButton(0)) {
 			Vector3 pz = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+			if(GameManager.Instance) {
+				pz.x = Mathf.Clamp(pz.x, -GameManager.Instance.WorldWidth / 2, GameManager.Instance.WorldWidth / 2);
+				pz.y = Mathf.Clamp(pz.y, -GameManager.Instance.WorldHeight / 2, GameManager.Instance.WorldHeight / 2);
+			}
 			pz.z = 0;
 			if(selected) {
 				selected.transform.position = pz;
