@@ -90,6 +90,7 @@ public class GameManager : MonoBehaviour {
 
 	void EndPrompt() {
 		animator.SetBool("IsOpen", false);
+		levelHandler.ToggleSpawn();
 	}
 
 	private IEnumerator RestartLevel() {
