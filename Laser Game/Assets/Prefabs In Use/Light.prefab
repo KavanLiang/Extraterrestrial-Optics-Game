@@ -59,6 +59,8 @@ MonoBehaviour:
   - {fileID: 359933548172592615}
   - {fileID: 5407580560364495531}
   max_shields: 1
+  particlePrefab: {fileID: 4259117809305580841, guid: 4436c1362b7cfe84e9c7599881ce8f86,
+    type: 3}
 --- !u!65 &2390969975330030405
 BoxCollider:
   m_ObjectHideFlags: 0

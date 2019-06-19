@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour {
 
 	private float playerHealth;
 	private int score;
+	public int ScoreThreshold;
+	private int thresholdFactor;
 	private bool gameEnded;
 
 	public Text promptText;
@@ -25,6 +27,7 @@ public class GameManager : MonoBehaviour {
 
 	public Queue<string> promptQueue;
 	public Animator animator;
+	public LevelHandler levelHandler;
 
 	public Vector3 GroundScale() {
 		return new Vector3(WorldWidth, (2 * WorldHeight / 3), 1);
@@ -78,6 +81,13 @@ public class GameManager : MonoBehaviour {
 		promptText.text = promptQueue.Dequeue();
 	}
 
+	public void Update() {
+		if(score > ScoreThreshold * thresholdFactor) {
+			levelHandler.advanceLevel();
+			thresholdFactor++;
+		}
+	}
+
 	void EndPrompt() {
 		animator.SetBool("IsOpen", false);
 	}
@@ -98,6 +108,7 @@ public class GameManager : MonoBehaviour {
 		playerHealth = MaxHealth;
 		score = 0;
 		promptQueue = new Queue<string>();
+		thresholdFactor = 1;
 	}
 
 	private void Awake() {

@@ -11,10 +11,12 @@ public class LevelHandler : MonoBehaviour {
 	public float WallSpawnFactor;
 	public Level[] levels;
 	private int currentLevel;
+	private int si;
+	private int ee;
 
 	void Start() {
 		elapsedTime = 0;
-		currentLevel = -1;
+		currentLevel = 0;
 		advanceLevel();
 		//coroutine = SpawnFromFile(someFileNameHere);
 	}
@@ -23,9 +25,9 @@ public class LevelHandler : MonoBehaviour {
 	void Update() {
 		//StartCoroutine(coroutine);
 		elapsedTime += Time.deltaTime;
-		if(elapsedTime > levels[currentLevel].SpawnInterval) {
+		if(elapsedTime > si) {
 			elapsedTime = 0;
-			SpawnRandom(UnityEngine.Random.Range(0, levels[currentLevel].EnabledEnemies - 1));
+			SpawnRandom(UnityEngine.Random.Range(0, ee));
 		}
 	}
 
@@ -33,12 +35,14 @@ public class LevelHandler : MonoBehaviour {
 		GameManager.Instance.displayPrompt(p);
 	}
 
-	void advanceLevel() {
+	public void advanceLevel() {
 		if(currentLevel < levels.Length) {
-			currentLevel++;
 			Level next = levels[currentLevel];
 			OpticsSelector.Instance.EnableTools(next.enabledTools);
 			TriggerPrompt(next.prompt);
+			si = levels[currentLevel].SpawnInterval;
+			ee = levels[currentLevel].EnabledEnemies - 1;
+			currentLevel++;
 		}
 	}
 
