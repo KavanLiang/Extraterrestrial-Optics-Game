@@ -9,6 +9,7 @@ public class newLaser : MonoBehaviour
     public string bounceTag = "mirror";
     public string prismTag = "squarePrism";
     public float refIndex = 1.5f;
+	public float laserWidth;
     public string enemyTag;
     public int maxBounce = 10;
     private LineRenderer mLineRenderer;
@@ -49,7 +50,7 @@ public class newLaser : MonoBehaviour
                 mLineRenderer.SetVertexCount(vertexCounter);
                 mLineRenderer.SetPosition(vertexCounter - 1, Vector3.MoveTowards(hit.point, lastLaserPosition, 0.01f));
 
-                mLineRenderer.SetWidth(.2f, .2f);
+                mLineRenderer.SetWidth(laserWidth, laserWidth);
                 lastLaserPosition = hit.point;
                 Vector3 prevDirection = laserDirection;
                 laserDirection = Vector3.Reflect(laserDirection, hit.normal);
@@ -64,7 +65,7 @@ public class newLaser : MonoBehaviour
                 mLineRenderer.SetVertexCount(vertexCounter);
                 mLineRenderer.SetPosition(vertexCounter - 1, Vector3.MoveTowards(hit.point, lastLaserPosition, 0.01f));
 
-                mLineRenderer.SetWidth(.2f, .2f);
+                mLineRenderer.SetWidth(laserWidth, laserWidth);
                 lastLaserPosition = hit.point;
 
                 Debug.Log(hit.point);
@@ -125,7 +126,7 @@ public class newLaser : MonoBehaviour
                 mLineRenderer.SetVertexCount(vertexCounter);
                 mLineRenderer.SetPosition(vertexCounter - 1, Vector3.MoveTowards(hit.point, lastLaserPosition, 0.01f));
 
-                mLineRenderer.SetWidth(.2f, .2f);
+                mLineRenderer.SetWidth(laserWidth, laserWidth);
                 lastLaserPosition = hit.point;
 
                 Debug.Log(hit.point);
@@ -160,7 +161,7 @@ public class newLaser : MonoBehaviour
                 mLineRenderer.SetVertexCount(vertexCounter);
                 mLineRenderer.SetPosition(vertexCounter - 1, Vector3.MoveTowards(hit.point, lastLaserPosition, 0.01f));
 
-                mLineRenderer.SetWidth(.2f, .2f);
+                mLineRenderer.SetWidth(laserWidth, laserWidth);
                 lastLaserPosition = hit.point;
             }
 
@@ -169,7 +170,7 @@ public class newLaser : MonoBehaviour
                 vertexCounter++;
                 mLineRenderer.SetVertexCount(vertexCounter);
                 mLineRenderer.SetPosition(vertexCounter - 1, hit.point);
-                mLineRenderer.SetWidth(.2f, .2f);
+                mLineRenderer.SetWidth(laserWidth, laserWidth);
                 loopActive = false;
                 if (hit.transform.gameObject.tag == enemyTag)
                 {
@@ -184,7 +185,7 @@ public class newLaser : MonoBehaviour
                 mLineRenderer.SetVertexCount(vertexCounter);
                 Vector3 lastPos = lastLaserPosition + (laserDirection.normalized * laserDistance);
                 mLineRenderer.SetPosition(vertexCounter - 1, lastLaserPosition + (laserDirection.normalized * laserDistance));
-                mLineRenderer.SetWidth(.2f, .2f);
+                mLineRenderer.SetWidth(laserWidth, laserWidth);
                 loopActive = false;
             }
             if (laserReflected > maxBounce)

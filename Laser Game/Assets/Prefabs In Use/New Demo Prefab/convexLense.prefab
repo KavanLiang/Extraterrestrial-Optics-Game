@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4320674152828568365}
   m_Layer: 0
   m_Name: convexLense
-  m_TagString: mirror
+  m_TagString: squarePrism
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
