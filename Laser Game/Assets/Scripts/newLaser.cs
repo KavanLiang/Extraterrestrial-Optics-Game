@@ -98,12 +98,15 @@ public class newLaser : MonoBehaviour
 
             else if (Physics.Raycast(lastLaserPosition, laserDirection, out hit, laserDistance) && ((hit.transform.gameObject.tag == prismTag)))
             {
+                Debug.Log("refract");
                 vertexCounter++;
                 mLineRenderer.SetVertexCount(vertexCounter);
                 mLineRenderer.SetPosition(vertexCounter - 1, Vector3.MoveTowards(hit.point, lastLaserPosition, 0.01f));
 
-                mLineRenderer.SetWidth(laserWidth, laserWidth);
+                mLineRenderer.SetWidth(.2f, .2f);
                 lastLaserPosition = hit.point;
+
+                Debug.Log(hit.point);
 
                 Vector3 prevDirection = laserDirection;
                 float incAngle = Vector3.Angle(prevDirection, -1.0f * (hit.normal));
@@ -129,28 +132,42 @@ public class newLaser : MonoBehaviour
                 float testDistance = 0f;
                 while (true)
                 {
+                    Debug.Log("loop");
                     if (Physics.Linecast((lastLaserPosition + testDistance * laserDirection), lastLaserPosition))
                     {
+                        Debug.Log("success");
                         break;
                     }
                     else
                     {
-                        testDistance = testDistance + 0.01f;
+                        testDistance = testDistance + 1f;
                     }
                     if (testDistance > 100f)
                     {
+                        Debug.Log("force break");
                         break;
                     }
                 }
-                
+
+                //Physics.Linecast((lastLaserPosition + testDistance * laserDirection), lastLaserPosition);
 
                 Physics.Raycast((lastLaserPosition + testDistance * laserDirection), -1f * laserDirection, out hit, laserDistance);
+
+                /*
+                if (Physics.Linecast(lastLaserPosition, (lastLaserPosition + 100f * laserDirection)))
+                {
+                    Debug.Log("success");
+                }
+                */
+                Debug.Log("refract end");
                 vertexCounter++;
                 mLineRenderer.SetVertexCount(vertexCounter);
                 mLineRenderer.SetPosition(vertexCounter - 1, Vector3.MoveTowards(hit.point, lastLaserPosition, 0.01f));
 
-                mLineRenderer.SetWidth(laserWidth, laserWidth);
+                mLineRenderer.SetWidth(.2f, .2f);
                 lastLaserPosition = hit.point;
+
+                Debug.Log(hit.point);
 
                 prevDirection = laserDirection;
                 incAngle = Vector3.Angle(prevDirection, hit.normal);
@@ -311,12 +328,15 @@ public class newLaser : MonoBehaviour
 
             else if (Physics.Raycast(lastLaserPosition, laserDirection, out hit, laserDistance) && ((hit.transform.gameObject.tag == prismTag)))
             {
+                Debug.Log("refract");
                 vertexCounter++;
                 mLineRenderer.SetVertexCount(vertexCounter);
                 mLineRenderer.SetPosition(vertexCounter - 1, Vector3.MoveTowards(hit.point, lastLaserPosition, 0.01f));
 
-                mLineRenderer.SetWidth(laserWidth, laserWidth);
+                mLineRenderer.SetWidth(.2f, .2f);
                 lastLaserPosition = hit.point;
+
+                Debug.Log(hit.point);
 
                 Vector3 prevDirection = laserDirection;
                 float incAngle = Vector3.Angle(prevDirection, -1.0f * (hit.normal));
@@ -342,26 +362,42 @@ public class newLaser : MonoBehaviour
                 float testDistance = 0f;
                 while (true)
                 {
+                    Debug.Log("loop");
                     if (Physics.Linecast((lastLaserPosition + testDistance * laserDirection), lastLaserPosition))
                     {
+                        Debug.Log("success");
                         break;
                     }
                     else
                     {
-                        testDistance = testDistance + 0.01f;
+                        testDistance = testDistance + 1f;
                     }
                     if (testDistance > 100f)
                     {
+                        Debug.Log("force break");
                         break;
                     }
                 }
-                
+
+                //Physics.Linecast((lastLaserPosition + testDistance * laserDirection), lastLaserPosition);
+
+                Physics.Raycast((lastLaserPosition + testDistance * laserDirection), -1f * laserDirection, out hit, laserDistance);
+
+                /*
+                if (Physics.Linecast(lastLaserPosition, (lastLaserPosition + 100f * laserDirection)))
+                {
+                    Debug.Log("success");
+                }
+                */
+                Debug.Log("refract end");
                 vertexCounter++;
                 mLineRenderer.SetVertexCount(vertexCounter);
                 mLineRenderer.SetPosition(vertexCounter - 1, Vector3.MoveTowards(hit.point, lastLaserPosition, 0.01f));
 
-                mLineRenderer.SetWidth(laserWidth, laserWidth);
+                mLineRenderer.SetWidth(.2f, .2f);
                 lastLaserPosition = hit.point;
+
+                Debug.Log(hit.point);
 
                 prevDirection = laserDirection;
                 incAngle = Vector3.Angle(prevDirection, hit.normal);
@@ -383,7 +419,6 @@ public class newLaser : MonoBehaviour
                     laserDirection = Quaternion.Euler(0, 0, -(refAngle - incAngle)) * laserDirection;
                 }
             }
-
 
             else if (Physics.Raycast(lastLaserPosition, laserDirection, out hit, laserDistance) && hit.transform.gameObject.tag == "medium")
             {
