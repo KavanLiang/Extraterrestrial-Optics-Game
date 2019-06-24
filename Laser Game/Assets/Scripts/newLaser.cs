@@ -20,7 +20,6 @@ public class newLaser : MonoBehaviour
     private bool startShooting = false;
 
     // variables for the shooting
-    private Vector3[] shotPos;
     private Vector3 lastShotPos;
     private float distanceCounter = 0f;
     private int shotVertexCounter = 0;
@@ -42,6 +41,7 @@ public class newLaser : MonoBehaviour
         if (Input.GetKeyDown("space"))
         {
             distanceCounter = 0f;
+            shotVertexCounter = 0;
             startShooting = !startShooting;
         }
         if (!startShooting)
@@ -54,51 +54,6 @@ public class newLaser : MonoBehaviour
         }
     }
 
-    /*void shot()
-    {
-        if (distanceCounter == 0f)
-        {
-            shooting.SetVertexCount(2);
-            shooting.SetWidth(laserWidth, laserWidth);
-            shooting.material.color = laserColor;
-            shotPos = new Vector3[mLineRenderer.positionCount];
-            mLineRenderer.GetPositions(shotPos);
-            shooting.SetPosition(0, shotPos[0]);
-            Debug.Log(mLineRenderer.positionCount);
-        }
-
-        if (distanceCounter < shotLength)
-        {
-            distanceCounter += 0.01f;
-        }
-        else
-        {
-            shotPos[shotVertexCounter] = shotPos[shotVertexCounter] + 0.01f * Vector3.Normalize(shotPos[shotVertexCounter + 1] - shotPos[shotVertexCounter]);
-            shooting.SetPosition(shotVertexCounter, shotPos[shotVertexCounter]);
-        }
-
-        if (Vector3.Distance(shotPos[shotVertexCounter], shotPos[shotVertexCounter + 1]) >= distanceCounter)
-        {
-            shooting.SetPosition(shotVertexCounter + 1, (shotPos[shotVertexCounter] + distanceCounter * Vector3.Normalize(shotPos[shotVertexCounter + 1] - shotPos[shotVertexCounter])));
-        }
-        else
-        {
-            distanceRemain = distanceCounter - Vector3.Distance(shotPos[shotVertexCounter], shotPos[shotVertexCounter + 1]);
-            while (distanceRemain != 0)
-            {
-                shotVertexCounter += 1;
-                if (Vector3.Distance(shotPos[shotVertexCounter], shotPos[shotVertexCounter + 1]) >= distanceRemain)
-                {
-                    shooting.SetVertexCount(shotVertexCounter + 2);
-                    shooting.SetPosition(shotVertexCounter + 1, (shotPos[shotVertexCounter] + distanceRemain * Vector3.Normalize(shotPos[shotVertexCounter + 1] - shotPos[shotVertexCounter])));
-                    distanceRemain = 0;
-                }
-            }
-            startShooting = false;
-        }
-    }
-    */
-
     void shot()
     {
         if (distanceCounter == 0)
@@ -108,7 +63,7 @@ public class newLaser : MonoBehaviour
         }
         if (distanceCounter < shotLength)
         {
-            distanceCounter += 0.07f;
+            distanceCounter += 0.1f;
         }
         distanceRemain = distanceCounter;
 
@@ -187,17 +142,9 @@ public class newLaser : MonoBehaviour
                         break;
                     }
                 }
-
-                //Physics.Linecast((lastLaserPosition + testDistance * laserDirection), lastLaserPosition);
+                
 
                 Physics.Raycast((lastLaserPosition + testDistance * laserDirection), -1f * laserDirection, out hit, laserDistance);
-
-                /*
-                if (Physics.Linecast(lastLaserPosition, (lastLaserPosition + 100f * laserDirection)))
-                {
-                    Debug.Log("success");
-                }
-                */
                 vertexCounter++;
                 mLineRenderer.SetVertexCount(vertexCounter);
                 mLineRenderer.SetPosition(vertexCounter - 1, Vector3.MoveTowards(hit.point, lastLaserPosition, 0.01f));
@@ -276,22 +223,22 @@ public class newLaser : MonoBehaviour
         {
             if (Mathf.Abs((lastShotPos).x - mLineRenderer.GetPosition(shotVertexCounter + 1).x) > 0.1f || Mathf.Abs((lastShotPos).y - mLineRenderer.GetPosition(shotVertexCounter + 1).y) > 0.1f)
             {
-                mLineRenderer.SetPosition(0, lastShotPos + 0.07f * Vector3.Normalize(mLineRenderer.GetPosition(shotVertexCounter + 1) - mLineRenderer.GetPosition(shotVertexCounter)));
+                mLineRenderer.SetPosition(0, lastShotPos + 0.1f * Vector3.Normalize(mLineRenderer.GetPosition(shotVertexCounter + 1) - mLineRenderer.GetPosition(shotVertexCounter)));
                 lastShotPos = mLineRenderer.GetPosition(0);
             }
             else
             {
-                
-                mLineRenderer.SetPosition(0, lastShotPos + 0.07f * Vector3.Normalize(mLineRenderer.GetPosition(shotVertexCounter + 2) - mLineRenderer.GetPosition(shotVertexCounter + 1)));
+                mLineRenderer.SetPosition(0, lastShotPos + 0.1f * Vector3.Normalize(mLineRenderer.GetPosition(shotVertexCounter + 2) - mLineRenderer.GetPosition(shotVertexCounter + 1)));
                 lastShotPos = mLineRenderer.GetPosition(0);
                 lastShotDirection = Vector3.Normalize(mLineRenderer.GetPosition(shotVertexCounter + 2) - mLineRenderer.GetPosition(shotVertexCounter + 1));
+                shotVertexCounter++;
             }
         }
         
 
         float accumulator = 0;
         int vertexAcc = 2;
-        while (accumulator <= distanceRemain && shotVertexCounter <= (mLineRenderer.positionCount - 2))
+        while (accumulator <= distanceRemain && shotVertexCounter < (mLineRenderer.positionCount - 2))
         {
             if (accumulator == 0)
             {
@@ -300,7 +247,7 @@ public class newLaser : MonoBehaviour
             else
             {
                 accumulator += Vector3.Distance(mLineRenderer.GetPosition(shotVertexCounter + 1), mLineRenderer.GetPosition(shotVertexCounter + 2));
-                shotVertexCounter++;
+                //shotVertexCounter++;
                 vertexAcc++;
             }
         }
@@ -408,17 +355,7 @@ public class newLaser : MonoBehaviour
                         break;
                     }
                 }
-
-                //Physics.Linecast((lastLaserPosition + testDistance * laserDirection), lastLaserPosition);
-
-                Physics.Raycast((lastLaserPosition + testDistance * laserDirection), -1f * laserDirection, out hit, laserDistance);
-
-                /*
-                if (Physics.Linecast(lastLaserPosition, (lastLaserPosition + 100f * laserDirection)))
-                {
-                    Debug.Log("success");
-                }
-                */
+                
                 vertexCounter++;
                 mLineRenderer.SetVertexCount(vertexCounter);
                 mLineRenderer.SetPosition(vertexCounter - 1, Vector3.MoveTowards(hit.point, lastLaserPosition, 0.01f));
