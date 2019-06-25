@@ -6,28 +6,11 @@ public class AlienController : MonoBehaviour {
 	public float max_hp;
 	private float hp;
 	public float speed;
-	public float dmg;
-	public int ScoreValue;
-	public List<GameObject> shields;
-	public int max_shields;
 	public GameObject particlePrefab;
 
 	// Start is called before the first frame update
 	void Start() {
 		hp = max_hp;
-		shields.Sort((a, b) => Random.Range(-1, 1));
-		int n = shields.Count;
-		while(n > 1) {
-			n--;
-			int k = Random.Range(0, n);
-			GameObject swap = shields[k];
-			shields[k] = shields[n];
-			shields[n] = swap;
-		}
-
-		for(int i = 0; i < 4 - max_shields; i++) {
-			shields[i].SetActive(false);
-		}
 	}
 
 	public void DecrementHp(float dmg) {
@@ -41,10 +24,7 @@ public class AlienController : MonoBehaviour {
 			Die();
 		}
 	}
-
-	/// <summary>
-	/// Kills this Alien
-	/// </summary>
+	
 	void Die() {
 		GameObject particles = Instantiate(particlePrefab, transform.position, Quaternion.identity);
 		Destroy(gameObject);
