@@ -37,11 +37,6 @@ public class AlienController : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update() {
-		transform.position -= new Vector3(speed * Time.deltaTime, 0, 0);
-		if(transform.position.x < -GameManager.Instance.WorldWidth / 2) {
-			GameManager.Instance.DecrementPlayerHealth(dmg);
-			Destroy(gameObject);
-		}
 		if(hp <= 0) {
 			Die();
 		}
@@ -51,7 +46,6 @@ public class AlienController : MonoBehaviour {
 	/// Kills this Alien
 	/// </summary>
 	void Die() {
-		GameManager.Instance.IncrementScore(ScoreValue);
 		GameObject particles = Instantiate(particlePrefab, transform.position, Quaternion.identity);
 		Destroy(gameObject);
 		Destroy(particles, 2f);

@@ -19,7 +19,7 @@ public class FadeScreen : MonoBehaviour
     }
 
 	void fade() {
-		if(GameManager.Instance.GetPlayerHealth() <= 0) {
+		if(GameManager.Instance.GetPlayerEnergy() <= 0) {
 			StartCoroutine(fadeToBlack());
 			if(!end) {
 				GameManager.Instance.EndGame();
