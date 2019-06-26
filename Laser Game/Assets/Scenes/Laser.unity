@@ -296,7 +296,8 @@ MonoBehaviour:
   laserWidth: 0.1
   enemyTag: 
   maxBounce: 2
-  dmg: 0
+  shotLength: 3
+  laserSpeed: 0.1
 --- !u!114 &266237709
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -466,12 +467,12 @@ PrefabInstance:
     - target: {fileID: 4215395996937028120, guid: a7fade9111bd95743a1e10e9b9011b43,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: 0.11320323
       objectReference: {fileID: 0}
     - target: {fileID: 4215395996937028120, guid: a7fade9111bd95743a1e10e9b9011b43,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.9935719
       objectReference: {fileID: 0}
     - target: {fileID: 4215395996937028120, guid: a7fade9111bd95743a1e10e9b9011b43,
         type: 3}
@@ -491,7 +492,7 @@ PrefabInstance:
     - target: {fileID: 4215395996937028120, guid: a7fade9111bd95743a1e10e9b9011b43,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 4215395996937028120, guid: a7fade9111bd95743a1e10e9b9011b43,
         type: 3}
@@ -632,7 +633,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &462769819
 MonoBehaviour:
@@ -669,10 +670,11 @@ MonoBehaviour:
   bounceTag: mirror
   prismTag: squarePrism
   refIndex: 1.5
-  laserWidth: 0
+  laserWidth: 0.1
   enemyTag: 
   maxBounce: 2
-  dmg: 0
+  shotLength: 3
+  laserSpeed: 0.1
 --- !u!1 &946302939
 GameObject:
   m_ObjectHideFlags: 0
@@ -882,7 +884,8 @@ MonoBehaviour:
   laserWidth: 0.1
   enemyTag: 
   maxBounce: 10
-  dmg: 0
+  shotLength: 3
+  laserSpeed: 0.1
 --- !u!120 &1257612220
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -1070,7 +1073,7 @@ Transform:
   m_LocalScale: {x: 2.134755, y: 2.196747, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &7188725166318816242
 PrefabInstance:
@@ -1083,6 +1086,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SquarePrism
+      objectReference: {fileID: 0}
+    - target: {fileID: 7188725167603364757, guid: 6607fe3d9c4daf346ae2ce4b01dbd04d,
+        type: 3}
+      propertyPath: m_TagString
+      value: squarePrism
       objectReference: {fileID: 0}
     - target: {fileID: 7188725167603364765, guid: 6607fe3d9c4daf346ae2ce4b01dbd04d,
         type: 3}
