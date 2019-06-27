@@ -6,8 +6,8 @@ TagManager:
   tags:
   - mirror
   - enemyTag
+  - squarePrism
   - medium
-  - prism
   layers:
   - Default
   - TransparentFX
