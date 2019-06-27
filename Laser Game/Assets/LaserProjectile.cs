@@ -6,6 +6,8 @@ public class LaserProjectile : MonoBehaviour
 {
     public float speed = 1f;
     private Vector3 direction = new Vector3(1, 0, 0);
+    private float refIndex;
+    private bool flip;
     public Rigidbody rb;
 
 
@@ -19,8 +21,8 @@ public class LaserProjectile : MonoBehaviour
         direction = vec;
     }
 
-    public void SetRefractiveIndex() {
-
+    public void SetRefractiveIndex(float index) {
+        refIndex = index;
     }
 
     void OnCollisionEnter(Collision collision)
@@ -40,12 +42,5 @@ public class LaserProjectile : MonoBehaviour
             direction = refl;
             rb.velocity = speed * direction;
         }
-        // else if (collision.gameObject.tag == Laser.prismTag) {
-        //     float incAngle = Vector3.Angle(direction, collision.contacts[0].normal);
-        //     if(incAngle > 90f) {
-        //         incAngle = incAngle - 90;
-        //     }
-        //     float refAngle = incAngle / 
-        // }
     }
 }
