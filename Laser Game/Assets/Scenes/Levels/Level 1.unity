@@ -521,7 +521,7 @@ GameObject:
   - component: {fileID: 577960142}
   m_Layer: 0
   m_Name: Walls
-  m_TagString: Untagged
+  m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1823,6 +1823,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Alien
+      objectReference: {fileID: 0}
+    - target: {fileID: 632388472136558899, guid: 3b562ffca2159c848988a4cb41975941,
+        type: 3}
+      propertyPath: m_TagString
+      value: wall
       objectReference: {fileID: 0}
     - target: {fileID: 632388472136558898, guid: 3b562ffca2159c848988a4cb41975941,
         type: 3}
