@@ -108,3 +108,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InteractableArea: {fileID: 0}
   rend: {fileID: 0}
+  rotation_speed: 0

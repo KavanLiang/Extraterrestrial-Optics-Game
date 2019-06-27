@@ -228,7 +228,7 @@ public class newLaser : MonoBehaviour
                 loopActive = false;
                 if (hit.transform.gameObject.tag == enemyTag)
                 {
-                    hit.transform.gameObject.GetComponent<AlienController>().DecrementHp(dmg);
+                    hit.transform.gameObject.GetComponent<AlienController>().kill();
                 }
             }
 
@@ -309,6 +309,7 @@ public class newLaser : MonoBehaviour
                 distanceRemain -= Vector3.Distance(mLineRenderer.GetPosition(i - 1), mLineRenderer.GetPosition(i));
             }
         }
+<<<<<<< HEAD
 
         if (Physics.Raycast(lastShotPos,lastShotDirection,out hit, shotLength))
         {
@@ -322,6 +323,9 @@ public class newLaser : MonoBehaviour
 
         mLineRenderer.SetPosition(vertexAcc - 1, mLineRenderer.GetPosition(vertexAcc - 2) + distanceRemain * Vector3.Normalize(mLineRenderer.GetPosition(vertexAcc - 1) - mLineRenderer.GetPosition(vertexAcc - 2)));
         
+=======
+        mLineRenderer.SetPosition(vertexAcc - 1, mLineRenderer.GetPosition(vertexAcc - 2) + distanceRemain * Vector3.Normalize(mLineRenderer.GetPosition(vertexAcc - 1) - mLineRenderer.GetPosition(vertexAcc - 2)));
+>>>>>>> 8628e66f86a9f7603957a0dc3891e06fa5cdceda
     }
 
     IEnumerator RedrawLaser()
@@ -478,10 +482,6 @@ public class newLaser : MonoBehaviour
                 mLineRenderer.SetPosition(vertexCounter - 1, hit.point);
                 mLineRenderer.SetWidth(laserWidth, laserWidth);
                 loopActive = false;
-                if (hit.transform.gameObject.tag == enemyTag)
-                {
-                    hit.transform.gameObject.GetComponent<AlienController>().DecrementHp(dmg);
-                }
             }
 
             else
