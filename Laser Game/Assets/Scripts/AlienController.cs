@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AlienController : MonoBehaviour {
 	public GameObject particlePrefab;
+	public LevelManager lm;
 
 	// Start is called before the first frame update
 
@@ -11,6 +12,7 @@ public class AlienController : MonoBehaviour {
 	
 	public void kill() {
 		GameObject particles = Instantiate(particlePrefab, transform.position, Quaternion.identity);
+		lm.decrementEnemies();
 		Destroy(gameObject);
 		Destroy(particles, 2f);
 	}

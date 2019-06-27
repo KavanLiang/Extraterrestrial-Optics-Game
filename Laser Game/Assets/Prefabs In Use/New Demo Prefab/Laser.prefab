@@ -138,15 +138,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1028756639354008568}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1ccbfcd5edfe92439eae33b8ea47feb, type: 3}
+  m_Script: {fileID: 11500000, guid: ccefa0106ab62457bbe5ff3912f8a0d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   laserDistance: 100
-  bounceTag: mirror
-  prismTag: squarePrism
   refIndex: 1.5
-  laserWidth: 0.025
-  enemyTag: 
+  laserWidth: 0
   maxBounce: 10
   dmg: 0
 --- !u!1 &2567533993167282635
