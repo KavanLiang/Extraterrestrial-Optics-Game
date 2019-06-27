@@ -27,8 +27,12 @@ public class newLaser : MonoBehaviour
     private float shotLength = 2f;
     private float distanceRemain;
     private Vector3 lastShotDirection;
+    private int bounceCounter;
+    private int maxPositionCount;
+    private bool laserEnd = false;
 
     // Use this for initialization
+   
     void Start()
     {
         mLineRenderer = gameObject.GetComponent<LineRenderer>();
@@ -60,6 +64,9 @@ public class newLaser : MonoBehaviour
         {
             lastShotPos = mLineRenderer.GetPosition(0);
             lastShotDirection = new Vector3(1, 0, 0);
+            bounceCounter = 0;
+            maxPositionCount = mLineRenderer.positionCount;
+            laserEnd = false;
         }
         if (distanceCounter < shotLength)
         {
@@ -98,15 +105,12 @@ public class newLaser : MonoBehaviour
 
             else if (Physics.Raycast(lastLaserPosition, laserDirection, out hit, laserDistance) && ((hit.transform.gameObject.tag == prismTag)))
             {
-                Debug.Log("refract");
                 vertexCounter++;
                 mLineRenderer.SetVertexCount(vertexCounter);
                 mLineRenderer.SetPosition(vertexCounter - 1, Vector3.MoveTowards(hit.point, lastLaserPosition, 0.01f));
 
                 mLineRenderer.SetWidth(.2f, .2f);
                 lastLaserPosition = hit.point;
-
-                Debug.Log(hit.point);
 
                 Vector3 prevDirection = laserDirection;
                 float incAngle = Vector3.Angle(prevDirection, -1.0f * (hit.normal));
@@ -132,10 +136,8 @@ public class newLaser : MonoBehaviour
                 float testDistance = 0f;
                 while (true)
                 {
-                    Debug.Log("loop");
                     if (Physics.Linecast((lastLaserPosition + testDistance * laserDirection), lastLaserPosition))
                     {
-                        Debug.Log("success");
                         break;
                     }
                     else
@@ -144,7 +146,6 @@ public class newLaser : MonoBehaviour
                     }
                     if (testDistance > 100f)
                     {
-                        Debug.Log("force break");
                         break;
                     }
                 }
@@ -159,15 +160,13 @@ public class newLaser : MonoBehaviour
                     Debug.Log("success");
                 }
                 */
-                Debug.Log("refract end");
                 vertexCounter++;
                 mLineRenderer.SetVertexCount(vertexCounter);
                 mLineRenderer.SetPosition(vertexCounter - 1, Vector3.MoveTowards(hit.point, lastLaserPosition, 0.01f));
 
                 mLineRenderer.SetWidth(.2f, .2f);
                 lastLaserPosition = hit.point;
-
-                Debug.Log(hit.point);
+                
 
                 prevDirection = laserDirection;
                 incAngle = Vector3.Angle(prevDirection, hit.normal);
@@ -200,6 +199,17 @@ public class newLaser : MonoBehaviour
 
                 mLineRenderer.SetWidth(laserWidth, laserWidth);
                 lastLaserPosition = hit.point;
+            }
+
+            else if (Physics.Raycast(lastLaserPosition, laserDirection, out hit, laserDistance) && hit.transform.gameObject.tag == "wall")
+            {
+                vertexCounter++;
+                mLineRenderer.SetVertexCount(vertexCounter);
+                mLineRenderer.SetPosition(vertexCounter - 1, Vector3.MoveTowards(hit.point, lastLaserPosition, 0.01f));
+
+                mLineRenderer.SetWidth(laserWidth, laserWidth);
+                lastLaserPosition = hit.point;
+                loopActive = false;
             }
 
             else if (Physics.Raycast(lastLaserPosition, laserDirection, out hit, laserDistance))
@@ -243,14 +253,22 @@ public class newLaser : MonoBehaviour
                 mLineRenderer.SetPosition(0, lastShotPos + 0.1f * Vector3.Normalize(mLineRenderer.GetPosition(shotVertexCounter + 1) - mLineRenderer.GetPosition(shotVertexCounter)));
                 lastShotPos = mLineRenderer.GetPosition(0);
             }
-            else
+            else if (bounceCounter < maxPositionCount - 2)
             {
                 mLineRenderer.SetPosition(0, lastShotPos + 0.1f * Vector3.Normalize(mLineRenderer.GetPosition(shotVertexCounter + 2) - mLineRenderer.GetPosition(shotVertexCounter + 1)));
                 lastShotPos = mLineRenderer.GetPosition(0);
                 lastShotDirection = Vector3.Normalize(mLineRenderer.GetPosition(shotVertexCounter + 2) - mLineRenderer.GetPosition(shotVertexCounter + 1));
                 shotVertexCounter++;
+                bounceCounter++;
+            }
+            else
+            {
+                startShooting = false;
+                return;
             }
         }
+
+        
         
 
         float accumulator = 0;
@@ -274,6 +292,7 @@ public class newLaser : MonoBehaviour
         }
 
         mLineRenderer.SetVertexCount(vertexAcc);
+        
 
         if (vertexAcc > 2)
         {
@@ -282,6 +301,16 @@ public class newLaser : MonoBehaviour
                 distanceRemain -= Vector3.Distance(mLineRenderer.GetPosition(i - 1), mLineRenderer.GetPosition(i));
             }
         }
+
+        if (Physics.Raycast(lastShotPos,lastShotDirection,out hit, shotLength))
+        {
+            if (bounceCounter == (maxPositionCount - 2))
+            {
+                return;
+            }
+        }
+
+
         mLineRenderer.SetPosition(vertexAcc - 1, mLineRenderer.GetPosition(vertexAcc - 2) + distanceRemain * Vector3.Normalize(mLineRenderer.GetPosition(vertexAcc - 1) - mLineRenderer.GetPosition(vertexAcc - 2)));
     }
 
@@ -318,15 +347,13 @@ public class newLaser : MonoBehaviour
 
             else if (Physics.Raycast(lastLaserPosition, laserDirection, out hit, laserDistance) && ((hit.transform.gameObject.tag == prismTag)))
             {
-                Debug.Log("refract");
                 vertexCounter++;
                 mLineRenderer.SetVertexCount(vertexCounter);
                 mLineRenderer.SetPosition(vertexCounter - 1, Vector3.MoveTowards(hit.point, lastLaserPosition, 0.01f));
 
                 mLineRenderer.SetWidth(.2f, .2f);
                 lastLaserPosition = hit.point;
-
-                Debug.Log(hit.point);
+                
 
                 Vector3 prevDirection = laserDirection;
                 float incAngle = Vector3.Angle(prevDirection, -1.0f * (hit.normal));
@@ -352,10 +379,8 @@ public class newLaser : MonoBehaviour
                 float testDistance = 0f;
                 while (true)
                 {
-                    Debug.Log("loop");
                     if (Physics.Linecast((lastLaserPosition + testDistance * laserDirection), lastLaserPosition))
                     {
-                        Debug.Log("success");
                         break;
                     }
                     else
@@ -364,7 +389,6 @@ public class newLaser : MonoBehaviour
                     }
                     if (testDistance > 100f)
                     {
-                        Debug.Log("force break");
                         break;
                     }
                 }
@@ -379,15 +403,13 @@ public class newLaser : MonoBehaviour
                     Debug.Log("success");
                 }
                 */
-                Debug.Log("refract end");
                 vertexCounter++;
                 mLineRenderer.SetVertexCount(vertexCounter);
                 mLineRenderer.SetPosition(vertexCounter - 1, Vector3.MoveTowards(hit.point, lastLaserPosition, 0.01f));
 
                 mLineRenderer.SetWidth(.2f, .2f);
                 lastLaserPosition = hit.point;
-
-                Debug.Log(hit.point);
+                
 
                 prevDirection = laserDirection;
                 incAngle = Vector3.Angle(prevDirection, hit.normal);
@@ -419,6 +441,17 @@ public class newLaser : MonoBehaviour
 
                 mLineRenderer.SetWidth(laserWidth, laserWidth);
                 lastLaserPosition = hit.point;
+            }
+
+            else if (Physics.Raycast(lastLaserPosition, laserDirection, out hit, laserDistance) && hit.transform.gameObject.tag == "wall")
+            {
+                vertexCounter++;
+                mLineRenderer.SetVertexCount(vertexCounter);
+                mLineRenderer.SetPosition(vertexCounter - 1, Vector3.MoveTowards(hit.point, lastLaserPosition, 0.01f));
+
+                mLineRenderer.SetWidth(laserWidth, laserWidth);
+                lastLaserPosition = hit.point;
+                loopActive = false;
             }
 
             else if (Physics.Raycast(lastLaserPosition, laserDirection, out hit, laserDistance))

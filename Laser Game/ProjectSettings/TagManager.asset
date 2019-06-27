@@ -8,6 +8,7 @@ TagManager:
   - enemyTag
   - squarePrism
   - medium
+  - wall
   layers:
   - Default
   - TransparentFX
