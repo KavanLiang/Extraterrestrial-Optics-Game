@@ -139,7 +139,7 @@ public class Laser : MonoBehaviour
                 loopActive = false;
                 if (hit.transform.gameObject.tag == enemyTag)
                 {
-                    hit.transform.gameObject.GetComponent<AlienController>().DecrementHp(dmg);
+                    hit.transform.gameObject.GetComponent<AlienController>().kill();
                 }
             }
             

@@ -24,7 +24,7 @@ public class newLaser : MonoBehaviour
     private float distanceCounter = 0f;
     private int shotVertexCounter = 0;
     private LineRenderer shooting;
-    private float shotLength = 3f;
+    private float shotLength = 2f;
     private float distanceRemain;
     private Vector3 lastShotDirection;
 
@@ -211,7 +211,7 @@ public class newLaser : MonoBehaviour
                 loopActive = false;
                 if (hit.transform.gameObject.tag == enemyTag)
                 {
-                    hit.transform.gameObject.GetComponent<AlienController>().DecrementHp(dmg);
+                    hit.transform.gameObject.GetComponent<AlienController>().kill();
                 }
             }
 
@@ -283,16 +283,6 @@ public class newLaser : MonoBehaviour
             }
         }
         mLineRenderer.SetPosition(vertexAcc - 1, mLineRenderer.GetPosition(vertexAcc - 2) + distanceRemain * Vector3.Normalize(mLineRenderer.GetPosition(vertexAcc - 1) - mLineRenderer.GetPosition(vertexAcc - 2)));
-
-
-
-
-
-
-
-
-
-
     }
 
     IEnumerator RedrawLaser()
@@ -438,10 +428,6 @@ public class newLaser : MonoBehaviour
                 mLineRenderer.SetPosition(vertexCounter - 1, hit.point);
                 mLineRenderer.SetWidth(laserWidth, laserWidth);
                 loopActive = false;
-                if (hit.transform.gameObject.tag == enemyTag)
-                {
-                    hit.transform.gameObject.GetComponent<AlienController>().DecrementHp(dmg);
-                }
             }
 
             else
