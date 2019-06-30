@@ -7,7 +7,7 @@ public class Laser : MonoBehaviour
 {
     public int laserDistance = 100;
     public static string bounceTag = "mirror";
-    public static string prismTag = "squarePrism";
+    public static string mediumTag = "squarePrism";
 
     public static string enemyTag = "enemyTag";
 
@@ -22,44 +22,45 @@ public class Laser : MonoBehaviour
     private Color traceColor = new Color(5, 5, 3, 0);
     private Color laserColor = new Color(2.2f, 10, 0.8f);
 
-    private bool startShooting = false;
-
-    // variables for the shooting
-    private Vector3 lastShotPos;
-    private float distanceCounter = 0f;
-    private int shotVertexCounter = 0;
-    private LineRenderer shooting;
-    private float shotLength = 2f;
-    private float distanceRemain;
-    private Vector3 lastShotDirection;
-    private int bounceCounter;
-    private int maxPositionCount;
-    private bool laserEnd = false;
+    private int numActiveProjectiles;
 
     // Use this for initialization
-   
+
     void Start()
     {
         mLineRenderer = gameObject.GetComponent<LineRenderer>();
-        StartCoroutine(RedrawLaser());
+        RedrawLaser();
+        numActiveProjectiles = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!startShooting)
+        if(Input.GetKey(KeyCode.Space)) {
+            shoot();
+        }
+        if (numActiveProjectiles <= 0)
         {
-            StartCoroutine(RedrawLaser());
+            mLineRenderer.enabled = true;
+            RedrawLaser();
+        } else {
+            mLineRenderer.enabled = false;
         }
     }
 
-    public void shoot() {
-        mLineRenderer.SetVertexCount(0);
-        Instantiate(proj, this.transform.position, transform.rotation);
-        startShooting = true;
+    public void DecrementActiveProjectiles()
+    {
+        numActiveProjectiles--;
     }
 
-    IEnumerator RedrawLaser()
+    public void shoot()
+    {
+        GameObject lp = Instantiate(proj, this.transform.position, transform.rotation);
+        lp.GetComponent<LaserProjectile>().SetLaserProperties(this);
+        numActiveProjectiles++;
+    }
+
+    void RedrawLaser()
     {
         int laserReflected = 1; //How many times it got reflected
         int vertexCounter = 1; //How many line segments are there
@@ -90,7 +91,7 @@ public class Laser : MonoBehaviour
 
             }
 
-            else if (Physics.Raycast(lastLaserPosition, laserDirection, out hit, laserDistance) && ((hit.transform.gameObject.tag == prismTag)))
+            else if (Physics.Raycast(lastLaserPosition, laserDirection, out hit, laserDistance) && ((hit.transform.gameObject.tag == mediumTag)))
             {
                 vertexCounter++;
                 mLineRenderer.SetVertexCount(vertexCounter);
@@ -98,7 +99,7 @@ public class Laser : MonoBehaviour
 
                 mLineRenderer.SetWidth(.2f, .2f);
                 lastLaserPosition = hit.point;
-                
+
 
                 Vector3 prevDirection = laserDirection;
                 float incAngle = Vector3.Angle(prevDirection, -1.0f * (hit.normal));
@@ -117,7 +118,7 @@ public class Laser : MonoBehaviour
                 }
                 //}
 
-                //else if (Physics.Raycast(lastLaserPosition, laserDirection, out hit, laserDistance) && ((hit.transform.gameObject.tag == prismTag)))
+                //else if (Physics.Raycast(lastLaserPosition, laserDirection, out hit, laserDistance) && ((hit.transform.gameObject.tag == mediumTag)))
                 //{
 
 
@@ -154,7 +155,7 @@ public class Laser : MonoBehaviour
 
                 mLineRenderer.SetWidth(.2f, .2f);
                 lastLaserPosition = hit.point;
-                
+
 
                 prevDirection = laserDirection;
                 incAngle = Vector3.Angle(prevDirection, hit.normal);
@@ -223,7 +224,5 @@ public class Laser : MonoBehaviour
                 loopActive = false;
             }
         }
-
-        yield return new WaitForEndOfFrame();
     }
 }
