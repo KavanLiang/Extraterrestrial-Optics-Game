@@ -32,7 +32,7 @@ public class Selectable : MonoBehaviour
             selected = false;
             existSelected = false;
         } else {
-            if(selected) {
+            if(selected && !Input.GetMouseButton(0)) {
                 Vector3 mouse_pos = Input.mousePosition;
                 mouse_pos.z = 0;
                 Vector3 object_pos = Camera.main.WorldToScreenPoint(transform.position);
