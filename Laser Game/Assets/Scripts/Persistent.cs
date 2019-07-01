@@ -17,4 +17,10 @@ public class Persistent : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+
+    void Update() {
+        if(Input.GetKey(KeyCode.Escape)) {
+            Application.Quit();
+        }
+    }
 }
