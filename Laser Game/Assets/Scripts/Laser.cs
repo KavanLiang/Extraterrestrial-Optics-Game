@@ -15,35 +15,36 @@ public class Laser : MonoBehaviour
 
     public GameObject proj;
     public float refIndex = 1.5f;
-    public float laserWidth;
-    public int maxBounce = 10;
     private LineRenderer mLineRenderer;
-    public float dmg;
-    private Color traceColor = new Color(5, 5, 3, 0);
-    private Color laserColor = new Color(2.2f, 10, 0.8f);
+    public Color LaserColor;
 
     private int numActiveProjectiles;
+    public int MaxCollisions;
 
-    // Use this for initialization
+    public float offset;
 
     void Start()
     {
         mLineRenderer = gameObject.GetComponent<LineRenderer>();
-        RedrawLaser();
+        DrawLaser();
         numActiveProjectiles = 0;
+    }
+
+    public Color GetColor()
+    {
+        return LaserColor;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey(KeyCode.Space)) {
-            shoot();
-        }
         if (numActiveProjectiles <= 0)
         {
             mLineRenderer.enabled = true;
-            RedrawLaser();
-        } else {
+            DrawLaser();
+        }
+        else
+        {
             mLineRenderer.enabled = false;
         }
     }
@@ -60,168 +61,147 @@ public class Laser : MonoBehaviour
         numActiveProjectiles++;
     }
 
-    void RedrawLaser()
+    void DrawLaser()
     {
-        int laserReflected = 1; //How many times it got reflected
-        int vertexCounter = 1; //How many line segments are there
-        bool loopActive = true; //Is the reflecting loop active?
-
-        Vector3 laserDirection = transform.right; //direction of the next laser
-        Vector3 lastLaserPosition = transform.localPosition; //origin of the next laser
-
-        mLineRenderer.SetVertexCount(1);
+        int vertexCounter = 0;
+        mLineRenderer.positionCount = 1;
         mLineRenderer.SetPosition(0, transform.position);
-        RaycastHit hit;
-
-        while (loopActive)
+        Vector3 direction = transform.right;
+        bool inMedium = false;
+        RaycastHit forward;
+        RaycastHit backward;
+        float traverseMediumDist = 0;
+        while (vertexCounter < MaxCollisions)
         {
-            if (Physics.Raycast(lastLaserPosition, laserDirection, out hit, laserDistance) && ((hit.transform.gameObject.tag == bounceTag)))
+            if (!inMedium)
             {
-                laserReflected++;
-                vertexCounter++;
-                mLineRenderer.SetVertexCount(vertexCounter);
-                mLineRenderer.SetPosition(vertexCounter - 1, Vector3.MoveTowards(hit.point, lastLaserPosition, 0.01f));
-
-                mLineRenderer.SetWidth(laserWidth, laserWidth);
-                mLineRenderer.material.color = traceColor;
-                lastLaserPosition = hit.point;
-                Vector3 prevDirection = laserDirection;
-                laserDirection = Vector3.Reflect(laserDirection, hit.normal);
-
-
-            }
-
-            else if (Physics.Raycast(lastLaserPosition, laserDirection, out hit, laserDistance) && ((hit.transform.gameObject.tag == mediumTag)))
-            {
-                vertexCounter++;
-                mLineRenderer.SetVertexCount(vertexCounter);
-                mLineRenderer.SetPosition(vertexCounter - 1, Vector3.MoveTowards(hit.point, lastLaserPosition, 0.01f));
-
-                mLineRenderer.SetWidth(.2f, .2f);
-                lastLaserPosition = hit.point;
-
-
-                Vector3 prevDirection = laserDirection;
-                float incAngle = Vector3.Angle(prevDirection, -1.0f * (hit.normal));
-                if (incAngle > 90f)
+                if (Physics.Raycast(mLineRenderer.GetPosition(vertexCounter), direction, out forward, laserDistance))
                 {
-                    incAngle = incAngle - 90;
-                }
-                float refAngle = incAngle / refIndex;
-                if (Vector3.Angle(Quaternion.Euler(0, 0, (refAngle - incAngle)) * laserDirection, -1.0f * (hit.normal)) < incAngle)
-                {
-                    laserDirection = Quaternion.Euler(0, 0, (refAngle - incAngle)) * laserDirection;
+                    mLineRenderer.positionCount++;
+                    vertexCounter++;
+                    mLineRenderer.SetPosition(vertexCounter, forward.point);
+                    Debug.DrawRay(mLineRenderer.GetPosition(vertexCounter), forward.normal, Color.green, 0);
+                    string hitTag = forward.transform.gameObject.tag;
+                    if (hitTag.Equals(Laser.bounceTag))
+                    {
+                        direction = Vector3.Reflect(direction, forward.normal);
+                        Debug.DrawRay(mLineRenderer.GetPosition(vertexCounter), direction);
+                    }
+                    else if (hitTag.Equals(Laser.mediumTag))
+                    {
+                        float incAngle = Vector3.Angle(direction, -1.0f * (forward.normal));
+                        if (incAngle > 90f)
+                        {
+                            incAngle = incAngle - 90;
+                        }
+                        float snell = Mathf.Sin(Mathf.Deg2Rad * incAngle) / refIndex;
+                        float refAngle;
+                        if (snell <= 1)
+                        {
+                            refAngle = Mathf.Asin(snell) * Mathf.Rad2Deg;
+                            if (refAngle > 90)
+                            {
+                                refAngle -= 90;
+                            }
+                            if (Vector3.Angle(Quaternion.Euler(0, 0, (refAngle - incAngle)) * direction, -forward.normal) < incAngle)
+                            {
+                                direction = Quaternion.Euler(0, 0, refAngle) * -forward.normal;
+                                Debug.DrawRay(mLineRenderer.GetPosition(vertexCounter), direction);
+                            }
+                            else
+                            {
+                                direction = Quaternion.Euler(0, 0, -refAngle) * -forward.normal;
+                                Debug.DrawRay(mLineRenderer.GetPosition(vertexCounter), direction);
+                            }
+                        }
+                        inMedium = true;
+                        traverseMediumDist = 0;
+                        mLineRenderer.positionCount++;
+                        vertexCounter++;
+                        mLineRenderer.SetPosition(vertexCounter, mLineRenderer.GetPosition(vertexCounter - 1) + direction.normalized * offset);
+                    }
+                    else if (hitTag.Equals(wallTag))
+                    {
+                        break;
+                    }
                 }
                 else
                 {
-                    laserDirection = Quaternion.Euler(0, 0, -(refAngle - incAngle)) * laserDirection;
+                    mLineRenderer.positionCount++;
+                    vertexCounter++;
+                    mLineRenderer.SetPosition(vertexCounter, mLineRenderer.GetPosition(vertexCounter - 1) + direction.normalized * laserDistance);
                 }
-                //}
-
-                //else if (Physics.Raycast(lastLaserPosition, laserDirection, out hit, laserDistance) && ((hit.transform.gameObject.tag == mediumTag)))
-                //{
-
-
-                float testDistance = 0f;
-                while (true)
+            }
+            else
+            {
+                if (Physics.Raycast(mLineRenderer.GetPosition(vertexCounter) + direction.normalized * offset, -direction, out backward, offset))
                 {
-                    if (Physics.Linecast((lastLaserPosition + testDistance * laserDirection), lastLaserPosition))
+                    if (backward.transform.gameObject.tag.Equals(mediumTag))
                     {
-                        break;
+                        traverseMediumDist = 0;
+                        mLineRenderer.positionCount++;
+                        vertexCounter++;
+                        mLineRenderer.SetPosition(vertexCounter, backward.point);
+                        Debug.DrawRay(mLineRenderer.GetPosition(vertexCounter), backward.normal, Color.green, 0);
+                        float incAngle = Vector3.Angle(direction, backward.normal);
+                        if (incAngle > 90f)
+                        {
+                            incAngle = incAngle - 90;
+                        }
+                        float snell = Mathf.Sin(Mathf.Deg2Rad * incAngle) * refIndex;
+                        if (snell > 1)
+                        {
+                            Debug.DrawRay(mLineRenderer.GetPosition(vertexCounter), direction);
+                            direction = Vector3.Reflect(direction, -1f * backward.normal);
+                            mLineRenderer.positionCount++;
+                            vertexCounter++;
+                            mLineRenderer.SetPosition(vertexCounter, mLineRenderer.GetPosition(vertexCounter - 1) + direction.normalized * offset);
+                        }
+                        else
+                        {
+                            float refAngle = Mathf.Asin(snell) * Mathf.Rad2Deg;
+                            if (refAngle > 90)
+                            {
+                                refAngle -= 90;
+                            }
+                            if (Vector3.Angle(Quaternion.Euler(0, 0, (refAngle - incAngle)) * direction, (backward.normal)) < incAngle)
+                            {
+                                direction = Quaternion.Euler(0, 0, -refAngle) * backward.normal;
+                                Debug.DrawRay(mLineRenderer.GetPosition(vertexCounter), direction);
+                            }
+                            else
+                            {
+                                direction = Quaternion.Euler(0, 0, refAngle) * backward.normal;
+                                Debug.DrawRay(mLineRenderer.GetPosition(vertexCounter), direction);
+                            }
+                            inMedium = false;
+                        }
                     }
                     else
                     {
-                        testDistance = testDistance + 1f;
+                        if (traverseMediumDist < 100f)
+                        {
+                            mLineRenderer.SetPosition(vertexCounter, mLineRenderer.GetPosition(vertexCounter) + direction.normalized * offset);
+                            traverseMediumDist += offset;
+                        }
+                        else
+                        {
+                            break;
+                        }
                     }
-                    if (testDistance > 100f)
+                }
+                else
+                {
+                    if (traverseMediumDist < 100f)
+                    {
+                        mLineRenderer.SetPosition(vertexCounter, mLineRenderer.GetPosition(vertexCounter) + direction.normalized * offset);
+                        traverseMediumDist += offset;
+                    }
+                    else
                     {
                         break;
                     }
                 }
-
-                //Physics.Linecast((lastLaserPosition + testDistance * laserDirection), lastLaserPosition);
-
-                Physics.Raycast((lastLaserPosition + testDistance * laserDirection), -1f * laserDirection, out hit, laserDistance);
-
-                /*
-                if (Physics.Linecast(lastLaserPosition, (lastLaserPosition + 100f * laserDirection)))
-                {
-                    Debug.Log("success");
-                }
-                */
-                vertexCounter++;
-                mLineRenderer.SetVertexCount(vertexCounter);
-                mLineRenderer.SetPosition(vertexCounter - 1, Vector3.MoveTowards(hit.point, lastLaserPosition, 0.01f));
-
-                mLineRenderer.SetWidth(.2f, .2f);
-                lastLaserPosition = hit.point;
-
-
-                prevDirection = laserDirection;
-                incAngle = Vector3.Angle(prevDirection, hit.normal);
-                if (incAngle > 90f)
-                {
-                    incAngle = incAngle - 90;
-                }
-                refAngle = incAngle * refIndex;
-                if (refAngle >= 90)
-                {
-                    laserDirection = Vector3.Reflect(laserDirection, -1f * hit.normal);
-                }
-                else if (Vector3.Angle(Quaternion.Euler(0, 0, (refAngle - incAngle)) * laserDirection, hit.normal) > incAngle)
-                {
-                    laserDirection = Quaternion.Euler(0, 0, (refAngle - incAngle)) * laserDirection;
-                }
-                else
-                {
-                    laserDirection = Quaternion.Euler(0, 0, -(refAngle - incAngle)) * laserDirection;
-                }
-            }
-
-            else if (Physics.Raycast(lastLaserPosition, laserDirection, out hit, laserDistance) && hit.transform.gameObject.tag == "medium")
-            {
-
-                vertexCounter++;
-                mLineRenderer.SetVertexCount(vertexCounter);
-                mLineRenderer.SetPosition(vertexCounter - 1, Vector3.MoveTowards(hit.point, lastLaserPosition, 0.01f));
-
-                mLineRenderer.SetWidth(laserWidth, laserWidth);
-                lastLaserPosition = hit.point;
-            }
-
-            else if (Physics.Raycast(lastLaserPosition, laserDirection, out hit, laserDistance) && hit.transform.gameObject.tag == "wall")
-            {
-                vertexCounter++;
-                mLineRenderer.SetVertexCount(vertexCounter);
-                mLineRenderer.SetPosition(vertexCounter - 1, Vector3.MoveTowards(hit.point, lastLaserPosition, 0.01f));
-
-                mLineRenderer.SetWidth(laserWidth, laserWidth);
-                lastLaserPosition = hit.point;
-                loopActive = false;
-            }
-
-            else if (Physics.Raycast(lastLaserPosition, laserDirection, out hit, laserDistance))
-            {
-                vertexCounter++;
-                mLineRenderer.SetVertexCount(vertexCounter);
-                mLineRenderer.SetPosition(vertexCounter - 1, hit.point);
-                mLineRenderer.SetWidth(laserWidth, laserWidth);
-                loopActive = false;
-            }
-
-            else
-            {
-                laserReflected++;
-                vertexCounter++;
-                mLineRenderer.SetVertexCount(vertexCounter);
-                Vector3 lastPos = lastLaserPosition + (laserDirection.normalized * laserDistance);
-                mLineRenderer.SetPosition(vertexCounter - 1, lastLaserPosition + (laserDirection.normalized * laserDistance));
-                mLineRenderer.SetWidth(laserWidth, laserWidth);
-                loopActive = false;
-            }
-            if (laserReflected > maxBounce)
-            {
-                loopActive = false;
             }
         }
     }

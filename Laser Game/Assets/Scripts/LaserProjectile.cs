@@ -13,6 +13,8 @@ public class LaserProjectile : MonoBehaviour
     private Laser laser;
     public Rigidbody rb;
     public BoxCollider collider;
+    public TrailRenderer tr;
+    public SpriteRenderer sr;
 
 
     public void Start()
@@ -27,6 +29,9 @@ public class LaserProjectile : MonoBehaviour
         refIndex = las.refIndex;
         direction = las.transform.right;
         laser = las;
+        sr.color = las.GetColor();
+        tr.startColor = las.GetColor();
+        tr.endColor = las.GetColor();
     }
 
     void FixedUpdate()
@@ -34,14 +39,13 @@ public class LaserProjectile : MonoBehaviour
         RaycastHit hit;
         if (!inMedium)
         {
-            if (Physics.Raycast(transform.position, direction, out hit, offset))
+            if (Physics.Raycast(transform.position, direction, out hit, offset, ~(1 << 8), QueryTriggerInteraction.UseGlobal))
             {
                 rb.MovePosition(hit.point);
                 string hitTag = hit.transform.gameObject.tag;
                 if (hitTag.Equals(Laser.enemyTag))
                 {
                     hit.transform.GetComponentInParent<AlienController>().kill();
-                    removeProjectile();
                 }
                 else if (hitTag.Equals(Laser.bounceTag))
                 {
@@ -63,12 +67,12 @@ public class LaserProjectile : MonoBehaviour
             }
             else
             {
-                rb.MovePosition(transform.position + speed * direction * Time.deltaTime);
+                rb.MovePosition(transform.position + speed * direction.normalized * Time.deltaTime);
             }
         }
         else
         {
-            if (Physics.Raycast(transform.position + direction * offset, -direction, out hit, offset))
+            if (Physics.Raycast(transform.position + direction.normalized * offset, -direction, out hit, offset))
             {
                 string hitTag = hit.transform.gameObject.tag;
                 if (hitTag.Equals(Laser.mediumTag))
@@ -78,28 +82,31 @@ public class LaserProjectile : MonoBehaviour
                 }
                 else
                 {
-                    rb.MovePosition(transform.position + speed * direction * Time.deltaTime);
+                    rb.MovePosition(transform.position + speed * direction.normalized * Time.deltaTime);
                 }
             }
         }
-        Debug.DrawRay(transform.position, direction);
     }
 
     void handleMediumEnter(RaycastHit hit)
     {
-        float incAngle = Vector3.Angle(direction, -1.0f * hit.normal);
+        float incAngle = Vector3.Angle(direction, -1.0f * (hit.normal));
         if (incAngle > 90f)
         {
-            incAngle -= 90;
+            incAngle = incAngle - 90;
         }
-        float refAngle = incAngle / refIndex;
-        if (Vector3.Angle(Quaternion.Euler(0, 0, (refAngle - incAngle)) * direction, -1.0f * (hit.normal)) < incAngle)
-        {
-            direction = Quaternion.Euler(0, 0, (refAngle - incAngle)) * direction;
-        }
-        else
-        {
-            direction = Quaternion.Euler(0, 0, -(refAngle - incAngle)) * direction;
+        float snell = Mathf.Sin(Mathf.Deg2Rad * incAngle) / refIndex;
+        float refAngle;
+        if(snell <= 1) {
+            refAngle = Mathf.Asin(snell) * Mathf.Rad2Deg;
+            if (Vector3.Angle(Quaternion.Euler(0, 0, (refAngle - incAngle)) * direction, -hit.normal) < incAngle)
+            {
+                direction = Quaternion.Euler(0, 0, refAngle) * -hit.normal;
+            }
+            else
+            {
+                direction = Quaternion.Euler(0, 0, -refAngle) * -hit.normal;
+            }
         }
         inMedium = true;
     }
@@ -111,18 +118,23 @@ public class LaserProjectile : MonoBehaviour
         {
             incAngle = incAngle - 90;
         }
-        float refAngle = incAngle * refIndex;
-        if (refAngle >= 90)
+        float snell = Mathf.Sin(Mathf.Deg2Rad * incAngle) * refIndex;
+        Debug.DrawRay(direction, hit.normal);
+        if (snell > 1)
         {
             direction = Vector3.Reflect(direction, -1f * hit.normal);
+            return;
         }
-        else if (Vector3.Angle(Quaternion.Euler(0, 0, (refAngle - incAngle)) * direction, hit.normal) > incAngle)
-        {
-            direction = Quaternion.Euler(0, 0, (refAngle - incAngle)) * direction;
-        }
-        else
-        {
-            direction = Quaternion.Euler(0, 0, -(refAngle - incAngle)) * direction;
+        else {
+            float refAngle = Mathf.Asin(snell) * Mathf.Rad2Deg;
+            if (Vector3.Angle(Quaternion.Euler(0, 0, (refAngle - incAngle)) * direction, hit.normal) < incAngle)
+            {
+                direction = Quaternion.Euler(0, 0, -refAngle) * hit.normal;
+            }
+            else
+            {
+                direction = Quaternion.Euler(0, 0, refAngle) * hit.normal;
+            }
         }
         inMedium = false;
     }

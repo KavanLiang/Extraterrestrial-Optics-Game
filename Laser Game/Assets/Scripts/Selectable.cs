@@ -14,7 +14,6 @@ public class Selectable : MonoBehaviour
         prevAlpha = 0.60f;
     }
 
-
     void OnMouseEnter()
     {
         toggleSelected();

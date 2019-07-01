@@ -146,7 +146,9 @@ MonoBehaviour:
   refIndex: 1.5
   laserWidth: 0.025
   maxBounce: 10
-  dmg: 0
+  LaserColor: {r: 1, g: 0, b: 0, a: 1}
+  MaxCollisions: 10
+  offset: 0.3
 --- !u!1 &3707957426925952362
 GameObject:
   m_ObjectHideFlags: 0

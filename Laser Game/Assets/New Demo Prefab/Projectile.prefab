@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7132388691329729139}
   - component: {fileID: 7132388691329729136}
   - component: {fileID: 3262687504709770030}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,6 +99,8 @@ MonoBehaviour:
   speed: 4
   rb: {fileID: 3262687504709770030}
   collider: {fileID: 7132388691329729139}
+  tr: {fileID: 7132388691329729136}
+  sr: {fileID: 7132388691329729134}
 --- !u!65 &7132388691329729139
 BoxCollider:
   m_ObjectHideFlags: 0
