@@ -17,6 +17,7 @@ public class Laser : MonoBehaviour
     public float refIndex = 1.5f;
     private LineRenderer mLineRenderer;
     public Color LaserColor;
+    public AudioSource audio;
 
     private static int numActiveProjectiles = 0;
     public int MaxCollisions;
@@ -61,6 +62,7 @@ public class Laser : MonoBehaviour
         GameObject lp = Instantiate(proj, this.transform.position, transform.rotation);
         lp.GetComponent<LaserProjectile>().SetLaserProperties(this);
         numActiveProjectiles++;
+        audio.Play();
     }
 
     public Vector3[] GetVerticies(){
