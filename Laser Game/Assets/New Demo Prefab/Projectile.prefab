@@ -101,6 +101,7 @@ MonoBehaviour:
   collider: {fileID: 7132388691329729139}
   tr: {fileID: 7132388691329729136}
   sr: {fileID: 7132388691329729134}
+  epsilon: 0.0001
 --- !u!65 &7132388691329729139
 BoxCollider:
   m_ObjectHideFlags: 0

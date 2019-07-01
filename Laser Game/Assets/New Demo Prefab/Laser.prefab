@@ -144,11 +144,9 @@ MonoBehaviour:
   laserDistance: 100
   proj: {fileID: 7132388691329729135, guid: 5a99817788ea71143a5c42998f1d3b76, type: 3}
   refIndex: 1.5
-  laserWidth: 0.025
-  maxBounce: 10
   LaserColor: {r: 1, g: 0, b: 0, a: 1}
   MaxCollisions: 10
-  offset: 0.3
+  offset: 0.5
 --- !u!1 &3707957426925952362
 GameObject:
   m_ObjectHideFlags: 0

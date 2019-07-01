@@ -61,16 +61,25 @@ public class Laser : MonoBehaviour
         numActiveProjectiles++;
     }
 
+    public Vector3[] GetVerticies(){
+        Vector3[] ret = new Vector3[mLineRenderer.positionCount];
+        mLineRenderer.GetPositions(ret);
+        return ret;
+    }
+
     void DrawLaser()
     {
         int vertexCounter = 0;
         mLineRenderer.positionCount = 1;
         mLineRenderer.SetPosition(0, transform.position);
+        mLineRenderer.material.color = LaserColor;
+        mLineRenderer.SetColors(LaserColor, LaserColor);
         Vector3 direction = transform.right;
         bool inMedium = false;
         RaycastHit forward;
         RaycastHit backward;
         float traverseMediumDist = 0;
+        float maxMedDist = 0;
         while (vertexCounter < MaxCollisions)
         {
             if (!inMedium)
@@ -115,6 +124,7 @@ public class Laser : MonoBehaviour
                             }
                         }
                         inMedium = true;
+                        maxMedDist = Mathf.Sqrt(Mathf.Pow(forward.collider.bounds.extents.x, 2) + Mathf.Pow(forward.collider.bounds.extents.y, 2)) * 1.1f;
                         traverseMediumDist = 0;
                         mLineRenderer.positionCount++;
                         vertexCounter++;
@@ -179,27 +189,27 @@ public class Laser : MonoBehaviour
                     }
                     else
                     {
-                        if (traverseMediumDist < 100f)
+                        if (traverseMediumDist < maxMedDist)
                         {
                             mLineRenderer.SetPosition(vertexCounter, mLineRenderer.GetPosition(vertexCounter) + direction.normalized * offset);
                             traverseMediumDist += offset;
                         }
                         else
                         {
-                            break;
+                            inMedium = false;
                         }
                     }
                 }
                 else
                 {
-                    if (traverseMediumDist < 100f)
+                    if (traverseMediumDist < maxMedDist)
                     {
                         mLineRenderer.SetPosition(vertexCounter, mLineRenderer.GetPosition(vertexCounter) + direction.normalized * offset);
                         traverseMediumDist += offset;
                     }
                     else
                     {
-                        break;
+                        inMedium = false;
                     }
                 }
             }
