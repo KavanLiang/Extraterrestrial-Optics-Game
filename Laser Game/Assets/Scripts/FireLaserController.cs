@@ -15,8 +15,9 @@ public class FireLaserController : MonoBehaviour
         foreach(Laser laser in toFire) {
             laser.shoot();
         }
-        if(ec.remainingEnergy() <= 0) {
-            bu.interactable = false;
-        }
+    }
+
+    void Update() {
+        bu.interactable = !Laser.isShooting() && ec.remainingEnergy() > 0;
     }
 }

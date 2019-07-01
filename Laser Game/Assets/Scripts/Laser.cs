@@ -18,7 +18,7 @@ public class Laser : MonoBehaviour
     private LineRenderer mLineRenderer;
     public Color LaserColor;
 
-    private int numActiveProjectiles;
+    private static int numActiveProjectiles = 0;
     public int MaxCollisions;
 
     public float offset;
@@ -27,7 +27,6 @@ public class Laser : MonoBehaviour
     {
         mLineRenderer = gameObject.GetComponent<LineRenderer>();
         DrawLaser();
-        numActiveProjectiles = 0;
     }
 
     public Color GetColor()
@@ -36,7 +35,7 @@ public class Laser : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (numActiveProjectiles <= 0)
         {
@@ -49,6 +48,9 @@ public class Laser : MonoBehaviour
         }
     }
 
+    public static bool isShooting() {
+        return numActiveProjectiles > 0;
+    }
     public void DecrementActiveProjectiles()
     {
         numActiveProjectiles--;
@@ -86,6 +88,7 @@ public class Laser : MonoBehaviour
             {
                 if (Physics.Raycast(mLineRenderer.GetPosition(vertexCounter), direction, out forward, laserDistance))
                 {
+                    Debug.DrawLine(forward.point, direction);
                     mLineRenderer.positionCount++;
                     vertexCounter++;
                     mLineRenderer.SetPosition(vertexCounter, forward.point);
@@ -94,7 +97,6 @@ public class Laser : MonoBehaviour
                     if (hitTag.Equals(Laser.bounceTag))
                     {
                         direction = Vector3.Reflect(direction, forward.normal);
-                        Debug.DrawRay(mLineRenderer.GetPosition(vertexCounter), direction);
                     }
                     else if (hitTag.Equals(Laser.mediumTag))
                     {
@@ -115,12 +117,10 @@ public class Laser : MonoBehaviour
                             if (Vector3.Angle(Quaternion.Euler(0, 0, (refAngle - incAngle)) * direction, -forward.normal) < incAngle)
                             {
                                 direction = Quaternion.Euler(0, 0, refAngle) * -forward.normal;
-                                Debug.DrawRay(mLineRenderer.GetPosition(vertexCounter), direction);
                             }
                             else
                             {
                                 direction = Quaternion.Euler(0, 0, -refAngle) * -forward.normal;
-                                Debug.DrawRay(mLineRenderer.GetPosition(vertexCounter), direction);
                             }
                         }
                         inMedium = true;
@@ -177,12 +177,10 @@ public class Laser : MonoBehaviour
                             if (Vector3.Angle(Quaternion.Euler(0, 0, (refAngle - incAngle)) * direction, (backward.normal)) < incAngle)
                             {
                                 direction = Quaternion.Euler(0, 0, -refAngle) * backward.normal;
-                                Debug.DrawRay(mLineRenderer.GetPosition(vertexCounter), direction);
                             }
                             else
                             {
                                 direction = Quaternion.Euler(0, 0, refAngle) * backward.normal;
-                                Debug.DrawRay(mLineRenderer.GetPosition(vertexCounter), direction);
                             }
                             inMedium = false;
                         }
