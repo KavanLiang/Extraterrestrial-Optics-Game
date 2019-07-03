@@ -57,11 +57,6 @@ public class LaserProjectile : MonoBehaviour
                 {
                     hit.transform.GetComponentInParent<AlienController>().kill();
                 }
-                else if (hitTag.Equals(Laser.wallTag))
-                {
-                    removeProjectile();
-                    return;
-                }
             }
             if (Vector3.Distance(traversePath[currVertex], transform.position) > epsilon)
             {
@@ -86,7 +81,7 @@ public class LaserProjectile : MonoBehaviour
 
     IEnumerator removeOnExit()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2f);
         removeProjectile();
     }
 

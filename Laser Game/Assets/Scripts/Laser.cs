@@ -49,7 +49,8 @@ public class Laser : MonoBehaviour
         }
     }
 
-    public static bool isShooting() {
+    public static bool isShooting()
+    {
         return numActiveProjectiles > 0;
     }
     public void DecrementActiveProjectiles()
@@ -65,7 +66,8 @@ public class Laser : MonoBehaviour
         audio.Play();
     }
 
-    public Vector3[] GetVerticies(){
+    public Vector3[] GetVerticies()
+    {
         Vector3[] ret = new Vector3[mLineRenderer.positionCount];
         mLineRenderer.GetPositions(ret);
         return ret;
@@ -135,6 +137,12 @@ public class Laser : MonoBehaviour
                     else if (hitTag.Equals(wallTag))
                     {
                         break;
+                    }
+                    else
+                    {
+                        mLineRenderer.positionCount++;
+                        vertexCounter++;
+                        mLineRenderer.SetPosition(vertexCounter, mLineRenderer.GetPosition(vertexCounter - 1) + direction.normalized * offset);
                     }
                 }
                 else

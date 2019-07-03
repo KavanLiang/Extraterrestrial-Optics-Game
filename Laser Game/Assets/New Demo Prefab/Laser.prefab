@@ -147,7 +147,7 @@ MonoBehaviour:
   refIndex: 1.5
   LaserColor: {r: 1, g: 0, b: 0, a: 1}
   audio: {fileID: 2406622841945016749}
-  MaxCollisions: 10
+  MaxCollisions: 30
   offset: 0.5
 --- !u!82 &2406622841945016749
 AudioSource:
