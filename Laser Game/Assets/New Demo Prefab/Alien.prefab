@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6931042193165115265}
   - component: {fileID: 6931042193165115264}
-  - component: {fileID: 6772407798620248008}
   m_Layer: 0
   m_Name: SeparatedAlien_0
   m_TagString: enemyTag
@@ -26,11 +25,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6931042193165115294}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1, y: 0.4, z: 7.034712}
+  m_LocalPosition: {x: -1, y: 0.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6931042193845277690}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6931042193165115264
 SpriteRenderer:
@@ -82,19 +81,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!65 &6772407798620248008
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6931042193165115294}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.97, y: 2.4, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6931042193305576167
 GameObject:
   m_ObjectHideFlags: 0
@@ -105,7 +91,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6931042193305576166}
   - component: {fileID: 6931042193305576169}
-  - component: {fileID: 2692250838384332946}
   m_Layer: 0
   m_Name: SeparatedAlien_2
   m_TagString: enemyTag
@@ -121,7 +106,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6931042193305576167}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1, y: 0.4, z: 7.034712}
+  m_LocalPosition: {x: 1, y: 0.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6931042193845277690}
@@ -177,19 +162,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!65 &2692250838384332946
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6931042193305576167}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.99, y: 2.42, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6931042193845277691
 GameObject:
   m_ObjectHideFlags: 0
@@ -201,6 +173,9 @@ GameObject:
   - component: {fileID: 6931042193845277690}
   - component: {fileID: 910737762344914329}
   - component: {fileID: 7563430331945268854}
+  - component: {fileID: 6719225987974893096}
+  - component: {fileID: 7097094043552260854}
+  - component: {fileID: 8968347366224058603}
   m_Layer: 0
   m_Name: Alien
   m_TagString: enemyTag
@@ -219,8 +194,8 @@ Transform:
   m_LocalPosition: {x: -1.75, y: -1.37, z: 0}
   m_LocalScale: {x: 0.25, y: 0.25, z: 1}
   m_Children:
-  - {fileID: 6931042193165115265}
   - {fileID: 6931042195016753685}
+  - {fileID: 6931042193165115265}
   - {fileID: 6931042193305576166}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -259,6 +234,45 @@ MonoBehaviour:
   particlePrefab: {fileID: 4259117809305580841, guid: 4436c1362b7cfe84e9c7599881ce8f86,
     type: 3}
   lm: {fileID: 0}
+--- !u!65 &6719225987974893096
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6931042193845277691}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.89362144, y: 2.3563366, z: 1}
+  m_Center: {x: -1.0194693, y: 0.39449024, z: 0}
+--- !u!65 &7097094043552260854
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6931042193845277691}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.0194683, y: 2.0903888, z: 1}
+  m_Center: {x: -0.039892197, y: 0.004431963, z: 0}
+--- !u!65 &8968347366224058603
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6931042193845277691}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.93794584, y: 2.3829312, z: 1}
+  m_Center: {x: 1.0061715, y: 0.4255178, z: 0}
 --- !u!1 &6931042195016753682
 GameObject:
   m_ObjectHideFlags: 0
@@ -269,7 +283,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6931042195016753685}
   - component: {fileID: 6931042195016753684}
-  - component: {fileID: 7939133399558875511}
   m_Layer: 0
   m_Name: SeparatedAlien_1
   m_TagString: enemyTag
@@ -289,7 +302,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6931042193845277690}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6931042195016753684
 SpriteRenderer:
@@ -341,16 +354,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!65 &7939133399558875511
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6931042195016753682}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.03, y: 2.05, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}

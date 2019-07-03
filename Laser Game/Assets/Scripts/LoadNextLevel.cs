@@ -14,7 +14,7 @@ public class LoadNextLevel : MonoBehaviour
     }
 
     private IEnumerator loadNext() {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(4f);
         SceneManager.LoadScene(nextLevel);
     }
 }
