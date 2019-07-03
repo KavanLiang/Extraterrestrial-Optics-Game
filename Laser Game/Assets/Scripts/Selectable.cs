@@ -37,9 +37,6 @@ public class Selectable : MonoBehaviour
     }
 
     void FixedUpdate() {
-        if(Laser.isShooting()) {
-            myLine.SetActive(false);
-        }
         if(!Input.GetMouseButton(1)) {
             selected = false;
             existSelected = false;
@@ -56,6 +53,9 @@ public class Selectable : MonoBehaviour
                     transform.rotation = Quaternion.Euler(0, 0, angle);
                 }
             }
+        }
+        if(Laser.isShooting()) {
+            myLine.SetActive(false);
         }
     }
 
