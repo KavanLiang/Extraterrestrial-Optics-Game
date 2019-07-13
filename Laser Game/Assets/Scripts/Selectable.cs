@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Selectable : MonoBehaviour
 {
-    public Renderer InteractableArea;
+    public SpriteRenderer InteractableArea;
     public Renderer rend;
     private float prevAlpha;
     public float rotation_speed;
@@ -79,7 +79,12 @@ public class Selectable : MonoBehaviour
             pz.y = Mathf.Clamp(pz.y, InteractableArea.bounds.min.y, InteractableArea.bounds.max.y);
             pz.z = 0;
             transform.position = pz;
+            InteractableArea.color = new Color(1f, 1f, 1f, Mathf.PingPong(Time.time,0.4f));
         }
+    }
+
+    void OnMouseUpAsButton() {
+        InteractableArea.color = new Color(1f, 1f, 1f, 0f);
     }
 
     void DrawLine(Vector3 start, Vector3 end, Color color)
