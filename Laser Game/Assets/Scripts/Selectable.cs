@@ -24,6 +24,7 @@ public class Selectable : MonoBehaviour
             myLine = new GameObject();
             myLine.AddComponent<LineRenderer>();
         }
+        rend.sortingOrder = 1;
     }
 
     void OnMouseEnter()
