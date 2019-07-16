@@ -25,17 +25,17 @@ PrefabInstance:
     - target: {fileID: 4239632588258255025, guid: b8b5c35f84ba2284580eaeae39e2d764,
         type: 3}
       propertyPath: m_Name
-      value: ScaledCL
+      value: ScaledCVL
       objectReference: {fileID: 0}
     - target: {fileID: 4239632588258254988, guid: b8b5c35f84ba2284580eaeae39e2d764,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.85
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4239632588258254988, guid: b8b5c35f84ba2284580eaeae39e2d764,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.53
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4239632588258254988, guid: b8b5c35f84ba2284580eaeae39e2d764,
         type: 3}

@@ -106,6 +106,7 @@ public class Selectable : MonoBehaviour
             if (swap)
             {
                 Selectable s = Instantiate(ts.tools[currTool], transform.position, Quaternion.identity);
+                s.transform.localScale = Vector3.Scale(ts.scaling[currTool], s.transform.localScale);
                 SwapInit(s);
                 ts.DisplayGUI(s);
                 Destroy(this.gameObject);

@@ -4939,6 +4939,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8280083092494843287, guid: 765604dce47ac8d4899d0d39a3a633d6,
         type: 3}
+      propertyPath: scaling.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8280083092494843287, guid: 765604dce47ac8d4899d0d39a3a633d6,
+        type: 3}
       propertyPath: tools.Array.data[2]
       value: 
       objectReference: {fileID: 1425894107930906858, guid: e99409c6d80dc9b41b5c38fdfe0f137e,
@@ -4955,6 +4960,51 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1965236623915729122, guid: 861ca2a1b9ff12b4cb0fe52e1b069bc3,
         type: 3}
+    - target: {fileID: 8280083092494843287, guid: 765604dce47ac8d4899d0d39a3a633d6,
+        type: 3}
+      propertyPath: scaling.Array.data[0].x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8280083092494843287, guid: 765604dce47ac8d4899d0d39a3a633d6,
+        type: 3}
+      propertyPath: scaling.Array.data[0].y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8280083092494843287, guid: 765604dce47ac8d4899d0d39a3a633d6,
+        type: 3}
+      propertyPath: scaling.Array.data[0].z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8280083092494843287, guid: 765604dce47ac8d4899d0d39a3a633d6,
+        type: 3}
+      propertyPath: scaling.Array.data[1].x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8280083092494843287, guid: 765604dce47ac8d4899d0d39a3a633d6,
+        type: 3}
+      propertyPath: scaling.Array.data[1].y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8280083092494843287, guid: 765604dce47ac8d4899d0d39a3a633d6,
+        type: 3}
+      propertyPath: scaling.Array.data[1].z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8280083092494843287, guid: 765604dce47ac8d4899d0d39a3a633d6,
+        type: 3}
+      propertyPath: scaling.Array.data[2].x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8280083092494843287, guid: 765604dce47ac8d4899d0d39a3a633d6,
+        type: 3}
+      propertyPath: scaling.Array.data[2].y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8280083092494843287, guid: 765604dce47ac8d4899d0d39a3a633d6,
+        type: 3}
+      propertyPath: scaling.Array.data[2].z
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5855300265558402036, guid: 765604dce47ac8d4899d0d39a3a633d6,
         type: 3}
       propertyPath: m_AnchorMax.x

@@ -7,6 +7,7 @@ public class ToolSelect : MonoBehaviour
 {
     // Start is called before the first frame update
     public Selectable[] tools;
+    public Vector3[] scaling;
     public Scrollbar sb;
 
     private float timeRemaining;
