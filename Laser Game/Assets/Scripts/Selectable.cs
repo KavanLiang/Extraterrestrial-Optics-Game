@@ -5,22 +5,32 @@ using UnityEngine;
 public class Selectable : MonoBehaviour
 {
     public SpriteRenderer InteractableArea;
-    public Renderer rend;
+    private Renderer rend;
     private float prevAlpha;
-    public float rotation_speed;
     private bool selected;
     private static bool existSelected = false;
     private Vector3 prevPosition;
-
     private static GameObject myLine;
-    
 
-    void Start()
+    public ToolSelect ts;
+    protected int currTool;
+
+
+    void Awake()
     {
+        Init();
+    }
+
+
+    void Init()
+    {
+        currTool = 0;
         prevAlpha = 0.60f;
         selected = false;
         prevPosition = new Vector3(0, 0, 0);
-        if(!myLine) {
+        rend = GetComponent<Renderer>();
+        if (!myLine)
+        {
             myLine = new GameObject();
             myLine.AddComponent<LineRenderer>();
         }
@@ -37,53 +47,90 @@ public class Selectable : MonoBehaviour
         toggleSelected();
     }
 
-    void FixedUpdate() {
-        if(!Input.GetMouseButton(1)) {
+    void FixedUpdate()
+    {
+        if (!Input.GetMouseButton(1))
+        {
             selected = false;
             existSelected = false;
             myLine.SetActive(false);
-        } else {
-            if(selected && !Input.GetMouseButton(0)) {
+        }
+        else
+        {
+            if (selected && !Input.GetMouseButton(0))
+            {
                 Vector3 mouse_pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 mouse_pos.z = 0;
                 DrawLine(prevPosition, mouse_pos, new Color(1f, 1f, 1f, 0.2f));
                 mouse_pos.x = mouse_pos.x - prevPosition.x;
                 mouse_pos.y = mouse_pos.y - prevPosition.y;
                 float angle = Mathf.Atan2(mouse_pos.y, mouse_pos.x) * Mathf.Rad2Deg;
-                if(!Laser.isShooting()){
+                if (!Laser.isShooting())
+                {
                     transform.rotation = Quaternion.Euler(0, 0, angle);
                 }
             }
         }
-        if(Laser.isShooting()) {
+        if (Laser.isShooting())
+        {
             myLine.SetActive(false);
         }
     }
 
     void OnMouseOver()
     {
-        if(Input.GetMouseButton(1) && !existSelected) {
+        if (Input.GetMouseButton(1) && !existSelected)
+        {
             selected = true;
             existSelected = true;
             prevPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             prevPosition.z = 0;
         }
+        else if (ts)
+        {
+            bool swap = false;
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                currTool = Mathf.Clamp(currTool - 1, 0, ts.tools.Length - 1);
+                swap = true;
+            }
+            else if (Input.GetKeyDown(KeyCode.E))
+            {
+                currTool = Mathf.Clamp(currTool + 1, 0, ts.tools.Length - 1);
+                swap = true;
+            }
+            if (swap)
+            {
+                Selectable s = Instantiate(ts.tools[currTool], transform.position, Quaternion.identity);
+                SwapInit(s);
+                Destroy(this.gameObject);
+            }
+        }
+    }
+
+    void SwapInit(Selectable s)
+    {
+        s.currTool = currTool;
+        s.InteractableArea = InteractableArea;
+        s.ts = ts;
     }
 
     void OnMouseDrag()
     {
-        if(!Laser.isShooting()) {
+        if (!Laser.isShooting())
+        {
             myLine.SetActive(false);
             Vector3 pz = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             pz.x = Mathf.Clamp(pz.x, InteractableArea.bounds.min.x, InteractableArea.bounds.max.x);
             pz.y = Mathf.Clamp(pz.y, InteractableArea.bounds.min.y, InteractableArea.bounds.max.y);
             pz.z = 0;
             transform.position = pz;
-            InteractableArea.color = new Color(1f, 1f, 1f, Mathf.PingPong(Time.time,0.4f));
+            InteractableArea.color = new Color(1f, 1f, 1f, Mathf.PingPong(Time.time, 0.4f));
         }
     }
 
-    void OnMouseUpAsButton() {
+    void OnMouseUpAsButton()
+    {
         InteractableArea.color = new Color(1f, 1f, 1f, 0f);
     }
 
