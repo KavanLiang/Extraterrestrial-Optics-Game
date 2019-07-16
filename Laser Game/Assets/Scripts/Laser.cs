@@ -14,9 +14,9 @@ public class Laser : MonoBehaviour
     public static string wallTag = "wall";
 
     public GameObject proj;
-    public float refIndex = 1.5f;
+    private float refIndex;
     private LineRenderer mLineRenderer;
-    public Color LaserColor;
+    private Color LaserColor;
     public AudioSource audio;
 
     private static int numActiveProjectiles = 0;
@@ -27,12 +27,22 @@ public class Laser : MonoBehaviour
     void Start()
     {
         mLineRenderer = gameObject.GetComponent<LineRenderer>();
+        SetColor(Color.red, 1.5f);
         DrawLaser();
+    }
+
+    public void SetColor(Color col, float refIndex) {
+        this.LaserColor = col;
+        this.refIndex = refIndex;
     }
 
     public Color GetColor()
     {
         return LaserColor;
+    }
+
+    public float GetRefIndex() {
+        return refIndex;
     }
 
     // Update is called once per frame

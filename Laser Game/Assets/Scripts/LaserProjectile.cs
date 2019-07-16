@@ -34,7 +34,7 @@ public class LaserProjectile : MonoBehaviour
 
     public void SetLaserProperties(Laser las)
     {
-        refIndex = las.refIndex;
+        refIndex = las.GetRefIndex();
         direction = las.transform.right;
         laser = las;
         sr.color = las.GetColor();
