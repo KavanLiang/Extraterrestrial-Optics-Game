@@ -37,6 +37,10 @@ public class Selectable : MonoBehaviour
         rend.sortingOrder = 1;
     }
 
+    public int GetCurrentTool() {
+        return currTool;
+    }
+
     void OnMouseEnter()
     {
         toggleSelected();
@@ -103,6 +107,7 @@ public class Selectable : MonoBehaviour
             {
                 Selectable s = Instantiate(ts.tools[currTool], transform.position, Quaternion.identity);
                 SwapInit(s);
+                ts.DisplayGUI(s);
                 Destroy(this.gameObject);
             }
         }
