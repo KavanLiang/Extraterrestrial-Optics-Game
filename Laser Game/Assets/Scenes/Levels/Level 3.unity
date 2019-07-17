@@ -557,7 +557,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: Convex Lenses
   m_isRightToLeft: 0
@@ -805,7 +805,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: FoCUS RAYS
   m_isRightToLeft: 0
@@ -1130,6 +1130,7 @@ TilemapRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -5016,6 +5017,21 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7324479563121464529, guid: 687fda9d5c7ec884ba14f83495f5a264,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7086466574170895014, guid: 687fda9d5c7ec884ba14f83495f5a264,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7086466574170895014, guid: 687fda9d5c7ec884ba14f83495f5a264,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 687fda9d5c7ec884ba14f83495f5a264, type: 3}
 --- !u!1 &1783082990 stripped
@@ -5401,6 +5417,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4320674152828568365, guid: b8b5c35f84ba2284580eaeae39e2d764,
+        type: 3}
+      propertyPath: rend
+      value: 
+      objectReference: {fileID: 2062457857}
+    - target: {fileID: 4320674152828568365, guid: b8b5c35f84ba2284580eaeae39e2d764,
+        type: 3}
+      propertyPath: InteractableArea
+      value: 
+      objectReference: {fileID: 1839643345}
     - target: {fileID: 4239632588258255025, guid: b8b5c35f84ba2284580eaeae39e2d764,
         type: 3}
       propertyPath: m_Name
@@ -5471,16 +5497,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1.448
       objectReference: {fileID: 0}
-    - target: {fileID: 4320674152828568365, guid: b8b5c35f84ba2284580eaeae39e2d764,
-        type: 3}
-      propertyPath: rend
-      value: 
-      objectReference: {fileID: 2062457857}
-    - target: {fileID: 4320674152828568365, guid: b8b5c35f84ba2284580eaeae39e2d764,
-        type: 3}
-      propertyPath: InteractableArea
-      value: 
-      objectReference: {fileID: 1839643345}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b8b5c35f84ba2284580eaeae39e2d764, type: 3}
 --- !u!1001 &2036270076
