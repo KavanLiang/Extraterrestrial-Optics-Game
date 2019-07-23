@@ -432,6 +432,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: 2DMirror
       objectReference: {fileID: 0}
+    - target: {fileID: 73910869031113994, guid: c57974eee0d42c54cb65062b7bda0be3,
+        type: 3}
+      propertyPath: InteractableArea
+      value: 
+      objectReference: {fileID: 129546796}
     - target: {fileID: 2656238231331256551, guid: c57974eee0d42c54cb65062b7bda0be3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -497,11 +502,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 0.3
       objectReference: {fileID: 0}
-    - target: {fileID: 73910869031113994, guid: c57974eee0d42c54cb65062b7bda0be3,
-        type: 3}
-      propertyPath: InteractableArea
-      value: 
-      objectReference: {fileID: 129546796}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c57974eee0d42c54cb65062b7bda0be3, type: 3}
 --- !u!1 &614204526
@@ -578,6 +578,7 @@ TilemapRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1477,6 +1478,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: 2DMirror (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 73910869031113994, guid: c57974eee0d42c54cb65062b7bda0be3,
+        type: 3}
+      propertyPath: InteractableArea
+      value: 
+      objectReference: {fileID: 1855896824}
     - target: {fileID: 2656238231331256551, guid: c57974eee0d42c54cb65062b7bda0be3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1542,11 +1548,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 0.3
       objectReference: {fileID: 0}
-    - target: {fileID: 73910869031113994, guid: c57974eee0d42c54cb65062b7bda0be3,
-        type: 3}
-      propertyPath: InteractableArea
-      value: 
-      objectReference: {fileID: 1855896824}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c57974eee0d42c54cb65062b7bda0be3, type: 3}
 --- !u!1001 &1341722221
@@ -1908,6 +1909,7 @@ TilemapRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -7979,6 +7981,41 @@ PrefabInstance:
     - target: {fileID: 4109154991188928252, guid: 687fda9d5c7ec884ba14f83495f5a264,
         type: 3}
       propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1774066702428278575, guid: 687fda9d5c7ec884ba14f83495f5a264,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1774066702428278575, guid: 687fda9d5c7ec884ba14f83495f5a264,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7324479563121464529, guid: 687fda9d5c7ec884ba14f83495f5a264,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2114284633197981510, guid: 687fda9d5c7ec884ba14f83495f5a264,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5674326467006270286, guid: 687fda9d5c7ec884ba14f83495f5a264,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7086466574170895014, guid: 687fda9d5c7ec884ba14f83495f5a264,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7086466574170895014, guid: 687fda9d5c7ec884ba14f83495f5a264,
+        type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

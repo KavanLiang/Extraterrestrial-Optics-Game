@@ -268,12 +268,37 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: -8
       objectReference: {fileID: 0}
+    - target: {fileID: 1774066702428278575, guid: 687fda9d5c7ec884ba14f83495f5a264,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1774066702428278575, guid: 687fda9d5c7ec884ba14f83495f5a264,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7324479563121464529, guid: 687fda9d5c7ec884ba14f83495f5a264,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2114284633197981510, guid: 687fda9d5c7ec884ba14f83495f5a264,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5674326467006270286, guid: 687fda9d5c7ec884ba14f83495f5a264,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7086466574170895014, guid: 687fda9d5c7ec884ba14f83495f5a264,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7086466574170895014, guid: 687fda9d5c7ec884ba14f83495f5a264,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -312,6 +337,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -508,6 +534,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -651,6 +678,7 @@ TilemapRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1463,6 +1491,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1557,6 +1586,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1603,6 +1633,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: 2DMirror
+      objectReference: {fileID: 0}
+    - target: {fileID: 73910869031113994, guid: c57974eee0d42c54cb65062b7bda0be3,
+        type: 3}
+      propertyPath: InteractableArea
+      value: 
+      objectReference: {fileID: 1294805943}
+    - target: {fileID: 73910869031113994, guid: c57974eee0d42c54cb65062b7bda0be3,
+        type: 3}
+      propertyPath: rend
+      value: 
+      objectReference: {fileID: 661896460}
+    - target: {fileID: 73910869031113994, guid: c57974eee0d42c54cb65062b7bda0be3,
+        type: 3}
+      propertyPath: rotation_speed
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2533747958544606624, guid: c57974eee0d42c54cb65062b7bda0be3,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2656238231331256551, guid: c57974eee0d42c54cb65062b7bda0be3,
         type: 3}
@@ -1669,29 +1719,9 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 73910869031113994, guid: c57974eee0d42c54cb65062b7bda0be3,
-        type: 3}
-      propertyPath: InteractableArea
-      value: 
-      objectReference: {fileID: 1294805943}
-    - target: {fileID: 73910869031113994, guid: c57974eee0d42c54cb65062b7bda0be3,
-        type: 3}
-      propertyPath: rend
-      value: 
-      objectReference: {fileID: 661896460}
-    - target: {fileID: 73910869031113994, guid: c57974eee0d42c54cb65062b7bda0be3,
-        type: 3}
-      propertyPath: rotation_speed
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 8975064316902097840, guid: c57974eee0d42c54cb65062b7bda0be3,
         type: 3}
       propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2533747958544606624, guid: c57974eee0d42c54cb65062b7bda0be3,
-        type: 3}
-      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
@@ -1714,6 +1744,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: 2DMirror (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 73910869031113994, guid: c57974eee0d42c54cb65062b7bda0be3,
+        type: 3}
+      propertyPath: InteractableArea
+      value: 
+      objectReference: {fileID: 1863135443}
+    - target: {fileID: 73910869031113994, guid: c57974eee0d42c54cb65062b7bda0be3,
+        type: 3}
+      propertyPath: rend
+      value: 
+      objectReference: {fileID: 716428063}
+    - target: {fileID: 73910869031113994, guid: c57974eee0d42c54cb65062b7bda0be3,
+        type: 3}
+      propertyPath: rotation_speed
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 2656238231331256551, guid: c57974eee0d42c54cb65062b7bda0be3,
         type: 3}
@@ -1779,21 +1824,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 73910869031113994, guid: c57974eee0d42c54cb65062b7bda0be3,
-        type: 3}
-      propertyPath: InteractableArea
-      value: 
-      objectReference: {fileID: 1863135443}
-    - target: {fileID: 73910869031113994, guid: c57974eee0d42c54cb65062b7bda0be3,
-        type: 3}
-      propertyPath: rend
-      value: 
-      objectReference: {fileID: 716428063}
-    - target: {fileID: 73910869031113994, guid: c57974eee0d42c54cb65062b7bda0be3,
-        type: 3}
-      propertyPath: rotation_speed
-      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8975064316902097840, guid: c57974eee0d42c54cb65062b7bda0be3,
         type: 3}
@@ -1861,6 +1891,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -2055,6 +2086,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -2217,6 +2249,7 @@ TilemapRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
