@@ -19,6 +19,7 @@ public class ToolSelect : MonoBehaviour
         timeRemaining = 0;
         sb.size = 1f / tools.Length;
         sb.numberOfSteps = tools.Length;
+        sb.gameObject.SetActive(false);
     }
     public void DisplayGUI(Selectable s)
     {

@@ -15,10 +15,16 @@ public class Selectable : MonoBehaviour
     public ToolSelect ts;
     protected int currTool;
 
+    static bool toggleInt = true;
+
 
     void Awake()
     {
         Init();
+    }
+
+    public static void ToggleInteractable(bool interactable) {
+        toggleInt = interactable;
     }
 
 
@@ -53,31 +59,33 @@ public class Selectable : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (!Input.GetMouseButton(1))
-        {
-            selected = false;
-            existSelected = false;
-            myLine.SetActive(false);
-        }
-        else
-        {
-            if (selected && !Input.GetMouseButton(0))
+        if(toggleInt) {
+            if (!Input.GetMouseButton(1))
             {
-                Vector3 mouse_pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                mouse_pos.z = 0;
-                DrawLine(prevPosition, mouse_pos, new Color(1f, 1f, 1f, 0.2f));
-                mouse_pos.x = mouse_pos.x - prevPosition.x;
-                mouse_pos.y = mouse_pos.y - prevPosition.y;
-                float angle = Mathf.Atan2(mouse_pos.y, mouse_pos.x) * Mathf.Rad2Deg;
-                if (!Laser.isShooting())
+                selected = false;
+                existSelected = false;
+                myLine.SetActive(false);
+            }
+            else
+            {
+                if (selected && !Input.GetMouseButton(0))
                 {
-                    transform.rotation = Quaternion.Euler(0, 0, angle);
+                    Vector3 mouse_pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                    mouse_pos.z = 0;
+                    DrawLine(prevPosition, mouse_pos, new Color(1f, 1f, 1f, 0.2f));
+                    mouse_pos.x = mouse_pos.x - prevPosition.x;
+                    mouse_pos.y = mouse_pos.y - prevPosition.y;
+                    float angle = Mathf.Atan2(mouse_pos.y, mouse_pos.x) * Mathf.Rad2Deg;
+                    if (!Laser.isShooting())
+                    {
+                        transform.rotation = Quaternion.Euler(0, 0, angle);
+                    }
                 }
             }
-        }
-        if (Laser.isShooting())
-        {
-            myLine.SetActive(false);
+            if (Laser.isShooting())
+            {
+                myLine.SetActive(false);
+            }
         }
     }
 
@@ -116,28 +124,34 @@ public class Selectable : MonoBehaviour
 
     void SwapInit(Selectable s)
     {
-        s.currTool = currTool;
-        s.InteractableArea = InteractableArea;
-        s.ts = ts;
+        if(toggleInt) {
+            s.currTool = currTool;
+            s.InteractableArea = InteractableArea;
+            s.ts = ts;
+        }
     }
 
     void OnMouseDrag()
     {
         if (!Laser.isShooting())
         {
-            myLine.SetActive(false);
-            Vector3 pz = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            pz.x = Mathf.Clamp(pz.x, InteractableArea.bounds.min.x, InteractableArea.bounds.max.x);
-            pz.y = Mathf.Clamp(pz.y, InteractableArea.bounds.min.y, InteractableArea.bounds.max.y);
-            pz.z = 0;
-            transform.position = pz;
-            InteractableArea.color = new Color(1f, 1f, 1f, Mathf.PingPong(Time.time, 0.4f));
+            if(toggleInt) {
+                myLine.SetActive(false);
+                Vector3 pz = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                pz.x = Mathf.Clamp(pz.x, InteractableArea.bounds.min.x, InteractableArea.bounds.max.x);
+                pz.y = Mathf.Clamp(pz.y, InteractableArea.bounds.min.y, InteractableArea.bounds.max.y);
+                pz.z = 0;
+                transform.position = pz;
+                InteractableArea.color = new Color(1f, 1f, 1f, Mathf.PingPong(Time.time, 0.4f));
+            }
         }
     }
 
     void OnMouseUpAsButton()
     {
-        InteractableArea.color = new Color(1f, 1f, 1f, 0f);
+        if(toggleInt) {
+            InteractableArea.color = new Color(1f, 1f, 1f, 0f);
+        }
     }
 
     void DrawLine(Vector3 start, Vector3 end, Color color)
