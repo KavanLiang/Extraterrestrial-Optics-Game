@@ -5,31 +5,58 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Main Menu.unity
     guid: 716fa00e0742b224e8a8cf2dfc73b192
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Levels/Level 1.unity
     guid: 58510c65820f23f42afdb651919ad5b4
   - enabled: 1
     path: Assets/Scenes/Levels/Level 2.unity
     guid: 8a686fd474c701742910aac6439e288a
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level 3.unity
+    guid: 7aa519f97393447fe8ba88bc7b86acf6
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level 4.unity
+    guid: c94d30e79c4ffad44ab9911436eea242
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level 5.unity
+    guid: 0ee980d9156db4c1694b1a55723be24e
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level 6.unity
+    guid: 0c9a3469d6af84cdcbdfc5fbf4942d5c
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level 7.unity
+    guid: a6be9890e040b47769b280088f874053
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level 8.unity
+    guid: 15469f9f5f0ff6545839e94e522eb233
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level 9.unity
+    guid: 9b29233fa4b69324eabe04981fd5ce43
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/Levels/Level 3.unity
-    guid: c94d30e79c4ffad44ab9911436eea242
+    path: Assets/Scenes/New Levels/1.unity
+    guid: d6acc6a4a6eb346d39633999b1b40caa
   - enabled: 1
-    path: Assets/Scenes/Levels/Level 4.unity
-    guid: 15469f9f5f0ff6545839e94e522eb233
+    path: Assets/Scenes/New Levels/2.unity
+    guid: 93c9fb86bd1754c74895f51e6f5f931b
   - enabled: 1
-    path: Assets/Scenes/Levels/Level 5.unity
-    guid: 9b29233fa4b69324eabe04981fd5ce43
+    path: Assets/Scenes/New Levels/3.unity
+    guid: 4d0169a538e5e454c8bb7755f489457b
+  - enabled: 1
+    path: Assets/Scenes/New Levels/4.unity
+    guid: 3e7db79cc1d3a46fe9e88e356b0ce057
+  - enabled: 1
+    path: Assets/Scenes/New Levels/5.unity
+    guid: 2e0e2239881d64bb08902b4df405b339
+  - enabled: 1
+    path: Assets/Scenes/New Levels/6.unity
+    guid: 2ca22c8f462a84284998cddbe9da4825
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects: {}
