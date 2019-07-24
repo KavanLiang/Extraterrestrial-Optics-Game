@@ -11,41 +11,43 @@ public class SandboxToolPanel : MonoBehaviour
     public GameObject[] prefabs;
     public Button[] buttons;
     public static GameObject activeTool;
+    int activeToolIndex;
     public Image SelectedToolPane;
+
+    public Sprite[] PrefabPreviews;
+    public Sprite MoveSelected;
 
     void Start()
     {
         for(int i = 0; i < prefabs.Length; i++) {
             int closure = i;
-            buttons[i].GetComponent<Image>().sprite = GetSprite(prefabs[i]);
+            buttons[i].GetComponent<Image>().sprite = PrefabPreviews[i];
             buttons[i].onClick.AddListener(() => Select(closure));
         }    
         activeTool = null;
+        activeToolIndex = -1;
     }
 
     void Select(int i) {
         activeTool = prefabs[i];
+        activeToolIndex = i;
     }
 
     public void Deselect() {
         activeTool = null;
-    }
-
-    Sprite GetSprite(GameObject obj) {
-        Texture2D previewTexture = AssetPreview.GetAssetPreview(obj);
-        return Sprite.Create(previewTexture, new Rect(0.0f, 0.0f, previewTexture.width, previewTexture.height), new Vector2(0.5f, 0.5f));
+        activeToolIndex = -1;
     }
 
     // Update is called once per frame
     void Update()
     {
         if(activeTool) {
-            SelectedToolPane.sprite = GetSprite(activeTool);
+            SelectedToolPane.sprite = PrefabPreviews[activeToolIndex];
             SelectedToolPane.gameObject.SetActive(true);
             SandBoxArea.EnableSelection(true);
             Selectable.ToggleInteractable(false);
         } else {
-            SelectedToolPane.gameObject.SetActive(false);
+            SelectedToolPane.sprite = MoveSelected;
             SandBoxArea.EnableSelection(false);
             Selectable.ToggleInteractable(true);
         }

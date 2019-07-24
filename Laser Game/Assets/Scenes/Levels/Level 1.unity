@@ -133,6 +133,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameUI
       objectReference: {fileID: 0}
+    - target: {fileID: 1774066703077037294, guid: 687fda9d5c7ec884ba14f83495f5a264,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1774066703077037266, guid: 687fda9d5c7ec884ba14f83495f5a264,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1651,26 +1656,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: 2DMirror
       objectReference: {fileID: 0}
-    - target: {fileID: 73910869031113994, guid: c57974eee0d42c54cb65062b7bda0be3,
-        type: 3}
-      propertyPath: InteractableArea
-      value: 
-      objectReference: {fileID: 1294805943}
-    - target: {fileID: 73910869031113994, guid: c57974eee0d42c54cb65062b7bda0be3,
-        type: 3}
-      propertyPath: rend
-      value: 
-      objectReference: {fileID: 661896460}
-    - target: {fileID: 73910869031113994, guid: c57974eee0d42c54cb65062b7bda0be3,
-        type: 3}
-      propertyPath: rotation_speed
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 2533747958544606624, guid: c57974eee0d42c54cb65062b7bda0be3,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2656238231331256551, guid: c57974eee0d42c54cb65062b7bda0be3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1741,6 +1726,26 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 73910869031113994, guid: c57974eee0d42c54cb65062b7bda0be3,
+        type: 3}
+      propertyPath: InteractableArea
+      value: 
+      objectReference: {fileID: 1294805943}
+    - target: {fileID: 73910869031113994, guid: c57974eee0d42c54cb65062b7bda0be3,
+        type: 3}
+      propertyPath: rend
+      value: 
+      objectReference: {fileID: 661896460}
+    - target: {fileID: 73910869031113994, guid: c57974eee0d42c54cb65062b7bda0be3,
+        type: 3}
+      propertyPath: rotation_speed
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2533747958544606624, guid: c57974eee0d42c54cb65062b7bda0be3,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2533747958544606624, guid: c57974eee0d42c54cb65062b7bda0be3, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c57974eee0d42c54cb65062b7bda0be3, type: 3}
@@ -1761,21 +1766,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: 2DMirror (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 73910869031113994, guid: c57974eee0d42c54cb65062b7bda0be3,
-        type: 3}
-      propertyPath: InteractableArea
-      value: 
-      objectReference: {fileID: 1863135443}
-    - target: {fileID: 73910869031113994, guid: c57974eee0d42c54cb65062b7bda0be3,
-        type: 3}
-      propertyPath: rend
-      value: 
-      objectReference: {fileID: 716428063}
-    - target: {fileID: 73910869031113994, guid: c57974eee0d42c54cb65062b7bda0be3,
-        type: 3}
-      propertyPath: rotation_speed
-      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 2656238231331256551, guid: c57974eee0d42c54cb65062b7bda0be3,
         type: 3}
@@ -1846,6 +1836,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsTrigger
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 73910869031113994, guid: c57974eee0d42c54cb65062b7bda0be3,
+        type: 3}
+      propertyPath: InteractableArea
+      value: 
+      objectReference: {fileID: 1863135443}
+    - target: {fileID: 73910869031113994, guid: c57974eee0d42c54cb65062b7bda0be3,
+        type: 3}
+      propertyPath: rend
+      value: 
+      objectReference: {fileID: 716428063}
+    - target: {fileID: 73910869031113994, guid: c57974eee0d42c54cb65062b7bda0be3,
+        type: 3}
+      propertyPath: rotation_speed
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2533747958544606624, guid: c57974eee0d42c54cb65062b7bda0be3, type: 3}

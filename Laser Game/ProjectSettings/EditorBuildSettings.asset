@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main Menu.unity
     guid: 716fa00e0742b224e8a8cf2dfc73b192
+  - enabled: 1
+    path: Assets/Scenes/Level Select.unity
+    guid: 69ff381872b02664ca6ce86412cd7c63
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
@@ -25,11 +28,38 @@ EditorBuildSettings:
     guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Levels/Level 3.unity
-    guid: c94d30e79c4ffad44ab9911436eea242
+    guid: 7aa519f97393447fe8ba88bc7b86acf6
   - enabled: 1
     path: Assets/Scenes/Levels/Level 4.unity
-    guid: 15469f9f5f0ff6545839e94e522eb233
+    guid: c94d30e79c4ffad44ab9911436eea242
   - enabled: 1
     path: Assets/Scenes/Levels/Level 5.unity
+    guid: 0c9a3469d6af84cdcbdfc5fbf4942d5c
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level 6.unity
+    guid: a6be9890e040b47769b280088f874053
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level 7.unity
+    guid: 15469f9f5f0ff6545839e94e522eb233
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level 8.unity
     guid: 9b29233fa4b69324eabe04981fd5ce43
+  - enabled: 1
+    path: Assets/Scenes/New Levels/Level 9.unity
+    guid: d6acc6a4a6eb346d39633999b1b40caa
+  - enabled: 1
+    path: Assets/Scenes/New Levels/Level 10.unity
+    guid: 93c9fb86bd1754c74895f51e6f5f931b
+  - enabled: 1
+    path: Assets/Scenes/New Levels/Level 11.unity
+    guid: 4d0169a538e5e454c8bb7755f489457b
+  - enabled: 1
+    path: Assets/Scenes/New Levels/Level 12.unity
+    guid: 3e7db79cc1d3a46fe9e88e356b0ce057
+  - enabled: 1
+    path: Assets/Scenes/New Levels/Level 13.unity
+    guid: 2e0e2239881d64bb08902b4df405b339
+  - enabled: 1
+    path: Assets/Scenes/SandBox.unity
+    guid: 67755324a3230be45af251b21dc702d0
   m_configObjects: {}
