@@ -25,12 +25,14 @@ public class SandBoxArea : MonoBehaviour
         if(!currTool) {
             if(SandboxToolPanel.activeTool) {
                 currTool = Instantiate(SandboxToolPanel.activeTool, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
+                currTool.transform.localScale = Vector3.Scale(currTool.transform.localScale, new Vector3(0.5f, 0.5f, 1f));
                 currTool.GetComponent<Selectable>().InteractableArea = GetComponent<SpriteRenderer>();
             }
         } else {
             if(SandboxToolPanel.activeTool) {
                 Destroy(currTool);
                 currTool = Instantiate(SandboxToolPanel.activeTool, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
+                currTool.transform.localScale = Vector3.Scale(currTool.transform.localScale, new Vector3(0.5f, 0.5f, 1f));
                 currTool.GetComponent<Selectable>().InteractableArea = GetComponent<SpriteRenderer>();
             }
         }
