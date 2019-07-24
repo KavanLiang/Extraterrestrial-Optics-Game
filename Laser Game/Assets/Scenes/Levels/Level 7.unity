@@ -457,8 +457,25 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4752099081078582469, guid: 687fda9d5c7ec884ba14f83495f5a264,
+        type: 3}
+      propertyPath: sb
+      value: 
+      objectReference: {fileID: 192748147}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 687fda9d5c7ec884ba14f83495f5a264, type: 3}
+--- !u!114 &192748147 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8418754294406064846, guid: 687fda9d5c7ec884ba14f83495f5a264,
+    type: 3}
+  m_PrefabInstance: {fileID: 192748146}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a4db7a114972834c8e4117be1d82ba3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &352814096
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -916,7 +933,6 @@ TilemapRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
-  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1571,7 +1587,6 @@ TilemapRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
-  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
