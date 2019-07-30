@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8975064316902097840}
   - component: {fileID: 73910869031113994}
   - component: {fileID: 2533747958544606624}
+  - component: {fileID: 5120053206323552478}
   m_Layer: 0
   m_Name: 2DMirror
   m_TagString: mirror
@@ -147,3 +148,19 @@ VFXRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &5120053206323552478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2656238231331256568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9dc92b6e97f5bd46a330ad19516d464, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  label: 2D Mirror
+  text:
+  - text: 2D mirrors reflect light and, by extension, lasers. Use them to redirect
+      lasers as necessary.

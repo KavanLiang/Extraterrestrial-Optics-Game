@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8706848103813496124}
   - component: {fileID: 1425894107930906859}
   - component: {fileID: 1425894107930906858}
+  - component: {fileID: 8480463916158738500}
   m_Layer: 0
   m_Name: ConcaveMirror 1
   m_TagString: mirror
@@ -108,3 +109,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InteractableArea: {fileID: 0}
   ts: {fileID: 0}
+--- !u!114 &8480463916158738500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6982873229174245856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9dc92b6e97f5bd46a330ad19516d464, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  label: Curved Mirrors
+  text:
+  - text: When used in the concave orientation, any incident ray travelling parallel
+      to the principal axis on the way to the mirror will pass through the focal
+      point upon reflection.
+  - text: Likewise, any incident ray travelling through the focal point on the way
+      to the mirror will travel parallel to the principal axis upon reflection.
+  - text: 'When used in the convex orientation, any incident ray travelling parallel
+      to the principal axis will reflect in such a way that its extension will travel
+      through the focal point. '
+  - text: Furthermore, any incident ray travelling towards the mirror in such a way
+      that its extension passes through the focal point will reflect and travel parallel
+      to the principal axis.

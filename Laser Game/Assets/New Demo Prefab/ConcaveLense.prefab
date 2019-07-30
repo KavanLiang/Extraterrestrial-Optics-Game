@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2919999047752015153}
   - component: {fileID: 2919999047752015152}
   - component: {fileID: 1965236623915729122}
+  - component: {fileID: 6817805199780546589}
   m_Layer: 0
   m_Name: ConcaveLense
   m_TagString: squarePrism
@@ -108,3 +109,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InteractableArea: {fileID: 0}
   ts: {fileID: 0}
+--- !u!114 &6817805199780546589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2919999047752015155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9dc92b6e97f5bd46a330ad19516d464, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  label: Concave Lens
+  text:
+  - text: Concave lenses can be used to diverge incoming light rays.
+  - text: Incident rays that travel parallel to the principal axis on the way to
+      the lens will appear to originate from the principal focus upon being refracted.

@@ -176,6 +176,7 @@ GameObject:
   - component: {fileID: 6719225987974893096}
   - component: {fileID: 7097094043552260854}
   - component: {fileID: 8968347366224058603}
+  - component: {fileID: -2417395626261279301}
   m_Layer: 0
   m_Name: Alien
   m_TagString: enemyTag
@@ -273,6 +274,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.93794584, y: 2.3829312, z: 1}
   m_Center: {x: 1.0061715, y: 0.4255178, z: 0}
+--- !u!114 &-2417395626261279301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6931042193845277691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9dc92b6e97f5bd46a330ad19516d464, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  label: Alien
+  text:
+  - text: This is an Alien. Eliminate all aliens with the laser to clear the level.
 --- !u!1 &6931042195016753682
 GameObject:
   m_ObjectHideFlags: 0

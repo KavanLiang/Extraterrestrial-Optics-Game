@@ -1,5 +1,21 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &5423269754870679025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2668251016287045497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9dc92b6e97f5bd46a330ad19516d464, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  label: 2D Mirror
+  text:
+  - text: 2D mirrors reflect light and, by extension, lasers. Use them to redirect
+      lasers as necessary.
 --- !u!1001 &133791532289556353
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -84,3 +100,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c57974eee0d42c54cb65062b7bda0be3, type: 3}
+--- !u!1 &2668251016287045497 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2656238231331256568, guid: c57974eee0d42c54cb65062b7bda0be3,
+    type: 3}
+  m_PrefabInstance: {fileID: 133791532289556353}
+  m_PrefabAsset: {fileID: 0}

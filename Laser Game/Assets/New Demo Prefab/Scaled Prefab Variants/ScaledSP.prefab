@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6468481288970895476}
   - component: {fileID: 1705436581423685948}
   - component: {fileID: 4821609431732209753}
+  - component: {fileID: -2757715386292587179}
   m_Layer: 0
   m_Name: ScaledSP
   m_TagString: squarePrism
@@ -109,3 +110,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InteractableArea: {fileID: 0}
   ts: {fileID: 0}
+--- !u!114 &-2757715386292587179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6468481288970895467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9dc92b6e97f5bd46a330ad19516d464, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  label: Prism
+  text:
+  - text: Prisms refract incoming light based on the refractive index of a medium
+      and the wavelength of the aforementioned light.
+  - text: 'Total internal refraction can occur when the incident angle is greater
+      than a certain threshold for a given medium called the critical angle. Experiment
+      with different incident angles yourself. '

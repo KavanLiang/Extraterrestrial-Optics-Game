@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4239632588258254990}
   - component: {fileID: 4239632588258254989}
   - component: {fileID: 4320674152828568365}
+  - component: {fileID: -8781139050632956669}
   m_Layer: 0
   m_Name: convexLense
   m_TagString: squarePrism
@@ -107,5 +108,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InteractableArea: {fileID: 0}
-  rend: {fileID: 0}
-  rotation_speed: 100
+  ts: {fileID: 0}
+--- !u!114 &-8781139050632956669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4239632588258255025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9dc92b6e97f5bd46a330ad19516d464, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  label: Convex Lens
+  text:
+  - text: Convex lenses can be used to converge incoming light rays.
+  - text: Any incident ray traveling parallel to the principal axis of a convex lens
+      will refract and travel through the focal point opposite the lens.
+  - text: Likewise, any incident ray traveling through the focal point on the way
+      to the lens will refract and travel parallel to the principal axis upon exiting
+      the lens.
