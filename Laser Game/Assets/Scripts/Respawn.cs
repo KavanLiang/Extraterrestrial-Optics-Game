@@ -14,7 +14,7 @@ public class Respawn : MonoBehaviour
     void Awake() {
         if(Instance == null) {
             Instance = this;
-            enemy.GetComponent<AlienController>().lm = levelManager;
+            Instance.enemy.GetComponent<AlienController>().lm = levelManager;
             DontDestroyOnLoad(this.gameObject);
         } else {
             Destroy(this.gameObject);
@@ -32,6 +32,6 @@ public class Respawn : MonoBehaviour
         while(Laser.isShooting()) {
             yield return new WaitForSeconds(1.5f);
         }
-        Instantiate(enemy, pos, rot);
+        Instantiate(Instance.enemy, pos, rot);
     }
 }
