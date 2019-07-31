@@ -8,14 +8,17 @@ public class AlienController : MonoBehaviour {
 	private Transform initialTransform;
 	private Quaternion initialRot;
 	public bool toRespawn;
+	private bool spawning;
 
 	public void Start() {
 		initialTransform = transform;
+		spawning = false;
 	}
 	
 	public void kill() {
-		if(toRespawn) {
+		if(toRespawn && !spawning) {
 			Respawn.RespawnEnemy(gameObject);
+			spawning = true;
 		}
 		GameObject particles = Instantiate(particlePrefab, transform.position, Quaternion.identity);
 		lm.decrementEnemies();
