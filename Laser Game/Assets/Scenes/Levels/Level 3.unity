@@ -406,8 +406,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   label: Hint
   text:
-  - text: 'Reversely, if a ray passes though the focal point, then the reflected
-      ray will be parallel. '
+  - text: How do you make a parallel ray with that mirror?
 --- !u!212 &190375573
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -422,7 +421,6 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -518,7 +516,6 @@ TilemapRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
-  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -4699,6 +4696,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3761326486146105697, guid: f37ee4f5b8269e54787203121a2da659,
+        type: 3}
+      propertyPath: m_Name
+      value: LevelManager
+      objectReference: {fileID: 0}
     - target: {fileID: 3761326486146105696, guid: f37ee4f5b8269e54787203121a2da659,
         type: 3}
       propertyPath: winUI
@@ -4708,11 +4710,6 @@ PrefabInstance:
         type: 3}
       propertyPath: TotalEnemies
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3761326486146105697, guid: f37ee4f5b8269e54787203121a2da659,
-        type: 3}
-      propertyPath: m_Name
-      value: LevelManager
       objectReference: {fileID: 0}
     - target: {fileID: 3761326486146105699, guid: f37ee4f5b8269e54787203121a2da659,
         type: 3}
@@ -4835,7 +4832,6 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -4892,11 +4888,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 62425028782795403, guid: e6f0ab62a8bb13541b36cf6bce38c7c5,
-        type: 3}
-      propertyPath: InteractableArea
-      value: 
-      objectReference: {fileID: 562380146}
     - target: {fileID: 2668251016287045497, guid: e6f0ab62a8bb13541b36cf6bce38c7c5,
         type: 3}
       propertyPath: m_Name
@@ -4967,6 +4958,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 2.503249
       objectReference: {fileID: 0}
+    - target: {fileID: 62425028782795403, guid: e6f0ab62a8bb13541b36cf6bce38c7c5,
+        type: 3}
+      propertyPath: InteractableArea
+      value: 
+      objectReference: {fileID: 562380146}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6f0ab62a8bb13541b36cf6bce38c7c5, type: 3}
 --- !u!212 &562380146 stripped
@@ -5205,11 +5201,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: InteractableArea (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 4642099982626007014, guid: 67a2766bb62664e4c84f4c3550fabd3a,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4642099982626007009, guid: 67a2766bb62664e4c84f4c3550fabd3a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5274,6 +5265,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 0.9636848
+      objectReference: {fileID: 0}
+    - target: {fileID: 4642099982626007014, guid: 67a2766bb62664e4c84f4c3550fabd3a,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67a2766bb62664e4c84f4c3550fabd3a, type: 3}
@@ -5579,7 +5575,6 @@ TilemapRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
-  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -5896,11 +5891,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 62425028782795403, guid: e6f0ab62a8bb13541b36cf6bce38c7c5,
-        type: 3}
-      propertyPath: InteractableArea
-      value: 
-      objectReference: {fileID: 562380146}
     - target: {fileID: 2668251016287045497, guid: e6f0ab62a8bb13541b36cf6bce38c7c5,
         type: 3}
       propertyPath: m_Name
@@ -5971,6 +5961,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 2.503249
       objectReference: {fileID: 0}
+    - target: {fileID: 62425028782795403, guid: e6f0ab62a8bb13541b36cf6bce38c7c5,
+        type: 3}
+      propertyPath: InteractableArea
+      value: 
+      objectReference: {fileID: 562380146}
     m_RemovedComponents:
     - {fileID: 62425028782795403, guid: e6f0ab62a8bb13541b36cf6bce38c7c5, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e6f0ab62a8bb13541b36cf6bce38c7c5, type: 3}

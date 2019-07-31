@@ -425,7 +425,6 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -602,7 +601,6 @@ TilemapRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
-  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -4285,6 +4283,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3761326486146105697, guid: f37ee4f5b8269e54787203121a2da659,
+        type: 3}
+      propertyPath: m_Name
+      value: LevelManager
+      objectReference: {fileID: 0}
     - target: {fileID: 3761326486146105696, guid: f37ee4f5b8269e54787203121a2da659,
         type: 3}
       propertyPath: winUI
@@ -4294,11 +4297,6 @@ PrefabInstance:
         type: 3}
       propertyPath: TotalEnemies
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3761326486146105697, guid: f37ee4f5b8269e54787203121a2da659,
-        type: 3}
-      propertyPath: m_Name
-      value: LevelManager
       objectReference: {fileID: 0}
     - target: {fileID: 3761326486146105699, guid: f37ee4f5b8269e54787203121a2da659,
         type: 3}
@@ -4381,11 +4379,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: InteractableArea
       objectReference: {fileID: 0}
-    - target: {fileID: 4642099982626007014, guid: 67a2766bb62664e4c84f4c3550fabd3a,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4642099982626007009, guid: 67a2766bb62664e4c84f4c3550fabd3a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4450,6 +4443,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 1.4510465
+      objectReference: {fileID: 0}
+    - target: {fileID: 4642099982626007014, guid: 67a2766bb62664e4c84f4c3550fabd3a,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67a2766bb62664e4c84f4c3550fabd3a, type: 3}
@@ -4917,7 +4915,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   label: Hint
   text:
-  - text: 'Convex lens can also be used to change the path of light. '
+  - text: Smart usage of the convex lens is probably what you're looking for.
 --- !u!212 &1461471517
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4932,7 +4930,6 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -5042,7 +5039,6 @@ TilemapRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
-  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -5997,6 +5993,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ScaledCVL
       objectReference: {fileID: 0}
+    - target: {fileID: 490163782681287321, guid: a31599c1bc102584588b273a578df396,
+        type: 3}
+      propertyPath: InteractableArea
+      value: 
+      objectReference: {fileID: 1951799135}
     - target: {fileID: 571188033030224184, guid: a31599c1bc102584588b273a578df396,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6062,11 +6063,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1.0136
       objectReference: {fileID: 0}
-    - target: {fileID: 490163782681287321, guid: a31599c1bc102584588b273a578df396,
-        type: 3}
-      propertyPath: InteractableArea
-      value: 
-      objectReference: {fileID: 1951799135}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a31599c1bc102584588b273a578df396, type: 3}
 --- !u!1001 &1951799134
@@ -6080,11 +6076,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: InteractableArea (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4642099982626007014, guid: 67a2766bb62664e4c84f4c3550fabd3a,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4642099982626007009, guid: 67a2766bb62664e4c84f4c3550fabd3a,
         type: 3}
@@ -6150,6 +6141,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 1.9952066
+      objectReference: {fileID: 0}
+    - target: {fileID: 4642099982626007014, guid: 67a2766bb62664e4c84f4c3550fabd3a,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67a2766bb62664e4c84f4c3550fabd3a, type: 3}

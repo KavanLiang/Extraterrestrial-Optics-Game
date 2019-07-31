@@ -297,6 +297,36 @@ PrefabInstance:
       propertyPath: m_Name
       value: Laser (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3707957427251598234, guid: ee2dbdd07b61a3141a0d721fc5c5791d,
+        type: 3}
+      propertyPath: MaxCollisions
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3707957427251598234, guid: ee2dbdd07b61a3141a0d721fc5c5791d,
+        type: 3}
+      propertyPath: offset
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3707957427251598234, guid: ee2dbdd07b61a3141a0d721fc5c5791d,
+        type: 3}
+      propertyPath: refIndex
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3707957427251598234, guid: ee2dbdd07b61a3141a0d721fc5c5791d,
+        type: 3}
+      propertyPath: LaserColor.r
+      value: 0.5019608
+      objectReference: {fileID: 0}
+    - target: {fileID: 3707957427251598234, guid: ee2dbdd07b61a3141a0d721fc5c5791d,
+        type: 3}
+      propertyPath: LaserColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3707957427251598234, guid: ee2dbdd07b61a3141a0d721fc5c5791d,
+        type: 3}
+      propertyPath: LaserColor.b
+      value: 0.5019608
+      objectReference: {fileID: 0}
     - target: {fileID: 2202851226227150683, guid: ee2dbdd07b61a3141a0d721fc5c5791d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -351,36 +381,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3707957427251598234, guid: ee2dbdd07b61a3141a0d721fc5c5791d,
-        type: 3}
-      propertyPath: MaxCollisions
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3707957427251598234, guid: ee2dbdd07b61a3141a0d721fc5c5791d,
-        type: 3}
-      propertyPath: offset
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3707957427251598234, guid: ee2dbdd07b61a3141a0d721fc5c5791d,
-        type: 3}
-      propertyPath: refIndex
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3707957427251598234, guid: ee2dbdd07b61a3141a0d721fc5c5791d,
-        type: 3}
-      propertyPath: LaserColor.r
-      value: 0.5019608
-      objectReference: {fileID: 0}
-    - target: {fileID: 3707957427251598234, guid: ee2dbdd07b61a3141a0d721fc5c5791d,
-        type: 3}
-      propertyPath: LaserColor.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3707957427251598234, guid: ee2dbdd07b61a3141a0d721fc5c5791d,
-        type: 3}
-      propertyPath: LaserColor.b
-      value: 0.5019608
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee2dbdd07b61a3141a0d721fc5c5791d, type: 3}
@@ -557,7 +557,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: Convex Lenses
   m_isRightToLeft: 0
@@ -717,7 +717,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   label: Hint
   text:
-  - text: 'The convex lens contains some useful information. '
+  - text: 'The convex lens may contain some useful information. '
 --- !u!212 &1190447052
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -732,7 +732,6 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -789,6 +788,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3761326486146105697, guid: f37ee4f5b8269e54787203121a2da659,
+        type: 3}
+      propertyPath: m_Name
+      value: LevelManager
+      objectReference: {fileID: 0}
     - target: {fileID: 3761326486146105696, guid: f37ee4f5b8269e54787203121a2da659,
         type: 3}
       propertyPath: winUI
@@ -798,11 +802,6 @@ PrefabInstance:
         type: 3}
       propertyPath: TotalEnemies
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3761326486146105697, guid: f37ee4f5b8269e54787203121a2da659,
-        type: 3}
-      propertyPath: m_Name
-      value: LevelManager
       objectReference: {fileID: 0}
     - target: {fileID: 3761326486146105699, guid: f37ee4f5b8269e54787203121a2da659,
         type: 3}
@@ -916,7 +915,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: FoCUS RAYS
   m_isRightToLeft: 0
@@ -1030,6 +1029,36 @@ PrefabInstance:
       propertyPath: m_Name
       value: Laser (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3707957427251598234, guid: ee2dbdd07b61a3141a0d721fc5c5791d,
+        type: 3}
+      propertyPath: MaxCollisions
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3707957427251598234, guid: ee2dbdd07b61a3141a0d721fc5c5791d,
+        type: 3}
+      propertyPath: offset
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3707957427251598234, guid: ee2dbdd07b61a3141a0d721fc5c5791d,
+        type: 3}
+      propertyPath: refIndex
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3707957427251598234, guid: ee2dbdd07b61a3141a0d721fc5c5791d,
+        type: 3}
+      propertyPath: LaserColor.r
+      value: 0.5019608
+      objectReference: {fileID: 0}
+    - target: {fileID: 3707957427251598234, guid: ee2dbdd07b61a3141a0d721fc5c5791d,
+        type: 3}
+      propertyPath: LaserColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3707957427251598234, guid: ee2dbdd07b61a3141a0d721fc5c5791d,
+        type: 3}
+      propertyPath: LaserColor.b
+      value: 0.5019608
+      objectReference: {fileID: 0}
     - target: {fileID: 2202851226227150683, guid: ee2dbdd07b61a3141a0d721fc5c5791d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1084,36 +1113,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3707957427251598234, guid: ee2dbdd07b61a3141a0d721fc5c5791d,
-        type: 3}
-      propertyPath: MaxCollisions
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3707957427251598234, guid: ee2dbdd07b61a3141a0d721fc5c5791d,
-        type: 3}
-      propertyPath: offset
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3707957427251598234, guid: ee2dbdd07b61a3141a0d721fc5c5791d,
-        type: 3}
-      propertyPath: refIndex
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3707957427251598234, guid: ee2dbdd07b61a3141a0d721fc5c5791d,
-        type: 3}
-      propertyPath: LaserColor.r
-      value: 0.5019608
-      objectReference: {fileID: 0}
-    - target: {fileID: 3707957427251598234, guid: ee2dbdd07b61a3141a0d721fc5c5791d,
-        type: 3}
-      propertyPath: LaserColor.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3707957427251598234, guid: ee2dbdd07b61a3141a0d721fc5c5791d,
-        type: 3}
-      propertyPath: LaserColor.b
-      value: 0.5019608
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee2dbdd07b61a3141a0d721fc5c5791d, type: 3}
@@ -1241,7 +1240,6 @@ TilemapRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
-  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -5365,6 +5363,36 @@ PrefabInstance:
       propertyPath: m_Name
       value: Laser (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 3707957427251598234, guid: ee2dbdd07b61a3141a0d721fc5c5791d,
+        type: 3}
+      propertyPath: MaxCollisions
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3707957427251598234, guid: ee2dbdd07b61a3141a0d721fc5c5791d,
+        type: 3}
+      propertyPath: offset
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3707957427251598234, guid: ee2dbdd07b61a3141a0d721fc5c5791d,
+        type: 3}
+      propertyPath: refIndex
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3707957427251598234, guid: ee2dbdd07b61a3141a0d721fc5c5791d,
+        type: 3}
+      propertyPath: LaserColor.r
+      value: 0.5019608
+      objectReference: {fileID: 0}
+    - target: {fileID: 3707957427251598234, guid: ee2dbdd07b61a3141a0d721fc5c5791d,
+        type: 3}
+      propertyPath: LaserColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3707957427251598234, guid: ee2dbdd07b61a3141a0d721fc5c5791d,
+        type: 3}
+      propertyPath: LaserColor.b
+      value: 0.5019608
+      objectReference: {fileID: 0}
     - target: {fileID: 2202851226227150683, guid: ee2dbdd07b61a3141a0d721fc5c5791d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5419,36 +5447,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3707957427251598234, guid: ee2dbdd07b61a3141a0d721fc5c5791d,
-        type: 3}
-      propertyPath: MaxCollisions
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3707957427251598234, guid: ee2dbdd07b61a3141a0d721fc5c5791d,
-        type: 3}
-      propertyPath: offset
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3707957427251598234, guid: ee2dbdd07b61a3141a0d721fc5c5791d,
-        type: 3}
-      propertyPath: refIndex
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3707957427251598234, guid: ee2dbdd07b61a3141a0d721fc5c5791d,
-        type: 3}
-      propertyPath: LaserColor.r
-      value: 0.5019608
-      objectReference: {fileID: 0}
-    - target: {fileID: 3707957427251598234, guid: ee2dbdd07b61a3141a0d721fc5c5791d,
-        type: 3}
-      propertyPath: LaserColor.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3707957427251598234, guid: ee2dbdd07b61a3141a0d721fc5c5791d,
-        type: 3}
-      propertyPath: LaserColor.b
-      value: 0.5019608
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee2dbdd07b61a3141a0d721fc5c5791d, type: 3}

@@ -9,6 +9,7 @@ public class LevelManager : MonoBehaviour
     public int TotalEnemies;
     public GameObject winUI;
     private int numEnemies;
+    public bool infiniteSandbox;
 
     public Button cont;
     
@@ -25,13 +26,15 @@ public class LevelManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (numEnemies <= 0)
-        {
-            if(!cont) {
-                LevelComplete();
-            } else {
-                cont.interactable = true;
-                cont.onClick.AddListener(() => LevelComplete());
+        if(!infiniteSandbox) {
+            if (numEnemies <= 0)
+            {
+                if(!cont) {
+                    LevelComplete();
+                } else {
+                    cont.interactable = true;
+                    cont.onClick.AddListener(() => LevelComplete());
+                }
             }
         }
     }

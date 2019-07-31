@@ -176,7 +176,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: Total
   m_isRightToLeft: 0
@@ -700,7 +700,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: InternAL
   m_isRightToLeft: 0
@@ -890,7 +890,6 @@ TilemapRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
-  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1837,6 +1836,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3761326486146105697, guid: f37ee4f5b8269e54787203121a2da659,
+        type: 3}
+      propertyPath: m_Name
+      value: LevelManager
+      objectReference: {fileID: 0}
     - target: {fileID: 3761326486146105696, guid: f37ee4f5b8269e54787203121a2da659,
         type: 3}
       propertyPath: winUI
@@ -1846,11 +1850,6 @@ PrefabInstance:
         type: 3}
       propertyPath: TotalEnemies
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3761326486146105697, guid: f37ee4f5b8269e54787203121a2da659,
-        type: 3}
-      propertyPath: m_Name
-      value: LevelManager
       objectReference: {fileID: 0}
     - target: {fileID: 3761326486146105699, guid: f37ee4f5b8269e54787203121a2da659,
         type: 3}
@@ -1921,6 +1920,36 @@ PrefabInstance:
       propertyPath: m_Name
       value: Laser
       objectReference: {fileID: 0}
+    - target: {fileID: 3707957427251598234, guid: ee2dbdd07b61a3141a0d721fc5c5791d,
+        type: 3}
+      propertyPath: MaxCollisions
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3707957427251598234, guid: ee2dbdd07b61a3141a0d721fc5c5791d,
+        type: 3}
+      propertyPath: offset
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3707957427251598234, guid: ee2dbdd07b61a3141a0d721fc5c5791d,
+        type: 3}
+      propertyPath: refIndex
+      value: 1.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 3707957427251598234, guid: ee2dbdd07b61a3141a0d721fc5c5791d,
+        type: 3}
+      propertyPath: LaserColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3707957427251598234, guid: ee2dbdd07b61a3141a0d721fc5c5791d,
+        type: 3}
+      propertyPath: LaserColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3707957427251598234, guid: ee2dbdd07b61a3141a0d721fc5c5791d,
+        type: 3}
+      propertyPath: LaserColor.b
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2202851226227150683, guid: ee2dbdd07b61a3141a0d721fc5c5791d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1974,36 +2003,6 @@ PrefabInstance:
     - target: {fileID: 2202851226227150683, guid: ee2dbdd07b61a3141a0d721fc5c5791d,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3707957427251598234, guid: ee2dbdd07b61a3141a0d721fc5c5791d,
-        type: 3}
-      propertyPath: MaxCollisions
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 3707957427251598234, guid: ee2dbdd07b61a3141a0d721fc5c5791d,
-        type: 3}
-      propertyPath: offset
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3707957427251598234, guid: ee2dbdd07b61a3141a0d721fc5c5791d,
-        type: 3}
-      propertyPath: refIndex
-      value: 1.33
-      objectReference: {fileID: 0}
-    - target: {fileID: 3707957427251598234, guid: ee2dbdd07b61a3141a0d721fc5c5791d,
-        type: 3}
-      propertyPath: LaserColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3707957427251598234, guid: ee2dbdd07b61a3141a0d721fc5c5791d,
-        type: 3}
-      propertyPath: LaserColor.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3707957427251598234, guid: ee2dbdd07b61a3141a0d721fc5c5791d,
-        type: 3}
-      propertyPath: LaserColor.b
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -2120,7 +2119,6 @@ TilemapRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
-  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -6188,7 +6186,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   label: Hint
   text:
-  - text: 'Do not forget you can also change the laser colors. '
+  - text: Total internal reflection is a phenomenon that occurs when the angle of
+      incidence is greater than the critical angle.
+  - text: The critical angle of a medium is dependent on its index of refraction.
+  - text: It may help if you alter the wavelength of the laser to produce the results
+      you want.
 --- !u!212 &2137283290
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6203,7 +6205,6 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -6308,7 +6309,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: REFRACTION
   m_isRightToLeft: 0

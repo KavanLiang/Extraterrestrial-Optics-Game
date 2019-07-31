@@ -354,7 +354,6 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -579,7 +578,6 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -724,7 +722,6 @@ TilemapRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
-  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1537,7 +1534,6 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1632,7 +1628,6 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1687,30 +1682,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 73910869031113994, guid: c57974eee0d42c54cb65062b7bda0be3,
-        type: 3}
-      propertyPath: InteractableArea
-      value: 
-      objectReference: {fileID: 1294805943}
-    - target: {fileID: 73910869031113994, guid: c57974eee0d42c54cb65062b7bda0be3,
-        type: 3}
-      propertyPath: rend
-      value: 
-      objectReference: {fileID: 661896460}
-    - target: {fileID: 73910869031113994, guid: c57974eee0d42c54cb65062b7bda0be3,
-        type: 3}
-      propertyPath: rotation_speed
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 2656238231331256568, guid: c57974eee0d42c54cb65062b7bda0be3,
         type: 3}
       propertyPath: m_Name
       value: 2DMirror
-      objectReference: {fileID: 0}
-    - target: {fileID: 2533747958544606624, guid: c57974eee0d42c54cb65062b7bda0be3,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2656238231331256551, guid: c57974eee0d42c54cb65062b7bda0be3,
         type: 3}
@@ -1782,6 +1757,26 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 73910869031113994, guid: c57974eee0d42c54cb65062b7bda0be3,
+        type: 3}
+      propertyPath: InteractableArea
+      value: 
+      objectReference: {fileID: 1294805943}
+    - target: {fileID: 73910869031113994, guid: c57974eee0d42c54cb65062b7bda0be3,
+        type: 3}
+      propertyPath: rend
+      value: 
+      objectReference: {fileID: 661896460}
+    - target: {fileID: 73910869031113994, guid: c57974eee0d42c54cb65062b7bda0be3,
+        type: 3}
+      propertyPath: rotation_speed
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2533747958544606624, guid: c57974eee0d42c54cb65062b7bda0be3,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2533747958544606624, guid: c57974eee0d42c54cb65062b7bda0be3, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c57974eee0d42c54cb65062b7bda0be3, type: 3}
@@ -1798,21 +1793,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 73910869031113994, guid: c57974eee0d42c54cb65062b7bda0be3,
-        type: 3}
-      propertyPath: InteractableArea
-      value: 
-      objectReference: {fileID: 1863135443}
-    - target: {fileID: 73910869031113994, guid: c57974eee0d42c54cb65062b7bda0be3,
-        type: 3}
-      propertyPath: rend
-      value: 
-      objectReference: {fileID: 716428063}
-    - target: {fileID: 73910869031113994, guid: c57974eee0d42c54cb65062b7bda0be3,
-        type: 3}
-      propertyPath: rotation_speed
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 2656238231331256568, guid: c57974eee0d42c54cb65062b7bda0be3,
         type: 3}
       propertyPath: m_Name
@@ -1887,6 +1867,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsTrigger
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 73910869031113994, guid: c57974eee0d42c54cb65062b7bda0be3,
+        type: 3}
+      propertyPath: InteractableArea
+      value: 
+      objectReference: {fileID: 1863135443}
+    - target: {fileID: 73910869031113994, guid: c57974eee0d42c54cb65062b7bda0be3,
+        type: 3}
+      propertyPath: rend
+      value: 
+      objectReference: {fileID: 716428063}
+    - target: {fileID: 73910869031113994, guid: c57974eee0d42c54cb65062b7bda0be3,
+        type: 3}
+      propertyPath: rotation_speed
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2533747958544606624, guid: c57974eee0d42c54cb65062b7bda0be3, type: 3}
@@ -1965,7 +1960,6 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -2042,7 +2036,6 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -2116,11 +2109,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: InteractableArea
       objectReference: {fileID: 0}
-    - target: {fileID: 4642099982626007014, guid: 67a2766bb62664e4c84f4c3550fabd3a,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4642099982626007009, guid: 67a2766bb62664e4c84f4c3550fabd3a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2186,6 +2174,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1.027943
       objectReference: {fileID: 0}
+    - target: {fileID: 4642099982626007014, guid: 67a2766bb62664e4c84f4c3550fabd3a,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67a2766bb62664e4c84f4c3550fabd3a, type: 3}
 --- !u!212 &1294805943 stripped
@@ -2239,7 +2232,6 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -2366,7 +2358,6 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -2443,9 +2434,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   label: Hint
   text:
-  - text: 'Try discover things with your mouth. A hover text will provide you with
-      information. Hit space to flip pages. '
-  - text: 'Remember to always check out the hints. '
+  - text: 'Interact with optical tools with your mouse. '
+  - text: 'Left-Click and drag to move mirrors. '
+  - text: 'Right-Click and drag to rotate mirrors. Use a larger radius of gyration
+      to make more minute adjustments. '
+  - text: Check out hints if you're stuck.
+  - text: Eliminate all the aliens to clear a level.
 --- !u!1 &1659077504
 GameObject:
   m_ObjectHideFlags: 0
@@ -2558,7 +2552,6 @@ TilemapRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
-  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -4784,11 +4777,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: InteractableArea (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 4642099982626007014, guid: 67a2766bb62664e4c84f4c3550fabd3a,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4642099982626007009, guid: 67a2766bb62664e4c84f4c3550fabd3a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4853,6 +4841,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 1.027943
+      objectReference: {fileID: 0}
+    - target: {fileID: 4642099982626007014, guid: 67a2766bb62664e4c84f4c3550fabd3a,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67a2766bb62664e4c84f4c3550fabd3a, type: 3}
@@ -4944,16 +4937,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3761326486146105696, guid: f37ee4f5b8269e54787203121a2da659,
-        type: 3}
-      propertyPath: winUI
-      value: 
-      objectReference: {fileID: 2035666515}
     - target: {fileID: 3761326486146105697, guid: f37ee4f5b8269e54787203121a2da659,
         type: 3}
       propertyPath: m_Name
       value: LevelManager
       objectReference: {fileID: 0}
+    - target: {fileID: 3761326486146105696, guid: f37ee4f5b8269e54787203121a2da659,
+        type: 3}
+      propertyPath: winUI
+      value: 
+      objectReference: {fileID: 2035666515}
     - target: {fileID: 3761326486146105699, guid: f37ee4f5b8269e54787203121a2da659,
         type: 3}
       propertyPath: m_LocalPosition.x

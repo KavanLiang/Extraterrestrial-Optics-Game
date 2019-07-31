@@ -407,6 +407,16 @@ PrefabInstance:
       propertyPath: sb
       value: 
       objectReference: {fileID: 192748147}
+    - target: {fileID: 1979240778678999686, guid: 687fda9d5c7ec884ba14f83495f5a264,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1774066701892367528, guid: 687fda9d5c7ec884ba14f83495f5a264,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4109154991188928252, guid: 687fda9d5c7ec884ba14f83495f5a264,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -451,16 +461,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1979240778678999686, guid: 687fda9d5c7ec884ba14f83495f5a264,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1774066701892367528, guid: 687fda9d5c7ec884ba14f83495f5a264,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 687fda9d5c7ec884ba14f83495f5a264, type: 3}
@@ -660,8 +660,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   label: Hint
   text:
-  - text: square prism can change the path of the ray. For most of the time, the
-      final refracted ray will be parallel to the initial ray.
+  - text: When dealing with square prisms, the final refracted ray will be parallel
+      to the initial ray in most cases.
 --- !u!212 &495397295
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -676,7 +676,6 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -807,6 +806,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3761326486146105697, guid: f37ee4f5b8269e54787203121a2da659,
+        type: 3}
+      propertyPath: m_Name
+      value: LevelManager
+      objectReference: {fileID: 0}
     - target: {fileID: 3761326486146105696, guid: f37ee4f5b8269e54787203121a2da659,
         type: 3}
       propertyPath: winUI
@@ -816,11 +820,6 @@ PrefabInstance:
         type: 3}
       propertyPath: TotalEnemies
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3761326486146105697, guid: f37ee4f5b8269e54787203121a2da659,
-        type: 3}
-      propertyPath: m_Name
-      value: LevelManager
       objectReference: {fileID: 0}
     - target: {fileID: 3761326486146105699, guid: f37ee4f5b8269e54787203121a2da659,
         type: 3}
@@ -1045,7 +1044,6 @@ TilemapRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
-  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1565,11 +1563,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4821609431732209753, guid: 3db11a14ef876ca40873b23f0ab3b17a,
-        type: 3}
-      propertyPath: InteractableArea
-      value: 
-      objectReference: {fileID: 1046661763}
     - target: {fileID: 6468481288970895467, guid: 3db11a14ef876ca40873b23f0ab3b17a,
         type: 3}
       propertyPath: m_Name
@@ -1640,6 +1633,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 1.7150507
       objectReference: {fileID: 0}
+    - target: {fileID: 4821609431732209753, guid: 3db11a14ef876ca40873b23f0ab3b17a,
+        type: 3}
+      propertyPath: InteractableArea
+      value: 
+      objectReference: {fileID: 1046661763}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3db11a14ef876ca40873b23f0ab3b17a, type: 3}
 --- !u!114 &1909013616 stripped
@@ -1700,7 +1698,6 @@ TilemapRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
-  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:

@@ -591,6 +591,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1774066702435679039}
     m_Modifications:
+    - target: {fileID: 6951576032837060603, guid: c4a0a7415b2a37d43a3525bc148be059,
+        type: 3}
+      propertyPath: m_Name
+      value: ToLS
+      objectReference: {fileID: 0}
     - target: {fileID: 4166029103911364100, guid: c4a0a7415b2a37d43a3525bc148be059,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -695,11 +700,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6951576032837060603, guid: c4a0a7415b2a37d43a3525bc148be059,
-        type: 3}
-      propertyPath: m_Name
-      value: ToLS
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4a0a7415b2a37d43a3525bc148be059, type: 3}
@@ -1311,9 +1311,8 @@ MonoBehaviour:
   label: Hint
   text:
   - text: 'Select a optical device, then click on an area to drop it. To control
-      it, hit the move buttom on the pannel. '
-  - text: You can have fun and experiment with different tools. Eliminate at least
-      3 aliens to continue.
+      it, hit the move button on the panel. '
+  - text: Experiment with different optical tools. You can leave anytime.
 --- !u!212 &745521988
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1708,18 +1707,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b5182e68fc4bd14c8253c955e7587b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1102180580 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3761326486146105696, guid: f37ee4f5b8269e54787203121a2da659,
-    type: 3}
-  m_PrefabInstance: {fileID: 1341722221}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f8da4ffa96d6614fbcb981387927a77, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1218516729
 GameObject:
   m_ObjectHideFlags: 0
@@ -1865,6 +1852,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3761326486146105697, guid: f37ee4f5b8269e54787203121a2da659,
+        type: 3}
+      propertyPath: m_Name
+      value: LevelManager
+      objectReference: {fileID: 0}
     - target: {fileID: 3761326486146105696, guid: f37ee4f5b8269e54787203121a2da659,
         type: 3}
       propertyPath: winUI
@@ -1880,10 +1872,10 @@ PrefabInstance:
       propertyPath: cont
       value: 
       objectReference: {fileID: 2023031077}
-    - target: {fileID: 3761326486146105697, guid: f37ee4f5b8269e54787203121a2da659,
+    - target: {fileID: 3761326486146105696, guid: f37ee4f5b8269e54787203121a2da659,
         type: 3}
-      propertyPath: m_Name
-      value: LevelManager
+      propertyPath: infiniteSandbox
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3761326486146105699, guid: f37ee4f5b8269e54787203121a2da659,
         type: 3}
@@ -2162,6 +2154,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2202851226227150681, guid: ee2dbdd07b61a3141a0d721fc5c5791d,
+        type: 3}
+      propertyPath: m_Name
+      value: Laser
+      objectReference: {fileID: 0}
     - target: {fileID: 3707957427251598234, guid: ee2dbdd07b61a3141a0d721fc5c5791d,
         type: 3}
       propertyPath: MaxCollisions
@@ -2196,11 +2193,6 @@ PrefabInstance:
         type: 3}
       propertyPath: laserDistance
       value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 2202851226227150681, guid: ee2dbdd07b61a3141a0d721fc5c5791d,
-        type: 3}
-      propertyPath: m_Name
-      value: Laser
       objectReference: {fileID: 0}
     - target: {fileID: 2202851226227150683, guid: ee2dbdd07b61a3141a0d721fc5c5791d,
         type: 3}
@@ -7601,7 +7593,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 4694319280079820394, guid: 5711c399053ea6b43aa28a49010915cc, type: 3}
-  levelManager: {fileID: 1102180580}
 --- !u!4 &2008606515
 Transform:
   m_ObjectHideFlags: 0
@@ -7634,7 +7625,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2023031075
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9948,6 +9939,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1774066702435679039}
     m_Modifications:
+    - target: {fileID: 7137960731629348355, guid: 812d4a1a52ba49c4fa2d7e01f87e01ae,
+        type: 3}
+      propertyPath: m_Name
+      value: HoverText
+      objectReference: {fileID: 0}
     - target: {fileID: 7137960731629348354, guid: 812d4a1a52ba49c4fa2d7e01f87e01ae,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10052,11 +10048,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7137960731629348355, guid: 812d4a1a52ba49c4fa2d7e01f87e01ae,
-        type: 3}
-      propertyPath: m_Name
-      value: HoverText
       objectReference: {fileID: 0}
     - target: {fileID: 6732919037705604355, guid: 812d4a1a52ba49c4fa2d7e01f87e01ae,
         type: 3}
