@@ -29,7 +29,7 @@ public class Respawn : MonoBehaviour
     IEnumerator REHelper(GameObject obj) {
         Vector3 pos = obj.transform.position;
         Quaternion rot = obj.transform.rotation;
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(7f);
         Instantiate(enemy, pos, rot);
     }
 }
