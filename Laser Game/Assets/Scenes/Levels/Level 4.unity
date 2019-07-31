@@ -789,11 +789,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3761326486146105697, guid: f37ee4f5b8269e54787203121a2da659,
-        type: 3}
-      propertyPath: m_Name
-      value: LevelManager
-      objectReference: {fileID: 0}
     - target: {fileID: 3761326486146105696, guid: f37ee4f5b8269e54787203121a2da659,
         type: 3}
       propertyPath: winUI
@@ -803,6 +798,11 @@ PrefabInstance:
         type: 3}
       propertyPath: TotalEnemies
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3761326486146105697, guid: f37ee4f5b8269e54787203121a2da659,
+        type: 3}
+      propertyPath: m_Name
+      value: LevelManager
       objectReference: {fileID: 0}
     - target: {fileID: 3761326486146105699, guid: f37ee4f5b8269e54787203121a2da659,
         type: 3}
@@ -5533,6 +5533,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4239632588258255025, guid: b8b5c35f84ba2284580eaeae39e2d764,
+        type: 3}
+      propertyPath: m_Name
+      value: convexLense
+      objectReference: {fileID: 0}
     - target: {fileID: 4320674152828568365, guid: b8b5c35f84ba2284580eaeae39e2d764,
         type: 3}
       propertyPath: rend
@@ -5543,11 +5548,6 @@ PrefabInstance:
       propertyPath: InteractableArea
       value: 
       objectReference: {fileID: 1839643345}
-    - target: {fileID: 4239632588258255025, guid: b8b5c35f84ba2284580eaeae39e2d764,
-        type: 3}
-      propertyPath: m_Name
-      value: convexLense
-      objectReference: {fileID: 0}
     - target: {fileID: 4239632588258254988, guid: b8b5c35f84ba2284580eaeae39e2d764,
         type: 3}
       propertyPath: m_LocalPosition.x
