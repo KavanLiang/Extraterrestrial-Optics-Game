@@ -256,7 +256,7 @@ PrefabInstance:
     - target: {fileID: 2320848957073601945, guid: 687fda9d5c7ec884ba14f83495f5a264,
         type: 3}
       propertyPath: nextLevel
-      value: Level 2
+      value: SandBox Curved Only
       objectReference: {fileID: 0}
     - target: {fileID: 7017432952424834645, guid: 687fda9d5c7ec884ba14f83495f5a264,
         type: 3}
@@ -1687,11 +1687,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2656238231331256568, guid: c57974eee0d42c54cb65062b7bda0be3,
-        type: 3}
-      propertyPath: m_Name
-      value: 2DMirror
-      objectReference: {fileID: 0}
     - target: {fileID: 73910869031113994, guid: c57974eee0d42c54cb65062b7bda0be3,
         type: 3}
       propertyPath: InteractableArea
@@ -1706,6 +1701,11 @@ PrefabInstance:
         type: 3}
       propertyPath: rotation_speed
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2656238231331256568, guid: c57974eee0d42c54cb65062b7bda0be3,
+        type: 3}
+      propertyPath: m_Name
+      value: 2DMirror
       objectReference: {fileID: 0}
     - target: {fileID: 2533747958544606624, guid: c57974eee0d42c54cb65062b7bda0be3,
         type: 3}
@@ -1798,11 +1798,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2656238231331256568, guid: c57974eee0d42c54cb65062b7bda0be3,
-        type: 3}
-      propertyPath: m_Name
-      value: 2DMirror (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 73910869031113994, guid: c57974eee0d42c54cb65062b7bda0be3,
         type: 3}
       propertyPath: InteractableArea
@@ -1817,6 +1812,11 @@ PrefabInstance:
         type: 3}
       propertyPath: rotation_speed
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2656238231331256568, guid: c57974eee0d42c54cb65062b7bda0be3,
+        type: 3}
+      propertyPath: m_Name
+      value: 2DMirror (1)
       objectReference: {fileID: 0}
     - target: {fileID: 2656238231331256551, guid: c57974eee0d42c54cb65062b7bda0be3,
         type: 3}
@@ -2111,15 +2111,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4642099982626007014, guid: 67a2766bb62664e4c84f4c3550fabd3a,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4642099982626007015, guid: 67a2766bb62664e4c84f4c3550fabd3a,
         type: 3}
       propertyPath: m_Name
       value: InteractableArea
+      objectReference: {fileID: 0}
+    - target: {fileID: 4642099982626007014, guid: 67a2766bb62664e4c84f4c3550fabd3a,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4642099982626007009, guid: 67a2766bb62664e4c84f4c3550fabd3a,
         type: 3}
@@ -4779,15 +4779,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4642099982626007014, guid: 67a2766bb62664e4c84f4c3550fabd3a,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4642099982626007015, guid: 67a2766bb62664e4c84f4c3550fabd3a,
         type: 3}
       propertyPath: m_Name
       value: InteractableArea (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4642099982626007014, guid: 67a2766bb62664e4c84f4c3550fabd3a,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4642099982626007009, guid: 67a2766bb62664e4c84f4c3550fabd3a,
         type: 3}
@@ -4944,16 +4944,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3761326486146105697, guid: f37ee4f5b8269e54787203121a2da659,
-        type: 3}
-      propertyPath: m_Name
-      value: LevelManager
-      objectReference: {fileID: 0}
     - target: {fileID: 3761326486146105696, guid: f37ee4f5b8269e54787203121a2da659,
         type: 3}
       propertyPath: winUI
       value: 
       objectReference: {fileID: 2035666515}
+    - target: {fileID: 3761326486146105697, guid: f37ee4f5b8269e54787203121a2da659,
+        type: 3}
+      propertyPath: m_Name
+      value: LevelManager
+      objectReference: {fileID: 0}
     - target: {fileID: 3761326486146105699, guid: f37ee4f5b8269e54787203121a2da659,
         type: 3}
       propertyPath: m_LocalPosition.x

@@ -2126,11 +2126,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2656238231331256568, guid: c57974eee0d42c54cb65062b7bda0be3,
-        type: 3}
-      propertyPath: m_Name
-      value: 2DMirror
-      objectReference: {fileID: 0}
     - target: {fileID: 73910869031113994, guid: c57974eee0d42c54cb65062b7bda0be3,
         type: 3}
       propertyPath: InteractableArea
@@ -2145,6 +2140,11 @@ PrefabInstance:
         type: 3}
       propertyPath: rotation_speed
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2656238231331256568, guid: c57974eee0d42c54cb65062b7bda0be3,
+        type: 3}
+      propertyPath: m_Name
+      value: 2DMirror
       objectReference: {fileID: 0}
     - target: {fileID: 2656238231331256551, guid: c57974eee0d42c54cb65062b7bda0be3,
         type: 3}
@@ -2380,16 +2380,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3761326486146105697, guid: f37ee4f5b8269e54787203121a2da659,
-        type: 3}
-      propertyPath: m_Name
-      value: LevelManager
-      objectReference: {fileID: 0}
     - target: {fileID: 3761326486146105696, guid: f37ee4f5b8269e54787203121a2da659,
         type: 3}
       propertyPath: winUI
       value: 
       objectReference: {fileID: 1783082990}
+    - target: {fileID: 3761326486146105697, guid: f37ee4f5b8269e54787203121a2da659,
+        type: 3}
+      propertyPath: m_Name
+      value: LevelManager
+      objectReference: {fileID: 0}
     - target: {fileID: 3761326486146105699, guid: f37ee4f5b8269e54787203121a2da659,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7660,8 +7660,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   label: Hint
   text:
-  - text: When a parallel ray hits the concave mirror, the reflected beam will always
-      pass through the focal point. Try make a parallel ray here with the mirror.
+  - text: How do you make the ray pass through the focal point?
 --- !u!212 &1707626818
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7918,6 +7917,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4752099081078582469, guid: 687fda9d5c7ec884ba14f83495f5a264,
+        type: 3}
+      propertyPath: sb
+      value: 
+      objectReference: {fileID: 1783082991}
     - target: {fileID: 4109154991188928252, guid: 687fda9d5c7ec884ba14f83495f5a264,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -7963,11 +7967,6 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4752099081078582469, guid: 687fda9d5c7ec884ba14f83495f5a264,
-        type: 3}
-      propertyPath: sb
-      value: 
-      objectReference: {fileID: 1783082991}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 687fda9d5c7ec884ba14f83495f5a264, type: 3}
 --- !u!1 &1783082990 stripped
