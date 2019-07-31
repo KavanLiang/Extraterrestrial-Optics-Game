@@ -13,7 +13,7 @@ public class ShowStars : MonoBehaviour
     }
 
     IEnumerator show() {
-        for(int i = 0; i < Mathf.Min(stars.Length, enc.remainingEnergy() + 1); i++) {
+        for(int i = 0; i <= Mathf.Min(stars.Length, enc.remainingEnergy() + 1); i++) {
             yield return new WaitForSeconds(delay);
             stars[i].SetActive(true);
         }
