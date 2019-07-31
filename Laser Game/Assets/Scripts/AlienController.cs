@@ -13,6 +13,9 @@ public class AlienController : MonoBehaviour {
 	public void Start() {
 		initialTransform = transform;
 		spawning = false;
+		if(toRespawn) {
+			lm = GameObject.Find("LevelManager").GetComponent<LevelManager>();
+		}
 	}
 	
 	public void kill() {

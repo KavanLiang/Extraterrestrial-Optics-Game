@@ -5,7 +5,6 @@ using UnityEngine;
 public class Respawn : MonoBehaviour
 {
     public GameObject enemy;
-    public LevelManager levelManager;
     public static Respawn Instance {
         get;
         private set;
@@ -14,7 +13,6 @@ public class Respawn : MonoBehaviour
     void Awake() {
         if(Instance == null) {
             Instance = this;
-            Instance.enemy.GetComponent<AlienController>().lm = levelManager;
         } else {
             Destroy(this.gameObject);
         }
