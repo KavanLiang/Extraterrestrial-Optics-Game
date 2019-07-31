@@ -19,7 +19,7 @@ public class Laser : MonoBehaviour
     private Color LaserColor;
     public AudioSource audio;
 
-    private static int numActiveProjectiles = 0;
+    private static int numActiveProjectiles;
     public int MaxCollisions;
 
     public float offset;
@@ -29,6 +29,7 @@ public class Laser : MonoBehaviour
         mLineRenderer = gameObject.GetComponent<LineRenderer>();
         SetColor(Color.red, 1.5f);
         DrawLaser();
+        numActiveProjectiles = 0;
     }
 
     public void SetColor(Color col, float refIndex) {

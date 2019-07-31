@@ -15,7 +15,6 @@ public class Respawn : MonoBehaviour
         if(Instance == null) {
             Instance = this;
             Instance.enemy.GetComponent<AlienController>().lm = levelManager;
-            DontDestroyOnLoad(this.gameObject);
         } else {
             Destroy(this.gameObject);
         }
