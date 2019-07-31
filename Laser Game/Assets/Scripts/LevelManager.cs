@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
 {
     public int TotalEnemies;
     public GameObject winUI;
     private int numEnemies;
+
+    public Button cont;
     
     // Start is called before the first frame update
     void Start()
@@ -24,7 +27,12 @@ public class LevelManager : MonoBehaviour
     {
         if (numEnemies <= 0)
         {
-            LevelComplete();
+            if(!cont) {
+                LevelComplete();
+            } else {
+                cont.interactable = true;
+                cont.onClick.AddListener(() => LevelComplete());
+            }
         }
     }
 

@@ -5,12 +5,18 @@ using UnityEngine;
 public class AlienController : MonoBehaviour {
 	public GameObject particlePrefab;
 	public LevelManager lm;
+	private Transform initialTransform;
+	private Quaternion initialRot;
+	public bool toRespawn;
 
-	// Start is called before the first frame update
-
-	// Update is called once per frame
+	public void Start() {
+		initialTransform = transform;
+	}
 	
 	public void kill() {
+		if(toRespawn) {
+			Respawn.RespawnEnemy(gameObject);
+		}
 		GameObject particles = Instantiate(particlePrefab, transform.position, Quaternion.identity);
 		lm.decrementEnemies();
 		Destroy(gameObject);
