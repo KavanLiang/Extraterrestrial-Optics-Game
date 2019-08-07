@@ -2330,6 +2330,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3135872138615457152}
     m_Modifications:
+    - target: {fileID: 7137960731629348355, guid: 812d4a1a52ba49c4fa2d7e01f87e01ae,
+        type: 3}
+      propertyPath: m_Name
+      value: HoverText
+      objectReference: {fileID: 0}
     - target: {fileID: 7137960731629348354, guid: 812d4a1a52ba49c4fa2d7e01f87e01ae,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2434,11 +2439,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7137960731629348355, guid: 812d4a1a52ba49c4fa2d7e01f87e01ae,
-        type: 3}
-      propertyPath: m_Name
-      value: HoverText
       objectReference: {fileID: 0}
     - target: {fileID: 7137960732545186805, guid: 812d4a1a52ba49c4fa2d7e01f87e01ae,
         type: 3}
@@ -2777,6 +2777,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3135872138615457152}
     m_Modifications:
+    - target: {fileID: 6951576032837060603, guid: c4a0a7415b2a37d43a3525bc148be059,
+        type: 3}
+      propertyPath: m_Name
+      value: ToLS
+      objectReference: {fileID: 0}
     - target: {fileID: 4166029103911364100, guid: c4a0a7415b2a37d43a3525bc148be059,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2882,10 +2887,10 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 6951576032837060603, guid: c4a0a7415b2a37d43a3525bc148be059,
+    - target: {fileID: 4927899550662168173, guid: c4a0a7415b2a37d43a3525bc148be059,
         type: 3}
-      propertyPath: m_Name
-      value: ToLS
+      propertyPath: m_Interactable
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4a0a7415b2a37d43a3525bc148be059, type: 3}
