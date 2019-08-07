@@ -382,7 +382,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -591,11 +591,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1774066702435679039}
     m_Modifications:
-    - target: {fileID: 6951576032837060603, guid: c4a0a7415b2a37d43a3525bc148be059,
-        type: 3}
-      propertyPath: m_Name
-      value: ToLS
-      objectReference: {fileID: 0}
     - target: {fileID: 4166029103911364100, guid: c4a0a7415b2a37d43a3525bc148be059,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -700,6 +695,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6951576032837060603, guid: c4a0a7415b2a37d43a3525bc148be059,
+        type: 3}
+      propertyPath: m_Name
+      value: ToLS
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4a0a7415b2a37d43a3525bc148be059, type: 3}
@@ -2154,11 +2154,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2202851226227150681, guid: ee2dbdd07b61a3141a0d721fc5c5791d,
-        type: 3}
-      propertyPath: m_Name
-      value: Laser
-      objectReference: {fileID: 0}
     - target: {fileID: 3707957427251598234, guid: ee2dbdd07b61a3141a0d721fc5c5791d,
         type: 3}
       propertyPath: MaxCollisions
@@ -2193,6 +2188,11 @@ PrefabInstance:
         type: 3}
       propertyPath: laserDistance
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2202851226227150681, guid: ee2dbdd07b61a3141a0d721fc5c5791d,
+        type: 3}
+      propertyPath: m_Name
+      value: Laser
       objectReference: {fileID: 0}
     - target: {fileID: 2202851226227150683, guid: ee2dbdd07b61a3141a0d721fc5c5791d,
         type: 3}
@@ -9939,11 +9939,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1774066702435679039}
     m_Modifications:
-    - target: {fileID: 7137960731629348355, guid: 812d4a1a52ba49c4fa2d7e01f87e01ae,
-        type: 3}
-      propertyPath: m_Name
-      value: HoverText
-      objectReference: {fileID: 0}
     - target: {fileID: 7137960731629348354, guid: 812d4a1a52ba49c4fa2d7e01f87e01ae,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10049,52 +10044,67 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 6732919037705604355, guid: 812d4a1a52ba49c4fa2d7e01f87e01ae,
+    - target: {fileID: 7137960731629348354, guid: 812d4a1a52ba49c4fa2d7e01f87e01ae,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7137960731629348354, guid: 812d4a1a52ba49c4fa2d7e01f87e01ae,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7137960731629348355, guid: 812d4a1a52ba49c4fa2d7e01f87e01ae,
+        type: 3}
+      propertyPath: m_Name
+      value: HoverText
+      objectReference: {fileID: 0}
+    - target: {fileID: 7326332233247645418, guid: 812d4a1a52ba49c4fa2d7e01f87e01ae,
         type: 3}
       propertyPath: m_textInfo.characterCount
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6732919037705604355, guid: 812d4a1a52ba49c4fa2d7e01f87e01ae,
+    - target: {fileID: 7326332233247645418, guid: 812d4a1a52ba49c4fa2d7e01f87e01ae,
         type: 3}
       propertyPath: m_textInfo.spaceCount
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6732919037705604355, guid: 812d4a1a52ba49c4fa2d7e01f87e01ae,
+    - target: {fileID: 7326332233247645418, guid: 812d4a1a52ba49c4fa2d7e01f87e01ae,
         type: 3}
       propertyPath: m_textInfo.wordCount
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6732919037705604355, guid: 812d4a1a52ba49c4fa2d7e01f87e01ae,
+    - target: {fileID: 7326332233247645418, guid: 812d4a1a52ba49c4fa2d7e01f87e01ae,
         type: 3}
       propertyPath: m_textInfo.lineCount
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6732919037705604355, guid: 812d4a1a52ba49c4fa2d7e01f87e01ae,
+    - target: {fileID: 7326332233247645418, guid: 812d4a1a52ba49c4fa2d7e01f87e01ae,
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7326332233247645418, guid: 812d4a1a52ba49c4fa2d7e01f87e01ae,
+    - target: {fileID: 6732919037705604355, guid: 812d4a1a52ba49c4fa2d7e01f87e01ae,
         type: 3}
       propertyPath: m_textInfo.characterCount
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7326332233247645418, guid: 812d4a1a52ba49c4fa2d7e01f87e01ae,
+    - target: {fileID: 6732919037705604355, guid: 812d4a1a52ba49c4fa2d7e01f87e01ae,
         type: 3}
       propertyPath: m_textInfo.spaceCount
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7326332233247645418, guid: 812d4a1a52ba49c4fa2d7e01f87e01ae,
+    - target: {fileID: 6732919037705604355, guid: 812d4a1a52ba49c4fa2d7e01f87e01ae,
         type: 3}
       propertyPath: m_textInfo.wordCount
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7326332233247645418, guid: 812d4a1a52ba49c4fa2d7e01f87e01ae,
+    - target: {fileID: 6732919037705604355, guid: 812d4a1a52ba49c4fa2d7e01f87e01ae,
         type: 3}
       propertyPath: m_textInfo.lineCount
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7326332233247645418, guid: 812d4a1a52ba49c4fa2d7e01f87e01ae,
+    - target: {fileID: 6732919037705604355, guid: 812d4a1a52ba49c4fa2d7e01f87e01ae,
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 0

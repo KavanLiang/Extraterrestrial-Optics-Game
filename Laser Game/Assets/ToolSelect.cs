@@ -23,7 +23,7 @@ public class ToolSelect : MonoBehaviour
     }
     public void DisplayGUI(Selectable s)
     {
-        sb.transform.position = Camera.main.WorldToScreenPoint(s.transform.position + new Vector3(0, Vector3.Magnitude(s.transform.lossyScale), 0));
+        sb.transform.position = Camera.main.WorldToScreenPoint(s.transform.position + new Vector3(0, 2.0f, 0));
         timeRemaining = 3;
         sb.gameObject.SetActive(true);
         sb.value = (float)s.GetCurrentTool() / (sb.numberOfSteps - 1);
@@ -43,7 +43,7 @@ public class ToolSelect : MonoBehaviour
         }
         if (sel)
         {
-            sb.transform.position = Camera.main.WorldToScreenPoint(sel.transform.position + new Vector3(0, Vector3.Magnitude(sel.transform.lossyScale), 0));
+            sb.transform.position = Camera.main.WorldToScreenPoint(sel.transform.position + new Vector3(0, 2.0f, 0));
         }
     }
 }
