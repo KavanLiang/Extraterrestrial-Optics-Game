@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour {
 	public void PlayGame() {
-		//SceneManager.LoadScene("Level Select");
-		Debug.Log("clicked");
+		SceneManager.LoadScene("Level Select");
 	}
 }
