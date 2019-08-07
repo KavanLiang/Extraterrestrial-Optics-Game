@@ -276,6 +276,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1425894107930906858, guid: d789d52673071f045900ee3b3b35a42b,
+        type: 3}
+      propertyPath: InteractableArea
+      value: 
+      objectReference: {fileID: 766515328}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d789d52673071f045900ee3b3b35a42b, type: 3}
 --- !u!1 &284060380
@@ -5993,11 +5998,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ScaledCVL
       objectReference: {fileID: 0}
-    - target: {fileID: 490163782681287321, guid: a31599c1bc102584588b273a578df396,
-        type: 3}
-      propertyPath: InteractableArea
-      value: 
-      objectReference: {fileID: 1951799135}
     - target: {fileID: 571188033030224184, guid: a31599c1bc102584588b273a578df396,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6063,6 +6063,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1.0136
       objectReference: {fileID: 0}
+    - target: {fileID: 490163782681287321, guid: a31599c1bc102584588b273a578df396,
+        type: 3}
+      propertyPath: InteractableArea
+      value: 
+      objectReference: {fileID: 1951799135}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a31599c1bc102584588b273a578df396, type: 3}
 --- !u!1001 &1951799134
