@@ -23,7 +23,7 @@ public class SandboxToolPanel : MonoBehaviour
             int closure = i;
             buttons[i].GetComponent<Image>().sprite = PrefabPreviews[i];
             buttons[i].onClick.AddListener(() => Select(closure));
-        }    
+        }
         activeTool = null;
         activeToolIndex = -1;
     }
@@ -36,6 +36,10 @@ public class SandboxToolPanel : MonoBehaviour
     public void Deselect() {
         activeTool = null;
         activeToolIndex = -1;
+    }
+
+    public static void reset() {
+      activeTool = null;
     }
 
     // Update is called once per frame

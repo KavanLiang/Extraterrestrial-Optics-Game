@@ -19,6 +19,5 @@ public class LoadNextLevel : MonoBehaviour
         while(!async.isDone) {
             yield return null;
         }
-
     }
 }

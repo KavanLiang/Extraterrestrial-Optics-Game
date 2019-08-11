@@ -27,6 +27,10 @@ public class Selectable : MonoBehaviour
         toggleInt = interactable;
     }
 
+    public static void resetInteractable() {
+        ToggleInteractable(true);
+    }
+
 
     void Init()
     {

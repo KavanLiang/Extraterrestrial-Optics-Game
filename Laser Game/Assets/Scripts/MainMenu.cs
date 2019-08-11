@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour {
 	public void PlayGame() {
+		Selectable.resetInteractable();
 		SceneManager.LoadScene("Level Select");
 	}
 }

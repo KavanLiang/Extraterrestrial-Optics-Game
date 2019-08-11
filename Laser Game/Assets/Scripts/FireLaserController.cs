@@ -11,6 +11,10 @@ public class FireLaserController : MonoBehaviour
     public ColorSlider cs;
     // Start is called before the first frame update
 
+    public void Start() {
+      Selectable.resetInteractable();
+    }
+
     public void fire() {
         ec.useEnergy();
         foreach(Laser laser in toFire) {
